@@ -114,8 +114,8 @@
   .border-glow { box-shadow: 0 0 0 1px oklch(0.72 0.22 45 / 0.4), 0 0 30px -5px oklch(0.72 0.22 45 / 0.5); }
   .grid-pattern {
     background-image:
-      linear-gradient(oklch(1 0 0 / 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, oklch(1 0 0 / 0.04) 1px, transparent 1px);
+      linear-gradient(oklch(0.18 0.01 40 / 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(0.18 0.01 40 / 0.05) 1px, transparent 1px);
     background-size: 48px 48px;
   }
   .noise::after {
