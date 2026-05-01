@@ -81,7 +81,7 @@ export const services: Service[] = [
   {
     icon: Megaphone,
     number: "03",
-    slug: "social-marketing",
+    slug: "social-media-marketing",
     title: "Social Media & Marketing",
     tagline: "Organic systems on IG, LinkedIn, YouTube.",
     headline: "Channels that compound followers into customers.",
@@ -189,7 +189,7 @@ export const services: Service[] = [
   {
     icon: GraduationCap,
     number: "07",
-    slug: "elearning-animation",
+    slug: "e-learning-animation",
     title: "E-Learning & Animation",
     tagline: "Courses, LMS, 2D/3D animation, explainers.",
     headline: "Turn expertise into scalable digital products.",
