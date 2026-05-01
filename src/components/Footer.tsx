@@ -25,7 +25,8 @@ export function Footer() {
               href="mailto:hello@korvion.media"
               className="mt-6 inline-flex items-center gap-2 text-foreground hover:text-primary transition-colors"
             >
-              <Mail className="h-4 w-4" /> hello@korvion.media
+              <Mail className="h-4 w-4" />
+              <span>hello@korvion.media</span>
             </a>
             <div className="mt-6 flex items-center gap-3">
               {[Instagram, Linkedin, Twitter, Youtube].map((Icon, i) => (
