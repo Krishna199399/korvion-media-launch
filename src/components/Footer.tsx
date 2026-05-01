@@ -26,7 +26,7 @@ export function Footer() {
               className="mt-6 inline-flex items-center gap-2 text-foreground hover:text-primary transition-colors"
             >
               <Mail className="h-4 w-4" />
-              <span>hello@korvion.media</span>
+              <span>korvionmedia@gmail.com</span>
             </a>
             <div className="mt-6 flex items-center gap-3">
               {[Instagram, Linkedin, Twitter, Youtube].map((Icon, i) => (
@@ -62,9 +62,9 @@ export function Footer() {
             <div>
               <h4 className="text-sm font-semibold text-foreground mb-4">Studios</h4>
               <ul className="space-y-3 text-sm text-muted-foreground">
-                <li>Mumbai · India</li>
-                <li>Dubai · UAE</li>
-                <li>Remote-first · Global</li>
+                <li>Belgavi ·Karnataka</li>
+                <li>Bengaluru ·Karnataka</li>
+                
               </ul>
             </div>
           </div>

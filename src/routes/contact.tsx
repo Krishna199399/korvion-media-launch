@@ -116,9 +116,9 @@ function ContactPage() {
           </motion.div>
 
           <div className="lg:col-span-5 space-y-4">
-            <InfoCard icon={Mail} title="Email" lines={["hello@korvion.media", "new-business@korvion.media"]} />
-            <InfoCard icon={Phone} title="Direct" lines={["+91 98765 43210", "Mon–Fri · 10am–7pm IST"]} />
-            <InfoCard icon={MapPin} title="Studios" lines={["Mumbai · India", "Dubai · UAE", "Remote · Global"]} />
+            <InfoCard icon={Mail} title="Email" lines={["korvionmedia@gmail.com"]} />
+            <InfoCard icon={Phone} title="Direct" lines={["+91 73536 48428", "Mon–Fri · 10am–7pm IST"]} />
+            <InfoCard icon={MapPin} title="Studios" lines={["Belgavi ·Karnataka", "Bengaluru ·Karnataka"]} />
 
             <div className="rounded-2xl border border-primary/30 bg-primary/5 p-6">
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-primary">Response time</p>
