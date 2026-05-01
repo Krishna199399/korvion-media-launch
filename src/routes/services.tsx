@@ -50,7 +50,7 @@ function ServicesPage() {
             const Icon = s.icon;
             return (
               <motion.div
-                key={s.title}
+                key={s.slug}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
@@ -75,13 +75,22 @@ function ServicesPage() {
                         </li>
                       ))}
                     </ul>
-                    <Link
-                      to="/contact"
-                      className="mt-7 inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
-                    >
-                      Discuss your {s.title.toLowerCase()} needs
-                      <ArrowUpRight className="h-4 w-4" />
-                    </Link>
+                    <div className="mt-7 flex flex-wrap items-center gap-5">
+                      <Link
+                        to="/services/$serviceSlug"
+                        params={{ serviceSlug: s.slug }}
+                        className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
+                      >
+                        Explore {s.title}
+                        <ArrowUpRight className="h-4 w-4" />
+                      </Link>
+                      <Link
+                        to="/contact"
+                        className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      >
+                        or book a call →
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </motion.div>
