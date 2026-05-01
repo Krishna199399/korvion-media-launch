@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import { CTASection } from "@/components/CTASection";
 import { services, getServiceBySlug } from "@/lib/services-data";
 
-export const Route = createFileRoute("/services/$serviceSlug")({
+export const Route = createFileRoute("/services_/$serviceSlug")({
   loader: ({ params }) => {
     const service = getServiceBySlug(params.serviceSlug);
     if (!service) throw notFound();
