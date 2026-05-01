@@ -3,14 +3,16 @@ import { useState, useEffect, useRef } from "react";
 import { Menu, X, ChevronDown, ArrowUpRight } from "lucide-react";
 import { services } from "@/lib/services-data";
 
-const links = [
+type NavLink = { to: "/" | "/services" | "/work" | "/process" | "/careers" | "/contact"; label: string; hasMenu?: boolean };
+
+const links: NavLink[] = [
   { to: "/", label: "Home" },
   { to: "/services", label: "Services", hasMenu: true },
   { to: "/work", label: "Case Studies" },
   { to: "/process", label: "Process" },
   { to: "/careers", label: "Careers" },
   { to: "/contact", label: "Contact" },
-] as const;
+];
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
