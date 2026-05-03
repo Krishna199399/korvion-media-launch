@@ -5,6 +5,13 @@ import { Mail, MapPin, Phone, ArrowUpRight, Check } from "lucide-react";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { SectionHeader } from "@/components/SectionHeader";
+import { SmoothScroll } from "@/components/SmoothScroll";
+import { ScrollProgress } from "@/components/animations/ScrollProgress";
+import { SplitText } from "@/components/animations/SplitText";
+import { MagneticButton } from "@/components/animations/MagneticButton";
+import { RippleButton } from "@/components/animations/RippleButton";
+import { StaggerChildren, StaggerChild } from "@/components/animations/StaggerChildren";
+import { FadeInSection } from "@/components/animations/FadeInSection";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -25,112 +32,195 @@ export const Route = createFileRoute("/contact")({
 function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Nav />
-      <section className="relative pt-36 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-hero-glow" />
-        <div className="absolute inset-0 grid-pattern opacity-30" />
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
-          <SectionHeader
-            eyebrow="Let's Build"
-            title={
-              <>
-                Tell us where you're stuck.<br />
-                <span className="text-gradient-primary">We'll show you the system.</span>
-              </>
-            }
-            subtitle="Drop your details. A senior strategist will reply within 24 hours with a custom growth angle — even if we don't end up working together."
-          />
-        </div>
-      </section>
-
-      <section className="pb-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-12 gap-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="lg:col-span-7 rounded-3xl border border-border bg-surface/40 p-8 lg:p-10"
-          >
-            {submitted ? (
-              <div className="py-20 text-center">
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-gradient-primary text-primary-foreground shadow-glow mb-6">
-                  <Check className="h-6 w-6" />
-                </div>
-                <h3 className="text-2xl font-bold">Got it — we're on it.</h3>
-                <p className="mt-3 text-muted-foreground">A strategist will reach out within 24 hours.</p>
-              </div>
-            ) : (
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setSubmitted(true);
-                }}
-                className="space-y-5"
+    <SmoothScroll>
+      <ScrollProgress />
+      <div className="min-h-screen bg-background text-foreground">
+        <Nav />
+        
+        {/* Hero Section */}
+        <section className="section-isolate relative pt-36 pb-20 overflow-hidden bg-background">
+          <div className="absolute inset-0 bg-hero-glow" />
+          <div className="absolute inset-0 grid-pattern opacity-30" />
+          <div className="absolute -top-20 left-1/2 -translate-x-1/2 h-[40rem] w-[40rem] rounded-full bg-primary/10 blur-3xl" />
+          
+          <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+            <FadeInSection>
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-xs uppercase tracking-[0.2em] text-primary font-mono mb-6"
               >
-                <div className="grid sm:grid-cols-2 gap-5">
-                  <Field label="Full Name" name="name" placeholder="Jane Doe" required />
-                  <Field label="Work Email" name="email" type="email" placeholder="jane@brand.com" required />
-                </div>
-                <div className="grid sm:grid-cols-2 gap-5">
-                  <Field label="Company" name="company" placeholder="Brand name" />
-                  <Field label="Website" name="website" placeholder="brand.com" />
-                </div>
-                <SelectField
-                  label="What do you need help with?"
-                  name="service"
-                  options={[
-                    "Branding & creative",
-                    "Performance marketing",
-                    "Content & social",
-                    "Web & digital experience",
-                    "CRM & automation",
-                    "Full-stack growth retainer",
-                    "Something else",
-                  ]}
-                />
-                <SelectField
-                  label="Monthly marketing budget"
-                  name="budget"
-                  options={["< ₹1L / mo", "₹1L – ₹5L / mo", "₹5L – ₹15L / mo", "₹15L+ / mo", "Not sure yet"]}
-                />
-                <div>
-                  <label className="block text-sm font-medium mb-2">Where are you stuck?</label>
-                  <textarea
-                    rows={4}
-                    placeholder="Tell us about your business and the bottleneck..."
-                    className="w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-gradient-primary px-7 py-4 text-base font-semibold text-primary-foreground shadow-glow hover:shadow-glow transition-all"
-                >
-                  Book My Strategy Call
-                  <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </button>
-                <p className="text-xs text-muted-foreground font-mono">No spam. No pitch decks. Just one honest call.</p>
-              </form>
-            )}
-          </motion.div>
-
-          <div className="lg:col-span-5 space-y-4">
-            <InfoCard icon={Mail} title="Email" lines={["korvionmedia@gmail.com"]} />
-            <InfoCard icon={Phone} title="Direct" lines={["+91 73536 48428", "Mon–Fri · 10am–7pm IST"]} />
-            <InfoCard icon={MapPin} title="Studios" lines={["Belgavi ·Karnataka", "Bengaluru ·Karnataka"]} />
-
-            <div className="rounded-2xl border border-primary/30 bg-primary/5 p-6">
-              <p className="font-mono text-xs uppercase tracking-[0.2em] text-primary">Response time</p>
-              <p className="mt-3 text-2xl font-bold">Within 24 hours.</p>
-              <p className="mt-2 text-sm text-muted-foreground">Every inquiry gets read by a senior strategist — not a sales rep.</p>
-            </div>
+                <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse-glow" />
+                Let's Build
+              </motion.div>
+              
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[0.98] tracking-tight">
+                <SplitText splitBy="words" stagger={0.05}>
+                  Tell us where you're stuck.
+                </SplitText>
+                <br />
+                <span className="text-gradient-primary">
+                  <SplitText splitBy="words" stagger={0.05} delay={0.3}>
+                    We'll show you the system.
+                  </SplitText>
+                </span>
+              </h1>
+              
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.6 }}
+                className="mt-7 text-lg sm:text-xl text-muted-foreground max-w-3xl leading-relaxed"
+              >
+                Drop your details. A senior strategist will reply within 24 hours with a custom growth angle — even if we don't end up working together.
+              </motion.p>
+            </FadeInSection>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <Footer />
-    </div>
+        {/* Contact Form & Info */}
+        <section className="section-isolate pb-32 bg-background">
+          <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-12 gap-10">
+            {/* Form */}
+            <FadeInSection className="lg:col-span-7" delay={0.2}>
+              <div className="rounded-3xl border border-border bg-surface/40 p-8 lg:p-10">
+                {submitted ? (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                    className="py-20 text-center"
+                  >
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ type: "spring", stiffness: 200, damping: 15, delay: 0.2 }}
+                      className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-gradient-primary text-primary-foreground shadow-glow mb-6"
+                    >
+                      <Check className="h-6 w-6" />
+                    </motion.div>
+                    <motion.h3
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.4 }}
+                      className="text-2xl font-bold"
+                    >
+                      Got it — we're on it.
+                    </motion.h3>
+                    <motion.p
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.5 }}
+                      className="mt-3 text-muted-foreground"
+                    >
+                      A strategist will reach out within 24 hours.
+                    </motion.p>
+                  </motion.div>
+                ) : (
+                  <form
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      setSubmitted(true);
+                    }}
+                  >
+                    <StaggerChildren className="space-y-5" staggerDelay={0.08}>
+                      <StaggerChild>
+                        <div className="grid sm:grid-cols-2 gap-5">
+                          <Field label="Full Name" name="name" placeholder="Jane Doe" required />
+                          <Field label="Work Email" name="email" type="email" placeholder="jane@brand.com" required />
+                        </div>
+                      </StaggerChild>
+                      
+                      <StaggerChild>
+                        <div className="grid sm:grid-cols-2 gap-5">
+                          <Field label="Company" name="company" placeholder="Brand name" />
+                          <Field label="Website" name="website" placeholder="brand.com" />
+                        </div>
+                      </StaggerChild>
+                      
+                      <StaggerChild>
+                        <SelectField
+                          label="What do you need help with?"
+                          name="service"
+                          options={[
+                            "Branding & creative",
+                            "Performance marketing",
+                            "Content & social",
+                            "Web & digital experience",
+                            "CRM & automation",
+                            "Full-stack growth retainer",
+                            "Something else",
+                          ]}
+                        />
+                      </StaggerChild>
+                      
+                      <StaggerChild>
+                        <SelectField
+                          label="Monthly marketing budget"
+                          name="budget"
+                          options={["< ₹1L / mo", "₹1L – ₹5L / mo", "₹5L – ₹15L / mo", "₹15L+ / mo", "Not sure yet"]}
+                        />
+                      </StaggerChild>
+                      
+                      <StaggerChild>
+                        <div>
+                          <label className="block text-sm font-medium mb-2">Where are you stuck?</label>
+                          <textarea
+                            rows={4}
+                            placeholder="Tell us about your business and the bottleneck..."
+                            className="w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none"
+                          />
+                        </div>
+                      </StaggerChild>
+                      
+                      <StaggerChild>
+                        <MagneticButton strength={0.15}>
+                          <RippleButton
+                            type="submit"
+                            className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-gradient-primary px-7 py-4 text-base font-semibold text-primary-foreground shadow-glow hover:shadow-glow transition-all"
+                          >
+                            Book My Strategy Call
+                            <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                          </RippleButton>
+                        </MagneticButton>
+                        <p className="mt-3 text-xs text-muted-foreground font-mono">No spam. No pitch decks. Just one honest call.</p>
+                      </StaggerChild>
+                    </StaggerChildren>
+                  </form>
+                )}
+              </div>
+            </FadeInSection>
+
+            {/* Info Cards */}
+            <StaggerChildren className="lg:col-span-5 space-y-4" staggerDelay={0.1}>
+              <StaggerChild>
+                <InfoCard icon={Mail} title="Email" lines={["korvionmedia@gmail.com"]} />
+              </StaggerChild>
+              <StaggerChild>
+                <InfoCard icon={Phone} title="Direct" lines={["+91 73536 48428", "Mon–Fri · 10am–7pm IST"]} />
+              </StaggerChild>
+              <StaggerChild>
+                <InfoCard icon={MapPin} title="Studios" lines={["Belgavi ·Karnataka", "Bengaluru ·Karnataka"]} />
+              </StaggerChild>
+
+              <StaggerChild>
+                <motion.div
+                  whileHover={{ scale: 1.02, y: -4 }}
+                  className="rounded-2xl border border-primary/30 bg-primary/5 p-6"
+                >
+                  <p className="font-mono text-xs uppercase tracking-[0.2em] text-primary">Response time</p>
+                  <p className="mt-3 text-2xl font-bold">Within 24 hours.</p>
+                  <p className="mt-2 text-sm text-muted-foreground">Every inquiry gets read by a senior strategist — not a sales rep.</p>
+                </motion.div>
+              </StaggerChild>
+            </StaggerChildren>
+          </div>
+        </section>
+
+        <Footer />
+      </div>
+    </SmoothScroll>
   );
 }
 
@@ -138,7 +228,8 @@ function Field({ label, name, type = "text", placeholder, required }: { label: s
   return (
     <div>
       <label htmlFor={name} className="block text-sm font-medium mb-2">{label}</label>
-      <input
+      <motion.input
+        whileFocus={{ scale: 1.01 }}
         id={name}
         name={name}
         type={type}
@@ -154,7 +245,8 @@ function SelectField({ label, name, options }: { label: string; name: string; op
   return (
     <div>
       <label htmlFor={name} className="block text-sm font-medium mb-2">{label}</label>
-      <select
+      <motion.select
+        whileFocus={{ scale: 1.01 }}
         id={name}
         name={name}
         defaultValue=""
@@ -164,18 +256,24 @@ function SelectField({ label, name, options }: { label: string; name: string; op
         {options.map((o) => (
           <option key={o} value={o}>{o}</option>
         ))}
-      </select>
+      </motion.select>
     </div>
   );
 }
 
 function InfoCard({ icon: Icon, title, lines }: { icon: typeof Mail; title: string; lines: string[] }) {
   return (
-    <div className="rounded-2xl border border-border bg-surface/40 p-6 hover:border-primary/40 transition-all">
+    <motion.div
+      whileHover={{ scale: 1.02, y: -4 }}
+      className="rounded-2xl border border-border bg-surface/40 p-6 hover:border-primary/40 transition-all"
+    >
       <div className="flex items-center gap-4">
-        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+        <motion.div
+          whileHover={{ rotate: 5, scale: 1.1 }}
+          className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary"
+        >
           <Icon className="h-5 w-5" />
-        </div>
+        </motion.div>
         <div>
           <h4 className="font-bold">{title}</h4>
           {lines.map((l, i) => (
@@ -183,6 +281,6 @@ function InfoCard({ icon: Icon, title, lines }: { icon: typeof Mail; title: stri
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

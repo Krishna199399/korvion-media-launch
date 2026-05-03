@@ -58,9 +58,15 @@ export const getRouter = () => {
   const router = createRouter({
     routeTree,
     context: {},
-    scrollRestoration: true,
+    defaultPreload: 'intent',
     defaultPreloadStaleTime: 0,
     defaultErrorComponent: DefaultErrorComponent,
+  });
+
+  // Reset scroll position on route change
+  router.subscribe('onBeforeLoad', () => {
+    // Scroll to top immediately on navigation
+    window.scrollTo(0, 0);
   });
 
   return router;

@@ -94,9 +94,15 @@
       radial-gradient(ellipse 50% 35% at 85% -5%, oklch(0.70 0.20 45 / 0.14), transparent 60%),
       radial-gradient(ellipse 55% 40% at -5% 100%, oklch(0.70 0.20 45 / 0.10), transparent 60%);
     background-attachment: fixed;
+    cursor: none; /* Hide default cursor */
   }
   h1,h2,h3,h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
   ::selection { background: var(--primary); color: var(--primary-foreground); }
+  
+  /* Hide default cursor on interactive elements */
+  a, button, input, textarea, select, [role="button"] {
+    cursor: none;
+  }
 }
 
 @layer utilities {
@@ -125,6 +131,23 @@
   }
   .marquee-mask {
     mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+  }
+  .section-isolate {
+    isolation: isolate;
+    position: relative;
+    z-index: 1;
+  }
+  .section-isolate::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: inherit;
+    z-index: -1;
+  }
+  
+  /* Custom cursor utilities */
+  .cursor-hover {
+    cursor: none;
   }
 }
 

@@ -4,6 +4,13 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { SectionHeader } from "@/components/SectionHeader";
 import { CTASection } from "@/components/CTASection";
+import { SmoothScroll } from "@/components/SmoothScroll";
+import { ScrollProgress } from "@/components/animations/ScrollProgress";
+import { SplitText } from "@/components/animations/SplitText";
+import { TiltCard } from "@/components/animations/TiltCard";
+import { CounterAnimation } from "@/components/animations/CounterAnimation";
+import { StaggerChildren, StaggerChild } from "@/components/animations/StaggerChildren";
+import { FadeInSection } from "@/components/animations/FadeInSection";
 
 export const Route = createFileRoute("/work")({
   head: () => ({
@@ -90,77 +97,158 @@ const studies = [
 
 function WorkPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Nav />
-      <section className="relative pt-36 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-hero-glow" />
-        <div className="absolute inset-0 grid-pattern opacity-30" />
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
-          <SectionHeader
-            eyebrow="Case Studies"
-            title={
-              <>
-                Brands we built.<br />
-                <span className="text-gradient-primary">Numbers we moved.</span>
-              </>
-            }
-            subtitle="No fluff slides. No vanity metrics. Just the problem, the system we engineered, and the revenue it printed."
-          />
-        </div>
-      </section>
+    <SmoothScroll>
+      <ScrollProgress />
+      <div className="min-h-screen bg-background text-foreground">
+        <Nav />
+        
+        {/* Hero Section */}
+        <section className="section-isolate relative pt-36 pb-20 overflow-hidden bg-background">
+          <div className="absolute inset-0 bg-hero-glow" />
+          <div className="absolute inset-0 grid-pattern opacity-30" />
+          <div className="absolute -top-20 left-[-10%] h-[40rem] w-[40rem] rounded-full bg-primary/10 blur-3xl animate-pulse-glow" />
+          
+          <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+            <FadeInSection>
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-xs uppercase tracking-[0.2em] text-primary font-mono mb-6"
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse-glow" />
+                Case Studies
+              </motion.div>
+              
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[0.98] tracking-tight">
+                <SplitText splitBy="words" stagger={0.05}>
+                  Brands we built.
+                </SplitText>
+                <br />
+                <span className="text-gradient-primary">
+                  <SplitText splitBy="words" stagger={0.05} delay={0.3}>
+                    Numbers we moved.
+                  </SplitText>
+                </span>
+              </h1>
+              
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.6 }}
+                className="mt-7 text-lg sm:text-xl text-muted-foreground max-w-3xl leading-relaxed"
+              >
+                No fluff slides. No vanity metrics. Just the problem, the system we engineered, and the revenue it printed.
+              </motion.p>
+            </FadeInSection>
+          </div>
+        </section>
 
-      <section className="pb-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 space-y-8">
-          {studies.map((s, i) => (
-            <motion.article
-              key={s.brand}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6 }}
-              className="relative overflow-hidden rounded-3xl border border-border bg-surface/40 p-8 lg:p-12 hover:border-primary/40 transition-all"
-            >
-              <div className="absolute -top-32 -right-32 h-72 w-72 rounded-full bg-primary/10 blur-3xl pointer-events-none" />
-              <div className="relative grid lg:grid-cols-12 gap-10">
-                <div className="lg:col-span-4">
-                  <span className="font-mono text-xs uppercase tracking-[0.2em] text-primary">{s.tag}</span>
-                  <h2 className="mt-4 text-3xl lg:text-4xl font-bold leading-tight">{s.title}</h2>
-                  <p className="mt-3 text-muted-foreground">— {s.brand}</p>
+        {/* Case Studies */}
+        <section className="section-isolate pb-32 bg-background">
+          <div className="mx-auto max-w-7xl px-6 lg:px-10">
+            <StaggerChildren className="space-y-8" staggerDelay={0.15}>
+              {studies.map((s, i) => (
+                <StaggerChild key={s.brand}>
+                  <TiltCard
+                    tiltAmount={3}
+                    className="relative overflow-hidden rounded-3xl border border-border bg-surface/40 p-8 lg:p-12 hover:border-primary/40 hover:shadow-glow-sm transition-all"
+                  >
+                    <div className="absolute -top-32 -right-32 h-72 w-72 rounded-full bg-primary/10 blur-3xl pointer-events-none" />
+                    
+                    <div className="relative grid lg:grid-cols-12 gap-10">
+                      {/* Left Column */}
+                      <div className="lg:col-span-4">
+                        <motion.span
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.5 }}
+                          className="font-mono text-xs uppercase tracking-[0.2em] text-primary"
+                        >
+                          {s.tag}
+                        </motion.span>
+                        
+                        <motion.h2
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.6, delay: 0.1 }}
+                          className="mt-4 text-3xl lg:text-4xl font-bold leading-tight"
+                        >
+                          {s.title}
+                        </motion.h2>
+                        
+                        <motion.p
+                          initial={{ opacity: 0 }}
+                          whileInView={{ opacity: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.5, delay: 0.2 }}
+                          className="mt-3 text-muted-foreground"
+                        >
+                          — {s.brand}
+                        </motion.p>
 
-                  <div className="mt-8 grid grid-cols-3 gap-4">
-                    {s.metrics.map((m) => (
-                      <div key={m.l} className="rounded-xl border border-border bg-background p-4">
-                        <div className="text-xl lg:text-2xl font-bold text-gradient-primary">{m.v}</div>
-                        <div className="mt-1 text-[11px] text-muted-foreground leading-tight">{m.l}</div>
+                        {/* Metrics */}
+                        <StaggerChildren className="mt-8 grid grid-cols-3 gap-4" staggerDelay={0.1}>
+                          {s.metrics.map((m) => (
+                            <StaggerChild key={m.l}>
+                              <motion.div
+                                whileHover={{ scale: 1.05, y: -4 }}
+                                className="rounded-xl border border-border bg-background p-4"
+                              >
+                                <div className="text-xl lg:text-2xl font-bold text-gradient-primary">
+                                  <CounterAnimation value={m.v} duration={2} />
+                                </div>
+                                <div className="mt-1 text-[11px] text-muted-foreground leading-tight">{m.l}</div>
+                              </motion.div>
+                            </StaggerChild>
+                          ))}
+                        </StaggerChildren>
                       </div>
-                    ))}
-                  </div>
-                </div>
 
-                <div className="lg:col-span-8 space-y-6">
-                  <Block label="Problem" body={s.problem} />
-                  <Block label="Solution" body={s.solution} />
-                  <Block label="Result" body={s.result} highlight />
-                </div>
-              </div>
-            </motion.article>
-          ))}
-        </div>
-      </section>
+                      {/* Right Column */}
+                      <div className="lg:col-span-8">
+                        <StaggerChildren className="space-y-6" staggerDelay={0.1}>
+                          <StaggerChild>
+                            <Block label="Problem" body={s.problem} />
+                          </StaggerChild>
+                          <StaggerChild>
+                            <Block label="Solution" body={s.solution} />
+                          </StaggerChild>
+                          <StaggerChild>
+                            <Block label="Result" body={s.result} highlight />
+                          </StaggerChild>
+                        </StaggerChildren>
+                      </div>
+                    </div>
+                  </TiltCard>
+                </StaggerChild>
+              ))}
+            </StaggerChildren>
+          </div>
+        </section>
 
-      <CTASection />
-      <Footer />
-    </div>
+        <CTASection />
+        <Footer />
+      </div>
+    </SmoothScroll>
   );
 }
 
 function Block({ label, body, highlight }: { label: string; body: string; highlight?: boolean }) {
   return (
-    <div className={`relative pl-5 border-l-2 ${highlight ? "border-primary" : "border-border"}`}>
+    <motion.div
+      initial={{ opacity: 0, x: -20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className={`relative pl-5 border-l-2 ${highlight ? "border-primary" : "border-border"}`}
+    >
       <div className={`text-xs uppercase tracking-[0.2em] font-mono mb-2 ${highlight ? "text-primary" : "text-muted-foreground"}`}>
         {label}
       </div>
       <p className={`leading-relaxed ${highlight ? "text-foreground text-lg" : "text-muted-foreground"}`}>{body}</p>
-    </div>
+    </motion.div>
   );
 }

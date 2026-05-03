@@ -1,7 +1,10 @@
 import { Link } from "@tanstack/react-router";
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, ChevronDown, ArrowUpRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { services } from "@/lib/services-data";
+import { MagneticButton } from "./animations/MagneticButton";
+import RotatingText from "./RotatingText";
 
 type NavLink = { to: "/" | "/services" | "/work" | "/process" | "/careers" | "/contact"; label: string; hasMenu?: boolean };
 
@@ -46,14 +49,28 @@ export function Nav() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 group">
-          <span className="relative flex h-7 w-7 items-center justify-center rounded-md bg-gradient-primary shadow-glow-sm">
-            <span className="absolute inset-0 rounded-md bg-gradient-primary blur-md opacity-60 group-hover:opacity-100 transition-opacity" />
-            <span className="relative font-display font-black text-primary-foreground text-sm">K</span>
-          </span>
-          <span className="font-display font-bold tracking-tight text-base">
-            KORVION<span className="text-primary">.</span>
-          </span>
+        <Link to="/" className="flex items-center gap-1 group">
+          <img 
+            src="/src/assets/korvion-logo.png" 
+            alt="Korvion Media" 
+            width={240}
+            height={53}
+            className="h-[53px] w-auto transition-transform group-hover:scale-105"
+          />
+          <div className="hidden lg:block">
+            <RotatingText
+              texts={['Brand', 'Content', 'Social', 'Growth']}
+              mainClassName="text-black overflow-hidden text-base font-semibold"
+              staggerFrom="last"
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "-120%" }}
+              staggerDuration={0.025}
+              splitLevelClassName="overflow-hidden"
+              transition={{ type: "spring", damping: 30, stiffness: 400 }}
+              rotationInterval={2500}
+            />
+          </div>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
@@ -65,37 +82,66 @@ export function Nav() {
                 onMouseEnter={openMenu}
                 onMouseLeave={scheduleClose}
               >
-                <Link
-                  to={l.to}
-                  className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-md inline-flex items-center gap-1"
-                  activeProps={{ className: "text-foreground" }}
+                <MagneticButton
+                  as="div"
+                  strength={0.15}
+                  className="relative group"
                 >
-                  {l.label}
-                  <ChevronDown className={`h-3.5 w-3.5 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
-                </Link>
+                  <Link
+                    to={l.to}
+                    className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-md inline-flex items-center gap-1"
+                    activeProps={{ className: "text-foreground" }}
+                  >
+                    {l.label}
+                    <ChevronDown className={`h-3.5 w-3.5 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
+                  </Link>
+                  <motion.div
+                    className="absolute bottom-0 left-4 right-4 h-0.5 bg-gradient-primary"
+                    initial={{ scaleX: 0 }}
+                    whileHover={{ scaleX: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </MagneticButton>
               </div>
             ) : (
-              <Link
+              <MagneticButton
                 key={l.to}
-                to={l.to}
-                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-md"
-                activeProps={{ className: "text-foreground" }}
-                activeOptions={{ exact: l.to === "/" }}
+                as="div"
+                strength={0.15}
+                className="relative group"
               >
-                {l.label}
-              </Link>
+                <Link
+                  to={l.to}
+                  className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-md block"
+                  activeProps={{ className: "text-foreground" }}
+                  activeOptions={{ exact: l.to === "/" }}
+                >
+                  {l.label}
+                </Link>
+                <motion.div
+                  className="absolute bottom-0 left-4 right-4 h-0.5 bg-gradient-primary"
+                  initial={{ scaleX: 0 }}
+                  whileHover={{ scaleX: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </MagneticButton>
             ),
           )}
         </nav>
 
         <div className="hidden lg:block">
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 rounded-full bg-gradient-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-glow-sm hover:shadow-glow transition-all duration-300"
+          <MagneticButton
+            as="div"
+            strength={0.2}
           >
-            Book a Call
-            <span aria-hidden>→</span>
-          </Link>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-glow-sm hover:shadow-glow transition-all duration-300"
+            >
+              Book a Call
+              <span aria-hidden>→</span>
+            </Link>
+          </MagneticButton>
         </div>
 
         <button
@@ -108,13 +154,17 @@ export function Nav() {
       </div>
 
       {/* Services Mega Menu (desktop) */}
-      <div
-        onMouseEnter={openMenu}
-        onMouseLeave={scheduleClose}
-        className={`hidden lg:block absolute inset-x-0 top-full transition-all duration-300 ${
-          servicesOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"
-        }`}
-      >
+      <AnimatePresence>
+        {servicesOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            onMouseEnter={openMenu}
+            onMouseLeave={scheduleClose}
+            className="hidden lg:block absolute inset-x-0 top-full"
+          >
         <div className="mx-auto max-w-7xl px-6 lg:px-10 pt-3">
           <div className="relative rounded-2xl border border-border bg-background/95 backdrop-blur-xl shadow-elegant overflow-hidden">
             <div className="absolute -top-32 -right-32 h-64 w-64 rounded-full bg-primary/20 blur-3xl pointer-events-none" />
@@ -140,16 +190,36 @@ export function Nav() {
               {/* Services grid */}
               <div className="lg:col-span-9 p-6">
                 <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-2">
-                  {services.map((s) => {
+                  {services.map((s, i) => {
                     const Icon = s.icon;
+                    // Use dedicated pages for specific services
+                    let linkTo = "/services/$serviceSlug";
+                    let linkParams: any = { serviceSlug: s.slug };
+                    
+                    if (s.slug === "social-media-marketing") {
+                      linkTo = "/social-media-marketing";
+                      linkParams = {};
+                    } else if (s.slug === "branding-creative") {
+                      linkTo = "/branding-agency-creative-services";
+                      linkParams = {};
+                    } else if (s.slug === "content-production") {
+                      linkTo = "/video-production-photography-services";
+                      linkParams = {};
+                    }
+                    
                     return (
-                      <Link
+                      <motion.div
                         key={s.slug}
-                        to="/services/$serviceSlug"
-                        params={{ serviceSlug: s.slug }}
-                        onClick={() => setServicesOpen(false)}
-                        className="group flex items-start gap-4 rounded-xl p-3 hover:bg-surface/60 transition-colors"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3, delay: i * 0.05 }}
                       >
+                        <Link
+                          to={linkTo as any}
+                          params={linkParams}
+                          onClick={() => setServicesOpen(false)}
+                          className="group flex items-start gap-4 rounded-xl p-3 hover:bg-surface/60 transition-colors"
+                        >
                         <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gradient-primary text-primary-foreground shadow-glow-sm">
                           <Icon className="h-5 w-5" />
                         </div>
@@ -160,7 +230,8 @@ export function Nav() {
                           </div>
                           <p className="mt-0.5 text-xs text-muted-foreground line-clamp-2">{s.tagline}</p>
                         </div>
-                      </Link>
+                        </Link>
+                      </motion.div>
                     );
                   })}
                 </div>
@@ -168,10 +239,19 @@ export function Nav() {
             </div>
           </div>
         </div>
-      </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-      {open && (
-        <div className="lg:hidden border-t border-border bg-background/95 backdrop-blur-xl max-h-[calc(100vh-4rem)] overflow-y-auto">
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="lg:hidden border-t border-border bg-background/95 backdrop-blur-xl max-h-[calc(100vh-4rem)] overflow-y-auto"
+          >
           <div className="px-6 py-6 flex flex-col gap-1">
             {links.map((l) =>
               l.hasMenu ? (
@@ -194,11 +274,26 @@ export function Nav() {
                       </Link>
                       {services.map((s) => {
                         const Icon = s.icon;
+                        // Use dedicated pages for specific services
+                        let linkTo = "/services/$serviceSlug";
+                        let linkParams: any = { serviceSlug: s.slug };
+                        
+                        if (s.slug === "social-media-marketing") {
+                          linkTo = "/social-media-marketing";
+                          linkParams = {};
+                        } else if (s.slug === "branding-creative") {
+                          linkTo = "/branding-agency-creative-services";
+                          linkParams = {};
+                        } else if (s.slug === "content-production") {
+                          linkTo = "/video-production-photography-services";
+                          linkParams = {};
+                        }
+                        
                         return (
                           <Link
                             key={s.slug}
-                            to="/services/$serviceSlug"
-                            params={{ serviceSlug: s.slug }}
+                            to={linkTo as any}
+                            params={linkParams}
                             onClick={() => setOpen(false)}
                             className="flex items-center gap-3 px-3 py-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
                           >
@@ -233,8 +328,9 @@ export function Nav() {
               Book a Strategy Call →
             </Link>
           </div>
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
