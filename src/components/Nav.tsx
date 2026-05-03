@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { services } from "@/lib/services-data";
 import { MagneticButton } from "./animations/MagneticButton";
 import RotatingText from "./RotatingText";
+import logoImage from "@/assets/korvion-logo.png";
 
 type NavLink = { to: "/" | "/services" | "/work" | "/process" | "/careers" | "/contact"; label: string; hasMenu?: boolean };
 
@@ -51,7 +52,7 @@ export function Nav() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-1 group">
           <img 
-            src="/src/assets/korvion-logo.png" 
+            src={logoImage} 
             alt="Korvion Media" 
             width={240}
             height={53}
