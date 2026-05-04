@@ -38,7 +38,7 @@ function ServicesPage() {
         <Nav />
         
         {/* Hero Section */}
-        <section className="section-isolate relative pt-36 pb-20 overflow-hidden bg-background">
+        <section className="section-isolate relative pt-36 pb-12 overflow-hidden bg-background">
           <div className="absolute inset-0 bg-hero-glow" />
           <div className="absolute inset-0 grid-pattern opacity-30" />
           <div className="absolute -top-20 right-[-10%] h-[40rem] w-[40rem] rounded-full bg-primary/10 blur-3xl" />
@@ -80,7 +80,7 @@ function ServicesPage() {
         </section>
 
         {/* Services Grid */}
-        <section className="section-isolate pb-32 bg-background">
+        <section className="section-isolate pb-20 bg-background">
           <div className="mx-auto max-w-7xl px-6 lg:px-10">
             <StaggerChildren className="space-y-6" staggerDelay={0.1}>
               {services.map((s, i) => {
