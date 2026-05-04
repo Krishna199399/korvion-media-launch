@@ -50,24 +50,24 @@ export function Nav() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-1 group">
+        <Link to="/" className="flex items-center gap-1 group flex-shrink-0">
           <img 
             src={logoImage} 
             alt="Korvion Media" 
             width={240}
             height={53}
-            className="h-[53px] w-auto transition-transform group-hover:scale-105"
+            className="h-[53px] w-auto transition-transform group-hover:scale-105 flex-shrink-0"
           />
-          <div className="hidden lg:block w-[70px]">
+          <div className="hidden lg:block w-[80px] flex-shrink-0">
             <RotatingText
               texts={['Brand', 'Content', 'Social', 'Growth']}
-              mainClassName="text-black overflow-hidden text-base font-semibold"
+              mainClassName="text-black overflow-hidden text-base font-semibold inline-block"
               staggerFrom="last"
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               exit={{ y: "-120%" }}
               staggerDuration={0.025}
-              splitLevelClassName="overflow-hidden"
+              splitLevelClassName="overflow-hidden inline-block"
               transition={{ type: "spring", damping: 30, stiffness: 400 }}
               rotationInterval={2500}
             />

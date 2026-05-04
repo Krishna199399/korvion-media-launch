@@ -7,7 +7,7 @@ import { FadeInSection } from "./animations/FadeInSection";
 
 export function CTASection() {
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section className="relative py-20 overflow-hidden">
       <div className="absolute inset-0 bg-hero-glow" />
       <div className="absolute inset-0 grid-pattern opacity-40" />
       <div className="relative mx-auto max-w-5xl px-6 lg:px-10 text-center">
