@@ -3,6 +3,7 @@ import { Instagram, Linkedin, Twitter, Youtube, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import { FadeInSection } from "./animations/FadeInSection";
 import { StaggerChildren, StaggerChild } from "./animations/StaggerChildren";
+import logoImage from "@/assets/korvion-logo.png";
 
 export function Footer() {
   return (
@@ -22,7 +23,7 @@ export function Footer() {
           <FadeInSection className="lg:col-span-5" direction="left">
             <Link to="/" className="flex items-center">
               <img 
-                src="/src/assets/korvion-logo.png" 
+                src={logoImage} 
                 alt="Korvion Media" 
                 width={216}
                 height={48}
