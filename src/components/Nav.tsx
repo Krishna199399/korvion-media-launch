@@ -58,7 +58,7 @@ export function Nav() {
             height={53}
             className="h-[53px] w-auto transition-transform group-hover:scale-105"
           />
-          <div className="hidden lg:block">
+          <div className="hidden lg:block w-[70px]">
             <RotatingText
               texts={['Brand', 'Content', 'Social', 'Growth']}
               mainClassName="text-black overflow-hidden text-base font-semibold"
