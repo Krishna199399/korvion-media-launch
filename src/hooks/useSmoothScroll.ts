@@ -7,6 +7,9 @@ import Lenis from 'lenis';
  */
 export function useSmoothScroll(options: Partial<ConstructorParameters<typeof Lenis>[0]> = {}) {
   useEffect(() => {
+    // Skip on server-side
+    if (typeof window === 'undefined') return;
+    
     // Initialize Lenis
     const lenis = new Lenis({
       duration: 1.2,
@@ -18,6 +21,7 @@ export function useSmoothScroll(options: Partial<ConstructorParameters<typeof Le
       smoothTouch: false,
       touchMultiplier: 2,
       infinite: false,
+      autoResize: true,
       ...options,
     });
 
@@ -31,9 +35,23 @@ export function useSmoothScroll(options: Partial<ConstructorParameters<typeof Le
 
     rafId = requestAnimationFrame(raf);
 
+    // Force resize on mount to ensure proper height calculation
+    const resizeTimeout = setTimeout(() => {
+      lenis.resize();
+    }, 100);
+
+    // Add resize observer to handle dynamic content
+    const resizeObserver = new ResizeObserver(() => {
+      lenis.resize();
+    });
+    
+    resizeObserver.observe(document.body);
+
     // Cleanup
     return () => {
-      cancelAnimationFrame(rafId);
+      if (rafId) cancelAnimationFrame(rafId);
+      clearTimeout(resizeTimeout);
+      resizeObserver.disconnect();
       lenis.destroy();
     };
   }, []);

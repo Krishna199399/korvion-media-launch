@@ -206,6 +206,12 @@ export function Nav() {
                     } else if (s.slug === "content-production") {
                       linkTo = "/video-production-photography-services";
                       linkParams = {};
+                    } else if (s.slug === "performance-marketing") {
+                      linkTo = "/performance-marketing-services";
+                      linkParams = {};
+                    } else if (s.slug === "web-digital-experience") {
+                      linkTo = "/website-design-services";
+                      linkParams = {};
                     }
                     
                     return (
@@ -287,6 +293,12 @@ export function Nav() {
                           linkParams = {};
                         } else if (s.slug === "content-production") {
                           linkTo = "/video-production-photography-services";
+                          linkParams = {};
+                        } else if (s.slug === "performance-marketing") {
+                          linkTo = "/performance-marketing-services";
+                          linkParams = {};
+                        } else if (s.slug === "web-digital-experience") {
+                          linkTo = "/website-design-services";
                           linkParams = {};
                         }
                         

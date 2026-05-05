@@ -10,10 +10,12 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WorkRouteImport } from './routes/work'
+import { Route as WebsiteDesignServicesRouteImport } from './routes/website-design-services'
 import { Route as VideoProductionPhotographyServicesRouteImport } from './routes/video-production-photography-services'
 import { Route as SocialMediaMarketingRouteImport } from './routes/social-media-marketing'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProcessRouteImport } from './routes/process'
+import { Route as PerformanceMarketingServicesRouteImport } from './routes/performance-marketing-services'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CareersRouteImport } from './routes/careers'
 import { Route as BrandingAgencyCreativeServicesRouteImport } from './routes/branding-agency-creative-services'
@@ -23,6 +25,11 @@ import { Route as ServicesServiceSlugRouteImport } from './routes/services_.$ser
 const WorkRoute = WorkRouteImport.update({
   id: '/work',
   path: '/work',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebsiteDesignServicesRoute = WebsiteDesignServicesRouteImport.update({
+  id: '/website-design-services',
+  path: '/website-design-services',
   getParentRoute: () => rootRouteImport,
 } as any)
 const VideoProductionPhotographyServicesRoute =
@@ -46,6 +53,12 @@ const ProcessRoute = ProcessRouteImport.update({
   path: '/process',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PerformanceMarketingServicesRoute =
+  PerformanceMarketingServicesRouteImport.update({
+    id: '/performance-marketing-services',
+    path: '/performance-marketing-services',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -78,10 +91,12 @@ export interface FileRoutesByFullPath {
   '/branding-agency-creative-services': typeof BrandingAgencyCreativeServicesRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
+  '/performance-marketing-services': typeof PerformanceMarketingServicesRoute
   '/process': typeof ProcessRoute
   '/services': typeof ServicesRoute
   '/social-media-marketing': typeof SocialMediaMarketingRoute
   '/video-production-photography-services': typeof VideoProductionPhotographyServicesRoute
+  '/website-design-services': typeof WebsiteDesignServicesRoute
   '/work': typeof WorkRoute
   '/services/$serviceSlug': typeof ServicesServiceSlugRoute
 }
@@ -90,10 +105,12 @@ export interface FileRoutesByTo {
   '/branding-agency-creative-services': typeof BrandingAgencyCreativeServicesRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
+  '/performance-marketing-services': typeof PerformanceMarketingServicesRoute
   '/process': typeof ProcessRoute
   '/services': typeof ServicesRoute
   '/social-media-marketing': typeof SocialMediaMarketingRoute
   '/video-production-photography-services': typeof VideoProductionPhotographyServicesRoute
+  '/website-design-services': typeof WebsiteDesignServicesRoute
   '/work': typeof WorkRoute
   '/services/$serviceSlug': typeof ServicesServiceSlugRoute
 }
@@ -103,10 +120,12 @@ export interface FileRoutesById {
   '/branding-agency-creative-services': typeof BrandingAgencyCreativeServicesRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
+  '/performance-marketing-services': typeof PerformanceMarketingServicesRoute
   '/process': typeof ProcessRoute
   '/services': typeof ServicesRoute
   '/social-media-marketing': typeof SocialMediaMarketingRoute
   '/video-production-photography-services': typeof VideoProductionPhotographyServicesRoute
+  '/website-design-services': typeof WebsiteDesignServicesRoute
   '/work': typeof WorkRoute
   '/services_/$serviceSlug': typeof ServicesServiceSlugRoute
 }
@@ -117,10 +136,12 @@ export interface FileRouteTypes {
     | '/branding-agency-creative-services'
     | '/careers'
     | '/contact'
+    | '/performance-marketing-services'
     | '/process'
     | '/services'
     | '/social-media-marketing'
     | '/video-production-photography-services'
+    | '/website-design-services'
     | '/work'
     | '/services/$serviceSlug'
   fileRoutesByTo: FileRoutesByTo
@@ -129,10 +150,12 @@ export interface FileRouteTypes {
     | '/branding-agency-creative-services'
     | '/careers'
     | '/contact'
+    | '/performance-marketing-services'
     | '/process'
     | '/services'
     | '/social-media-marketing'
     | '/video-production-photography-services'
+    | '/website-design-services'
     | '/work'
     | '/services/$serviceSlug'
   id:
@@ -141,10 +164,12 @@ export interface FileRouteTypes {
     | '/branding-agency-creative-services'
     | '/careers'
     | '/contact'
+    | '/performance-marketing-services'
     | '/process'
     | '/services'
     | '/social-media-marketing'
     | '/video-production-photography-services'
+    | '/website-design-services'
     | '/work'
     | '/services_/$serviceSlug'
   fileRoutesById: FileRoutesById
@@ -154,10 +179,12 @@ export interface RootRouteChildren {
   BrandingAgencyCreativeServicesRoute: typeof BrandingAgencyCreativeServicesRoute
   CareersRoute: typeof CareersRoute
   ContactRoute: typeof ContactRoute
+  PerformanceMarketingServicesRoute: typeof PerformanceMarketingServicesRoute
   ProcessRoute: typeof ProcessRoute
   ServicesRoute: typeof ServicesRoute
   SocialMediaMarketingRoute: typeof SocialMediaMarketingRoute
   VideoProductionPhotographyServicesRoute: typeof VideoProductionPhotographyServicesRoute
+  WebsiteDesignServicesRoute: typeof WebsiteDesignServicesRoute
   WorkRoute: typeof WorkRoute
   ServicesServiceSlugRoute: typeof ServicesServiceSlugRoute
 }
@@ -169,6 +196,13 @@ declare module '@tanstack/react-router' {
       path: '/work'
       fullPath: '/work'
       preLoaderRoute: typeof WorkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/website-design-services': {
+      id: '/website-design-services'
+      path: '/website-design-services'
+      fullPath: '/website-design-services'
+      preLoaderRoute: typeof WebsiteDesignServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/video-production-photography-services': {
@@ -197,6 +231,13 @@ declare module '@tanstack/react-router' {
       path: '/process'
       fullPath: '/process'
       preLoaderRoute: typeof ProcessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/performance-marketing-services': {
+      id: '/performance-marketing-services'
+      path: '/performance-marketing-services'
+      fullPath: '/performance-marketing-services'
+      preLoaderRoute: typeof PerformanceMarketingServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -242,11 +283,13 @@ const rootRouteChildren: RootRouteChildren = {
   BrandingAgencyCreativeServicesRoute: BrandingAgencyCreativeServicesRoute,
   CareersRoute: CareersRoute,
   ContactRoute: ContactRoute,
+  PerformanceMarketingServicesRoute: PerformanceMarketingServicesRoute,
   ProcessRoute: ProcessRoute,
   ServicesRoute: ServicesRoute,
   SocialMediaMarketingRoute: SocialMediaMarketingRoute,
   VideoProductionPhotographyServicesRoute:
     VideoProductionPhotographyServicesRoute,
+  WebsiteDesignServicesRoute: WebsiteDesignServicesRoute,
   WorkRoute: WorkRoute,
   ServicesServiceSlugRoute: ServicesServiceSlugRoute,
 }

@@ -170,10 +170,18 @@ function ServicesPage() {
                                     ? "/branding-agency-creative-services"
                                     : s.slug === "content-production"
                                     ? "/video-production-photography-services"
+                                    : s.slug === "performance-marketing"
+                                    ? "/performance-marketing-services"
+                                    : s.slug === "web-digital-experience"
+                                    ? "/website-design-services"
                                     : "/services/$serviceSlug"
                                 }
                                 params={
-                                  s.slug === "social-media-marketing" || s.slug === "branding-creative" || s.slug === "content-production"
+                                  s.slug === "social-media-marketing" || 
+                                  s.slug === "branding-creative" || 
+                                  s.slug === "content-production" ||
+                                  s.slug === "performance-marketing" ||
+                                  s.slug === "web-digital-experience"
                                     ? {}
                                     : { serviceSlug: s.slug }
                                 }
