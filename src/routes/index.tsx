@@ -116,12 +116,13 @@ function HomePage() {
 
         {/* HERO */}
         <section className="relative pt-32 pb-24 lg:pt-44 lg:pb-32 overflow-hidden">
-          <div className="absolute inset-0 bg-hero-glow" />
-          <div className="absolute inset-0 grid-pattern opacity-40" />
+          {/* Background overlays */}
+          <div className="absolute inset-0 bg-hero-glow opacity-30" />
+          <div className="absolute inset-0 grid-pattern opacity-20" />
           <div className="absolute -top-20 right-[-10%] h-[40rem] w-[40rem] rounded-full bg-primary/10 blur-3xl" />
 
-          <div className="relative mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-7">
+          <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+            <div className="max-w-4xl">
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -193,15 +194,6 @@ function HomePage() {
               <span>4.9/5 from 80+ founders & operators</span>
             </motion.div>
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.92 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="lg:col-span-5 relative"
-          >
-            <AnimatedOrb src={heroOrb} alt="Korvion Media revenue engine" />
-          </motion.div>
         </div>
 
         {/* Stats bar */}

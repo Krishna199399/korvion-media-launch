@@ -14,6 +14,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import mediaPlanningImage from "@/assets/media-planning-optimization.png";
+import heroBackground from "@/assets/pro_hero_bg_white_rising_bars.svg";
 
 export const Route = createFileRoute("/performance-marketing-services")({
   head: () => ({
@@ -175,20 +177,49 @@ function PerformanceMarketingPage() {
 
         {/* Hero Section */}
         <section className="section-isolate relative pt-36 pb-24 lg:pt-44 lg:pb-32 overflow-hidden">
-          <div className="absolute inset-0">
+          {/* SVG Background with Animation */}
+          <motion.div 
+            className="absolute inset-0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
             <img 
-              src="/src/assets/performance-hero-bg.jpg" 
-              alt="" 
-              className="w-full h-full object-cover opacity-30"
+              src={heroBackground} 
+              alt="Performance Marketing Growth Chart" 
+              className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
+            <div className="absolute inset-0 bg-gradient-to-b from-background/5 via-transparent to-background/80" />
+          </motion.div>
+          
+          {/* Animated Overlay Elements */}
+          <div className="absolute inset-0 pointer-events-none">
+            {/* Subtle animated glow on the chart area */}
+            <motion.div
+              className="absolute right-0 top-0 w-1/2 h-full"
+              animate={{
+                background: [
+                  "radial-gradient(circle at 70% 50%, rgba(249, 115, 22, 0.08) 0%, transparent 50%)",
+                  "radial-gradient(circle at 70% 50%, rgba(249, 115, 22, 0.12) 0%, transparent 50%)",
+                  "radial-gradient(circle at 70% 50%, rgba(249, 115, 22, 0.08) 0%, transparent 50%)",
+                ],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
           </div>
-          <div className="absolute inset-0 bg-hero-glow" />
-          <div className="absolute inset-0 grid-pattern opacity-40" />
 
           <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
             <div className="text-center max-w-5xl mx-auto">
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.98] tracking-tight">
+              <motion.h1 
+                className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.98] tracking-tight"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
                 <SplitText
                   splitBy="words"
                   stagger={0.05}
@@ -196,12 +227,12 @@ function PerformanceMarketingPage() {
                 >
                   Performance Marketing Focused on 3 Core Metrics That Drive Revenue
                 </SplitText>
-              </h1>
+              </motion.h1>
 
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.2 }}
+                transition={{ duration: 0.7, delay: 0.4 }}
                 className="mt-10"
               >
                 <MagneticButton>
@@ -469,23 +500,108 @@ function PerformanceMarketingPage() {
           <div className="mx-auto max-w-7xl px-6 lg:px-10">
             <div className="grid lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-6">
-                {/* Image Placeholder */}
-                <div className="relative aspect-[4/3] rounded-3xl border border-border bg-background backdrop-blur-xl shadow-elegant overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
-                    <div className="text-center p-8">
-                      <DollarSign className="h-20 w-20 mx-auto mb-4 text-primary" />
-                      <p className="text-sm font-mono">ROI Metrics Visual</p>
-                    </div>
+                {/* Image with Advanced Animations */}
+                <motion.div
+                  initial={{ opacity: 0, x: -50, rotateY: -15 }}
+                  whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ 
+                    duration: 0.8,
+                    ease: [0.25, 0.46, 0.45, 0.94]
+                  }}
+                  className="relative aspect-[4/3] rounded-3xl border border-border bg-background backdrop-blur-xl shadow-elegant overflow-hidden group"
+                  style={{ perspective: "1000px" }}
+                >
+                  {/* Animated Border Glow */}
+                  <motion.div
+                    className="absolute inset-0 rounded-3xl"
+                    animate={{
+                      boxShadow: [
+                        "0 0 20px rgba(255, 107, 0, 0.3)",
+                        "0 0 40px rgba(255, 107, 0, 0.5)",
+                        "0 0 20px rgba(255, 107, 0, 0.3)",
+                      ],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  />
+                  
+                  {/* Image with Hover Effect */}
+                  <motion.img 
+                    src={mediaPlanningImage} 
+                    alt="Media Planning and Optimization - ROI Metrics Visual" 
+                    className="w-full h-full object-cover transition-transform duration-700"
+                    whileHover={{ scale: 1.05 }}
+                    initial={{ scale: 0.9, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                  />
+                  
+                  {/* Animated Gradient Overlay */}
+                  <motion.div 
+                    className="absolute inset-0 bg-gradient-to-t from-background/30 via-transparent to-transparent"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                  />
+                  
+                  {/* Floating Particles Effect */}
+                  <div className="absolute inset-0 pointer-events-none">
+                    {[...Array(5)].map((_, i) => (
+                      <motion.div
+                        key={i}
+                        className="absolute w-2 h-2 bg-primary/30 rounded-full"
+                        style={{
+                          left: `${20 + i * 15}%`,
+                          top: `${30 + i * 10}%`,
+                        }}
+                        animate={{
+                          y: [-20, 20, -20],
+                          opacity: [0.3, 0.8, 0.3],
+                        }}
+                        transition={{
+                          duration: 3 + i * 0.5,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                          delay: i * 0.3,
+                        }}
+                      />
+                    ))}
                   </div>
-                </div>
+                  
+                  {/* Shine Effect on Hover */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                    initial={{ x: "-100%" }}
+                    whileHover={{ x: "100%" }}
+                    transition={{ duration: 0.8 }}
+                  />
+                </motion.div>
               </div>
               <div className="lg:col-span-6">
-                <h2 className="text-4xl sm:text-5xl font-bold leading-tight">
+                <motion.h2 
+                  className="text-4xl sm:text-5xl font-bold leading-tight"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
                   Media Planning and <span className="text-gradient-primary">Optimization</span>
-                </h2>
-                <p className="mt-6 text-xl text-muted-foreground leading-relaxed">
+                </motion.h2>
+                <motion.p 
+                  className="mt-6 text-xl text-muted-foreground leading-relaxed"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                >
                   We ensure every rupee or dollar is spent with intent.
-                </p>
+                </motion.p>
                 <ul className="mt-8 space-y-4">
                   {[
                     "Media planning services",
@@ -493,17 +609,34 @@ function PerformanceMarketingPage() {
                     "Campaign optimization services",
                     "Channel performance tracking",
                   ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/15 text-primary shrink-0 mt-1">
+                    <motion.li 
+                      key={i} 
+                      className="flex items-start gap-3"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
+                    >
+                      <motion.span 
+                        className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/15 text-primary shrink-0 mt-1"
+                        whileHover={{ scale: 1.2, rotate: 360 }}
+                        transition={{ duration: 0.3 }}
+                      >
                         <Check className="h-4 w-4" />
-                      </span>
+                      </motion.span>
                       <span className="text-lg text-foreground">{item}</span>
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
-                <p className="mt-8 text-lg font-semibold text-foreground">
+                <motion.p 
+                  className="mt-8 text-lg font-semibold text-foreground"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                >
                   We focus on efficiency, not just scale.
-                </p>
+                </motion.p>
               </div>
             </div>
           </div>

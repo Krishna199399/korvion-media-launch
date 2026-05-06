@@ -14,6 +14,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import mediaPlanningImage from "@/assets/media-planning-optimization.png";
 
 export const Route = createFileRoute("/website-design-services")({
   head: () => ({
@@ -414,15 +415,21 @@ function WebsiteDesignPage() {
           <div className="mx-auto max-w-7xl px-6 lg:px-10">
             <div className="grid lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-6">
-                {/* Image Placeholder */}
-                <div className="relative aspect-[4/3] rounded-3xl border border-border bg-surface/50 backdrop-blur-xl shadow-elegant overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
-                    <div className="text-center p-8">
-                      <TrendingUp className="h-20 w-20 mx-auto mb-4 text-primary" />
-                      <p className="text-sm font-mono">Conversion Funnel Visual</p>
-                    </div>
-                  </div>
-                </div>
+                {/* Image */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="relative aspect-[4/3] rounded-3xl border border-border bg-surface/50 backdrop-blur-xl shadow-elegant overflow-hidden"
+                >
+                  <img 
+                    src={mediaPlanningImage} 
+                    alt="Media Planning and Optimization - ROI Metrics Visual" 
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
+                </motion.div>
               </div>
               <div className="lg:col-span-6">
                 <h2 className="text-4xl sm:text-5xl font-bold leading-tight">
@@ -569,15 +576,29 @@ function WebsiteDesignPage() {
                 </p>
               </div>
               <div className="lg:col-span-6 order-1 lg:order-2">
-                {/* Image Placeholder */}
-                <div className="relative aspect-[4/3] rounded-3xl border border-border bg-surface/50 backdrop-blur-xl shadow-elegant overflow-hidden">
+                {/* Modern Image Placeholder */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="relative aspect-[4/3] rounded-3xl border border-border bg-gradient-to-br from-primary/10 via-surface/50 to-background backdrop-blur-xl shadow-elegant overflow-hidden group"
+                >
                   <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
                     <div className="text-center p-8">
-                      <Zap className="h-20 w-20 mx-auto mb-4 text-primary" />
-                      <p className="text-sm font-mono">Website Redesign Visual</p>
+                      <motion.div
+                        initial={{ scale: 1 }}
+                        whileInView={{ scale: [1, 1.1, 1] }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+                      >
+                        <Zap className="h-24 w-24 mx-auto mb-4 text-primary drop-shadow-glow" />
+                      </motion.div>
+                      <p className="text-sm font-mono text-foreground/60">Website Redesign Visual</p>
                     </div>
                   </div>
-                </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/30 to-transparent" />
+                </motion.div>
               </div>
             </div>
           </div>

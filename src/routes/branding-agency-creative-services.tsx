@@ -14,6 +14,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import brandingHeroBackground from "@/assets/branding_hero_bg_2_identity_grid.svg";
+import brandIdentityMockup from "@/assets/brand-identity-mockup.png";
 
 export const Route = createFileRoute("/branding-agency-creative-services")({
   head: () => ({
@@ -181,21 +183,49 @@ function BrandingPage() {
 
       {/* Hero Section */}
       <section className="section-isolate relative pt-36 pb-24 lg:pt-44 lg:pb-32 overflow-hidden">
-        {/* Background Image Placeholder */}
-        <div className="absolute inset-0">
+        {/* SVG Background with Animation */}
+        <motion.div 
+          className="absolute inset-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
           <img 
-            src="/src/assets/branding-hero-bg.jpg" 
-            alt="" 
-            className="w-full h-full object-cover opacity-30"
+            src={brandingHeroBackground} 
+            alt="Brand Identity Construction Grid" 
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/5 via-transparent to-background/80" />
+        </motion.div>
+        
+        {/* Animated Overlay Elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Subtle animated glow on the brand identity grid area */}
+          <motion.div
+            className="absolute right-0 top-0 w-1/2 h-full"
+            animate={{
+              background: [
+                "radial-gradient(circle at 75% 45%, rgba(249, 115, 22, 0.08) 0%, transparent 50%)",
+                "radial-gradient(circle at 75% 45%, rgba(249, 115, 22, 0.12) 0%, transparent 50%)",
+                "radial-gradient(circle at 75% 45%, rgba(249, 115, 22, 0.08) 0%, transparent 50%)",
+              ],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
         </div>
-        <div className="absolute inset-0 bg-hero-glow" />
-        <div className="absolute inset-0 grid-pattern opacity-40" />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
           <div className="text-center max-w-5xl mx-auto">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.98] tracking-tight">
+            <motion.h1 
+              className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.98] tracking-tight"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
               <SplitText
                 splitBy="words"
                 stagger={0.05}
@@ -203,12 +233,12 @@ function BrandingPage() {
               >
                 Branding Agency and Creative Services That Build Strong Brands
               </SplitText>
-            </h1>
+            </motion.h1>
 
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
               className="mt-10"
             >
               <MagneticButton>
@@ -251,34 +281,125 @@ function BrandingPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6">
-              {/* Image Placeholder */}
-              <div className="relative aspect-[4/3] rounded-3xl border border-border bg-surface/50 backdrop-blur-xl shadow-elegant overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
-                  <div className="text-center p-8">
-                    <Sparkles className="h-20 w-20 mx-auto mb-4 text-primary" />
-                    <p className="text-sm font-mono">Brand Identity Visual</p>
-                  </div>
+              {/* Brand Identity Mockup Image with Animations */}
+              <motion.div
+                initial={{ opacity: 0, x: -50, rotateY: -15 }}
+                whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
+                viewport={{ once: true }}
+                transition={{ 
+                  duration: 0.8,
+                  ease: [0.25, 0.46, 0.45, 0.94]
+                }}
+                className="relative aspect-[4/3] rounded-3xl border border-border bg-white backdrop-blur-xl shadow-elegant overflow-hidden group"
+                style={{ perspective: "1000px" }}
+              >
+                {/* Animated Border Glow */}
+                <motion.div
+                  className="absolute inset-0 rounded-3xl"
+                  animate={{
+                    boxShadow: [
+                      "0 0 20px rgba(249, 115, 22, 0.3)",
+                      "0 0 40px rgba(249, 115, 22, 0.5)",
+                      "0 0 20px rgba(249, 115, 22, 0.3)",
+                    ],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                />
+                
+                {/* Image with Hover Effect */}
+                <motion.img 
+                  src={brandIdentityMockup} 
+                  alt="Korvion Media Brand Identity Elements - Logo, Colors, Typography, Business Cards" 
+                  className="w-full h-full object-cover transition-transform duration-700"
+                  whileHover={{ scale: 1.05 }}
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                />
+                
+                {/* Subtle Gradient Overlay */}
+                <motion.div 
+                  className="absolute inset-0 bg-gradient-to-t from-background/10 via-transparent to-transparent"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                />
+                
+                {/* Floating Particles Effect */}
+                <div className="absolute inset-0 pointer-events-none">
+                  {[...Array(5)].map((_, i) => (
+                    <motion.div
+                      key={i}
+                      className="absolute w-2 h-2 bg-primary/30 rounded-full"
+                      style={{
+                        left: `${20 + i * 15}%`,
+                        top: `${30 + i * 10}%`,
+                      }}
+                      animate={{
+                        y: [-20, 20, -20],
+                        opacity: [0.3, 0.8, 0.3],
+                      }}
+                      transition={{
+                        duration: 3 + i * 0.5,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: i * 0.3,
+                      }}
+                    />
+                  ))}
                 </div>
-              </div>
+                
+                {/* Shine Effect on Hover */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                  initial={{ x: "-100%" }}
+                  whileHover={{ x: "100%" }}
+                  transition={{ duration: 0.8 }}
+                />
+              </motion.div>
             </div>
             <div className="lg:col-span-6">
-              <h2 className="text-4xl sm:text-5xl font-bold leading-tight">
+              <motion.h2 
+                className="text-4xl sm:text-5xl font-bold leading-tight"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
                 Most businesses do not struggle with visibility.
                 <br />
                 <span className="text-gradient-primary">They struggle with clarity.</span>
-              </h2>
-              <p className="mt-6 text-xl text-muted-foreground leading-relaxed">
+              </motion.h2>
+              <motion.p 
+                className="mt-6 text-xl text-muted-foreground leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
                 As a branding agency, we help businesses define their identity, positioning, and communication so they
                 can compete and scale effectively.
-              </p>
-              <div className="mt-8">
+              </motion.p>
+              <motion.div 
+                className="mt-8"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
                 <Link
                   to="/contact"
                   className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
                 >
                   Talk to a Branding Expert <ArrowUpRight className="h-4 w-4" />
                 </Link>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
