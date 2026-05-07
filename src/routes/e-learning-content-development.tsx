@@ -312,11 +312,11 @@ function ELearningPage() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-4xl sm:text-5xl font-bold leading-tight">
-                Video Production and Content Services That Drive{" "}
-                <span className="text-gradient-primary">Growth</span>
+                E Learning Content Development{" "}
+                <span className="text-gradient-primary">Services</span>
               </h2>
               <p className="mt-6 text-xl text-muted-foreground">
-                We create content assets designed for engagement, visibility, and conversion.
+                We create learning experiences designed for engagement, clarity, and retention.
               </p>
             </motion.div>
           </div>
@@ -427,8 +427,8 @@ function ELearningPage() {
               <div className="relative aspect-square rounded-3xl border border-border bg-surface/50 backdrop-blur-xl shadow-elegant overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
                   <div className="text-center p-8">
-                    <ImageIcon className="h-20 w-20 mx-auto mb-4 text-primary" />
-                    <p className="text-sm font-mono">Photography Services Visual</p>
+                    <GraduationCap className="h-20 w-20 mx-auto mb-4 text-primary" />
+                    <p className="text-sm font-mono">Interactive Learning Visual</p>
                   </div>
                 </div>
               </div>
@@ -558,7 +558,7 @@ function ELearningPage() {
                 Frequently Asked <span className="text-gradient-primary">Questions</span>
               </h2>
               <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
-                Everything you need to know about our video production and photography services.
+                Everything you need to know about our e-learning content development services.
               </p>
             </motion.div>
           </div>
