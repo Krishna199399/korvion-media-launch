@@ -212,6 +212,12 @@ export function Nav() {
                     } else if (s.slug === "web-digital-experience") {
                       linkTo = "/website-design-services";
                       linkParams = {};
+                    } else if (s.slug === "crm-automation-tech") {
+                      linkTo = "/crm-setup-marketing-automation-services";
+                      linkParams = {};
+                    } else if (s.slug === "e-learning-animation") {
+                      linkTo = "/e-learning-content-development";
+                      linkParams = {};
                     }
                     
                     return (
@@ -299,6 +305,12 @@ export function Nav() {
                           linkParams = {};
                         } else if (s.slug === "web-digital-experience") {
                           linkTo = "/website-design-services";
+                          linkParams = {};
+                        } else if (s.slug === "crm-automation-tech") {
+                          linkTo = "/crm-setup-marketing-automation-services";
+                          linkParams = {};
+                        } else if (s.slug === "e-learning-animation") {
+                          linkTo = "/e-learning-content-development";
                           linkParams = {};
                         }
                         

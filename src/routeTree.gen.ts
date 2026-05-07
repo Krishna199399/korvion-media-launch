@@ -16,6 +16,8 @@ import { Route as SocialMediaMarketingRouteImport } from './routes/social-media-
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProcessRouteImport } from './routes/process'
 import { Route as PerformanceMarketingServicesRouteImport } from './routes/performance-marketing-services'
+import { Route as ELearningContentDevelopmentRouteImport } from './routes/e-learning-content-development'
+import { Route as CrmSetupMarketingAutomationServicesRouteImport } from './routes/crm-setup-marketing-automation-services'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CareersRouteImport } from './routes/careers'
 import { Route as BrandingAgencyCreativeServicesRouteImport } from './routes/branding-agency-creative-services'
@@ -59,6 +61,18 @@ const PerformanceMarketingServicesRoute =
     path: '/performance-marketing-services',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ELearningContentDevelopmentRoute =
+  ELearningContentDevelopmentRouteImport.update({
+    id: '/e-learning-content-development',
+    path: '/e-learning-content-development',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CrmSetupMarketingAutomationServicesRoute =
+  CrmSetupMarketingAutomationServicesRouteImport.update({
+    id: '/crm-setup-marketing-automation-services',
+    path: '/crm-setup-marketing-automation-services',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -91,6 +105,8 @@ export interface FileRoutesByFullPath {
   '/branding-agency-creative-services': typeof BrandingAgencyCreativeServicesRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
+  '/crm-setup-marketing-automation-services': typeof CrmSetupMarketingAutomationServicesRoute
+  '/e-learning-content-development': typeof ELearningContentDevelopmentRoute
   '/performance-marketing-services': typeof PerformanceMarketingServicesRoute
   '/process': typeof ProcessRoute
   '/services': typeof ServicesRoute
@@ -105,6 +121,8 @@ export interface FileRoutesByTo {
   '/branding-agency-creative-services': typeof BrandingAgencyCreativeServicesRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
+  '/crm-setup-marketing-automation-services': typeof CrmSetupMarketingAutomationServicesRoute
+  '/e-learning-content-development': typeof ELearningContentDevelopmentRoute
   '/performance-marketing-services': typeof PerformanceMarketingServicesRoute
   '/process': typeof ProcessRoute
   '/services': typeof ServicesRoute
@@ -120,6 +138,8 @@ export interface FileRoutesById {
   '/branding-agency-creative-services': typeof BrandingAgencyCreativeServicesRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
+  '/crm-setup-marketing-automation-services': typeof CrmSetupMarketingAutomationServicesRoute
+  '/e-learning-content-development': typeof ELearningContentDevelopmentRoute
   '/performance-marketing-services': typeof PerformanceMarketingServicesRoute
   '/process': typeof ProcessRoute
   '/services': typeof ServicesRoute
@@ -136,6 +156,8 @@ export interface FileRouteTypes {
     | '/branding-agency-creative-services'
     | '/careers'
     | '/contact'
+    | '/crm-setup-marketing-automation-services'
+    | '/e-learning-content-development'
     | '/performance-marketing-services'
     | '/process'
     | '/services'
@@ -150,6 +172,8 @@ export interface FileRouteTypes {
     | '/branding-agency-creative-services'
     | '/careers'
     | '/contact'
+    | '/crm-setup-marketing-automation-services'
+    | '/e-learning-content-development'
     | '/performance-marketing-services'
     | '/process'
     | '/services'
@@ -164,6 +188,8 @@ export interface FileRouteTypes {
     | '/branding-agency-creative-services'
     | '/careers'
     | '/contact'
+    | '/crm-setup-marketing-automation-services'
+    | '/e-learning-content-development'
     | '/performance-marketing-services'
     | '/process'
     | '/services'
@@ -179,6 +205,8 @@ export interface RootRouteChildren {
   BrandingAgencyCreativeServicesRoute: typeof BrandingAgencyCreativeServicesRoute
   CareersRoute: typeof CareersRoute
   ContactRoute: typeof ContactRoute
+  CrmSetupMarketingAutomationServicesRoute: typeof CrmSetupMarketingAutomationServicesRoute
+  ELearningContentDevelopmentRoute: typeof ELearningContentDevelopmentRoute
   PerformanceMarketingServicesRoute: typeof PerformanceMarketingServicesRoute
   ProcessRoute: typeof ProcessRoute
   ServicesRoute: typeof ServicesRoute
@@ -240,6 +268,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PerformanceMarketingServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/e-learning-content-development': {
+      id: '/e-learning-content-development'
+      path: '/e-learning-content-development'
+      fullPath: '/e-learning-content-development'
+      preLoaderRoute: typeof ELearningContentDevelopmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/crm-setup-marketing-automation-services': {
+      id: '/crm-setup-marketing-automation-services'
+      path: '/crm-setup-marketing-automation-services'
+      fullPath: '/crm-setup-marketing-automation-services'
+      preLoaderRoute: typeof CrmSetupMarketingAutomationServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -283,6 +325,9 @@ const rootRouteChildren: RootRouteChildren = {
   BrandingAgencyCreativeServicesRoute: BrandingAgencyCreativeServicesRoute,
   CareersRoute: CareersRoute,
   ContactRoute: ContactRoute,
+  CrmSetupMarketingAutomationServicesRoute:
+    CrmSetupMarketingAutomationServicesRoute,
+  ELearningContentDevelopmentRoute: ELearningContentDevelopmentRoute,
   PerformanceMarketingServicesRoute: PerformanceMarketingServicesRoute,
   ProcessRoute: ProcessRoute,
   ServicesRoute: ServicesRoute,
