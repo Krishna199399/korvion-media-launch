@@ -17,6 +17,7 @@ import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProcessRouteImport } from './routes/process'
 import { Route as PerformanceMarketingServicesRouteImport } from './routes/performance-marketing-services'
 import { Route as ELearningContentDevelopmentRouteImport } from './routes/e-learning-content-development'
+import { Route as CustomMobileWebAppDevelopmentRouteImport } from './routes/custom-mobile-web-app-development'
 import { Route as CrmSetupMarketingAutomationServicesRouteImport } from './routes/crm-setup-marketing-automation-services'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CareersRouteImport } from './routes/careers'
@@ -67,6 +68,12 @@ const ELearningContentDevelopmentRoute =
     path: '/e-learning-content-development',
     getParentRoute: () => rootRouteImport,
   } as any)
+const CustomMobileWebAppDevelopmentRoute =
+  CustomMobileWebAppDevelopmentRouteImport.update({
+    id: '/custom-mobile-web-app-development',
+    path: '/custom-mobile-web-app-development',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const CrmSetupMarketingAutomationServicesRoute =
   CrmSetupMarketingAutomationServicesRouteImport.update({
     id: '/crm-setup-marketing-automation-services',
@@ -106,6 +113,7 @@ export interface FileRoutesByFullPath {
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/crm-setup-marketing-automation-services': typeof CrmSetupMarketingAutomationServicesRoute
+  '/custom-mobile-web-app-development': typeof CustomMobileWebAppDevelopmentRoute
   '/e-learning-content-development': typeof ELearningContentDevelopmentRoute
   '/performance-marketing-services': typeof PerformanceMarketingServicesRoute
   '/process': typeof ProcessRoute
@@ -122,6 +130,7 @@ export interface FileRoutesByTo {
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/crm-setup-marketing-automation-services': typeof CrmSetupMarketingAutomationServicesRoute
+  '/custom-mobile-web-app-development': typeof CustomMobileWebAppDevelopmentRoute
   '/e-learning-content-development': typeof ELearningContentDevelopmentRoute
   '/performance-marketing-services': typeof PerformanceMarketingServicesRoute
   '/process': typeof ProcessRoute
@@ -139,6 +148,7 @@ export interface FileRoutesById {
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/crm-setup-marketing-automation-services': typeof CrmSetupMarketingAutomationServicesRoute
+  '/custom-mobile-web-app-development': typeof CustomMobileWebAppDevelopmentRoute
   '/e-learning-content-development': typeof ELearningContentDevelopmentRoute
   '/performance-marketing-services': typeof PerformanceMarketingServicesRoute
   '/process': typeof ProcessRoute
@@ -157,6 +167,7 @@ export interface FileRouteTypes {
     | '/careers'
     | '/contact'
     | '/crm-setup-marketing-automation-services'
+    | '/custom-mobile-web-app-development'
     | '/e-learning-content-development'
     | '/performance-marketing-services'
     | '/process'
@@ -173,6 +184,7 @@ export interface FileRouteTypes {
     | '/careers'
     | '/contact'
     | '/crm-setup-marketing-automation-services'
+    | '/custom-mobile-web-app-development'
     | '/e-learning-content-development'
     | '/performance-marketing-services'
     | '/process'
@@ -189,6 +201,7 @@ export interface FileRouteTypes {
     | '/careers'
     | '/contact'
     | '/crm-setup-marketing-automation-services'
+    | '/custom-mobile-web-app-development'
     | '/e-learning-content-development'
     | '/performance-marketing-services'
     | '/process'
@@ -206,6 +219,7 @@ export interface RootRouteChildren {
   CareersRoute: typeof CareersRoute
   ContactRoute: typeof ContactRoute
   CrmSetupMarketingAutomationServicesRoute: typeof CrmSetupMarketingAutomationServicesRoute
+  CustomMobileWebAppDevelopmentRoute: typeof CustomMobileWebAppDevelopmentRoute
   ELearningContentDevelopmentRoute: typeof ELearningContentDevelopmentRoute
   PerformanceMarketingServicesRoute: typeof PerformanceMarketingServicesRoute
   ProcessRoute: typeof ProcessRoute
@@ -275,6 +289,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ELearningContentDevelopmentRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/custom-mobile-web-app-development': {
+      id: '/custom-mobile-web-app-development'
+      path: '/custom-mobile-web-app-development'
+      fullPath: '/custom-mobile-web-app-development'
+      preLoaderRoute: typeof CustomMobileWebAppDevelopmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/crm-setup-marketing-automation-services': {
       id: '/crm-setup-marketing-automation-services'
       path: '/crm-setup-marketing-automation-services'
@@ -327,6 +348,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   CrmSetupMarketingAutomationServicesRoute:
     CrmSetupMarketingAutomationServicesRoute,
+  CustomMobileWebAppDevelopmentRoute: CustomMobileWebAppDevelopmentRoute,
   ELearningContentDevelopmentRoute: ELearningContentDevelopmentRoute,
   PerformanceMarketingServicesRoute: PerformanceMarketingServicesRoute,
   ProcessRoute: ProcessRoute,

@@ -173,7 +173,7 @@ const faqs = [
   {
     question: "How do I get started?",
     answer:
-      "You can call 1234567890 or schedule a consultation. The team at Korvion Media will assess your current process and recommend the right CRM and automation setup.",
+      "You can call +91 73536 48428 or schedule a consultation. The team at Korvion Media will assess your current process and recommend the right CRM and automation setup.",
   },
 ];
 
@@ -941,11 +941,11 @@ function CRMAutomationPage() {
                 <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
               <a
-                href="tel:1234567890"
+                href="tel:+917353648428"
                 className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-8 py-4 text-lg font-semibold hover:border-primary hover:text-primary transition-all"
               >
                 <Phone className="h-5 w-5" />
-                Call 1234567890
+                Call +91 73536 48428
               </a>
             </div>
           </div>

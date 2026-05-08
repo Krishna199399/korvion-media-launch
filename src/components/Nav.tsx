@@ -218,6 +218,9 @@ export function Nav() {
                     } else if (s.slug === "e-learning-animation") {
                       linkTo = "/e-learning-content-development";
                       linkParams = {};
+                    } else if (s.slug === "it-product-engineering") {
+                      linkTo = "/custom-mobile-web-app-development";
+                      linkParams = {};
                     }
                     
                     return (
@@ -311,6 +314,9 @@ export function Nav() {
                           linkParams = {};
                         } else if (s.slug === "e-learning-animation") {
                           linkTo = "/e-learning-content-development";
+                          linkParams = {};
+                        } else if (s.slug === "it-product-engineering") {
+                          linkTo = "/custom-mobile-web-app-development";
                           linkParams = {};
                         }
                         
