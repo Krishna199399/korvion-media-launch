@@ -10,6 +10,8 @@ import { ScrollProgress } from "@/components/animations/ScrollProgress";
 import { SplitText } from "@/components/animations/SplitText";
 import { StaggerChildren } from "@/components/animations/StaggerChildren";
 import { TiltCard } from "@/components/animations/TiltCard";
+import { InteractiveFlow3D } from "@/components/animations/InteractiveFlow3D";
+import { ImagePlaceholder3D } from "@/components/animations/ImagePlaceholder3D";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 
 export const Route = createFileRoute("/services_/$serviceSlug")({
@@ -254,7 +256,7 @@ function ServiceDetailPage() {
             {others.map((s, i) => {
               const OIcon = s.icon;
               return (
-                <TiltCard key={s.slug} tiltAmount={8}>
+                <TiltCard key={s.slug} tiltAmount={15}>
                   <Link
                     to="/services/$serviceSlug"
                     params={{ serviceSlug: s.slug }}

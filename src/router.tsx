@@ -61,6 +61,7 @@ export const getRouter = () => {
     defaultPreload: 'intent',
     defaultPreloadStaleTime: 0,
     defaultErrorComponent: DefaultErrorComponent,
+    trailingSlash: 'always',
   });
 
   // Reset scroll position on route change

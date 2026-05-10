@@ -198,7 +198,7 @@ export function Nav() {
                     let linkParams: any = { serviceSlug: s.slug };
                     
                     if (s.slug === "social-media-marketing") {
-                      linkTo = "/social-media-marketing";
+                      linkTo = "/social-media-marketing-services";
                       linkParams = {};
                     } else if (s.slug === "branding-creative") {
                       linkTo = "/branding-agency-creative-services";
@@ -220,6 +220,12 @@ export function Nav() {
                       linkParams = {};
                     } else if (s.slug === "it-product-engineering") {
                       linkTo = "/custom-mobile-web-app-development";
+                      linkParams = {};
+                    } else if (s.slug === "advanced-seo-performance") {
+                      linkTo = "/seo-services";
+                      linkParams = {};
+                    } else if (s.slug === "advanced-seo-cro") {
+                      linkTo = "/advanced-seo-performance-services";
                       linkParams = {};
                     }
                     
@@ -295,7 +301,7 @@ export function Nav() {
                         let linkParams: any = { serviceSlug: s.slug };
                         
                         if (s.slug === "social-media-marketing") {
-                          linkTo = "/social-media-marketing";
+                          linkTo = "/social-media-marketing-services";
                           linkParams = {};
                         } else if (s.slug === "branding-creative") {
                           linkTo = "/branding-agency-creative-services";
@@ -317,6 +323,12 @@ export function Nav() {
                           linkParams = {};
                         } else if (s.slug === "it-product-engineering") {
                           linkTo = "/custom-mobile-web-app-development";
+                          linkParams = {};
+                        } else if (s.slug === "advanced-seo-performance") {
+                          linkTo = "/seo-services";
+                          linkParams = {};
+                        } else if (s.slug === "advanced-seo-cro") {
+                          linkTo = "/advanced-seo-performance-services";
                           linkParams = {};
                         }
                         

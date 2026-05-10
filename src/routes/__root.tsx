@@ -35,6 +35,10 @@ export const Route = createRootRoute({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@korvionmedia" },
+      { name: "geo.region", content: "IN-KA" },
+      { name: "geo.placename", content: "Belagavi, Bengaluru" },
+      { name: "geo.position", content: "15.8497;74.4977" },
+      { name: "ICBM", content: "15.8497, 74.4977" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

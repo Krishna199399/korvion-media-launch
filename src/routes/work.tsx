@@ -1,8 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { motion } from "framer-motion";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { useRef } from "react";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
-import { SectionHeader } from "@/components/SectionHeader";
 import { CTASection } from "@/components/CTASection";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { ScrollProgress } from "@/components/animations/ScrollProgress";
@@ -23,6 +23,10 @@ export const Route = createFileRoute("/work")({
       },
       { property: "og:title", content: "Korvion Case Studies — Receipts From The Front Line" },
       { property: "og:description", content: "Brand stories with hard numbers attached." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Case Studies — Korvion Media | Real Brands. Real Numbers." },
+      { name: "twitter:description", content: "See how Korvion Media engineered revenue systems for D2C, SaaS, coaching and enterprise brands." },
     ],
   }),
   component: WorkPage,
@@ -95,20 +99,119 @@ const studies = [
   },
 ];
 
+// 3D Floating Orbs background
+function FloatingOrbs() {
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {[...Array(5)].map((_, i) => (
+        <motion.div
+          key={i}
+          animate={{
+            x: [0, 30, -20, 0],
+            y: [0, -40, 20, 0],
+            scale: [1, 1.1, 0.9, 1],
+            opacity: [0.3, 0.6, 0.4, 0.3],
+          }}
+          transition={{
+            duration: 8 + i * 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: i * 1.5,
+          }}
+          className="absolute rounded-full bg-primary/20 blur-3xl"
+          style={{
+            width: `${150 + i * 80}px`,
+            height: `${150 + i * 80}px`,
+            left: `${10 + i * 20}%`,
+            top: `${5 + i * 15}%`,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
+// 3D Stats bar between hero and cases
+function Stats3D() {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const rotateX = useTransform(scrollYProgress, [0, 0.5, 1], [15, 0, -15]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.9, 1, 0.9]);
+
+  const stats = [
+    { value: "₹50Cr+", label: "Revenue Generated" },
+    { value: "4.2x", label: "Avg. ROAS Improvement" },
+    { value: "12+", label: "Industry Verticals" },
+    { value: "100%", label: "Client Retention Rate" },
+  ];
+
+  return (
+    <div ref={ref} className="perspective-1000 py-16">
+      <motion.div
+        style={{ rotateX, scale, transformStyle: "preserve-3d" }}
+        className="mx-auto max-w-7xl px-6 lg:px-10"
+      >
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          {stats.map((s, i) => (
+            <motion.div
+              key={s.label}
+              initial={{ opacity: 0, y: 40, rotateY: -20 }}
+              whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: i * 0.1, type: "spring", stiffness: 100 }}
+              whileHover={{ translateZ: 30, scale: 1.05 }}
+              style={{ transformStyle: "preserve-3d" }}
+              className="relative rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/10 to-primary/5 p-8 text-center shadow-glow-sm hover:shadow-glow transition-all group"
+            >
+              <div className="absolute inset-0 rounded-2xl bg-gradient-primary opacity-0 group-hover:opacity-5 transition-opacity duration-500" />
+              <div className="text-3xl lg:text-4xl font-display font-bold text-gradient-primary">
+                <CounterAnimation value={s.value} duration={2.5} />
+              </div>
+              <p className="mt-2 text-sm text-muted-foreground font-mono tracking-wider">{s.label}</p>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
 function WorkPage() {
+  const heroRef = useRef<HTMLElement>(null);
+  const { scrollYProgress: heroScroll } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+  const heroY = useTransform(heroScroll, [0, 1], ["0%", "30%"]);
+  const heroOpacity = useTransform(heroScroll, [0, 0.8], [1, 0]);
+
   return (
     <SmoothScroll>
       <ScrollProgress />
       <div className="min-h-screen bg-background text-foreground">
         <Nav />
-        
-        {/* Hero Section */}
-        <section className="section-isolate relative pt-36 pb-20 overflow-hidden bg-background">
+
+        {/* Hero Section — 3D Parallax */}
+        <section ref={heroRef} className="section-isolate relative pt-36 pb-20 overflow-hidden bg-background min-h-[55vh] flex items-center">
+          <FloatingOrbs />
           <div className="absolute inset-0 bg-hero-glow" />
           <div className="absolute inset-0 grid-pattern opacity-30" />
-          <div className="absolute -top-20 left-[-10%] h-[40rem] w-[40rem] rounded-full bg-primary/10 blur-3xl animate-pulse-glow" />
-          
-          <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+
+          {/* 3D rotating wireframe ring */}
+          <motion.div
+            animate={{ rotateY: 360 }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            className="absolute right-[-5%] top-1/4 w-[500px] h-[500px] border border-primary/10 rounded-full pointer-events-none"
+            style={{ transformStyle: "preserve-3d" }}
+          >
+            <motion.div
+              animate={{ rotateX: 360 }}
+              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+              className="absolute inset-[20%] border border-primary/15 rounded-full"
+            />
+          </motion.div>
+
+          <motion.div style={{ y: heroY, opacity: heroOpacity }} className="relative mx-auto max-w-7xl px-6 lg:px-10 w-full">
             <FadeInSection>
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
@@ -119,8 +222,8 @@ function WorkPage() {
                 <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse-glow" />
                 Case Studies
               </motion.div>
-              
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[0.98] tracking-tight">
+
+              <h1 className="text-5xl sm:text-6xl lg:text-8xl font-bold leading-[0.95] tracking-tight">
                 <SplitText splitBy="words" stagger={0.05}>
                   Brands we built.
                 </SplitText>
@@ -131,7 +234,7 @@ function WorkPage() {
                   </SplitText>
                 </span>
               </h1>
-              
+
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -141,8 +244,11 @@ function WorkPage() {
                 No fluff slides. No vanity metrics. Just the problem, the system we engineered, and the revenue it printed.
               </motion.p>
             </FadeInSection>
-          </div>
+          </motion.div>
         </section>
+
+        {/* 3D Stats Bar */}
+        <Stats3D />
 
         {/* Case Studies */}
         <section className="section-isolate pb-32 bg-background">
@@ -151,11 +257,16 @@ function WorkPage() {
               {studies.map((s, i) => (
                 <StaggerChild key={s.brand}>
                   <TiltCard
-                    tiltAmount={3}
-                    className="relative overflow-hidden rounded-3xl border border-border bg-surface/40 p-8 lg:p-12 hover:border-primary/40 hover:shadow-glow-sm transition-all"
+                    tiltAmount={5}
+                    className="relative overflow-hidden rounded-3xl border border-border bg-surface/40 p-8 lg:p-12 hover:border-primary/40 hover:shadow-glow transition-all"
                   >
-                    <div className="absolute -top-32 -right-32 h-72 w-72 rounded-full bg-primary/10 blur-3xl pointer-events-none" />
-                    
+                    {/* Gradient orb */}
+                    <motion.div
+                      animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
+                      transition={{ duration: 5, repeat: Infinity, delay: i * 0.5 }}
+                      className="absolute -top-32 -right-32 h-72 w-72 rounded-full bg-primary/20 blur-3xl pointer-events-none"
+                    />
+
                     <div className="relative grid lg:grid-cols-12 gap-10">
                       {/* Left Column */}
                       <div className="lg:col-span-4">
@@ -168,7 +279,7 @@ function WorkPage() {
                         >
                           {s.tag}
                         </motion.span>
-                        
+
                         <motion.h2
                           initial={{ opacity: 0, y: 20 }}
                           whileInView={{ opacity: 1, y: 0 }}
@@ -178,7 +289,7 @@ function WorkPage() {
                         >
                           {s.title}
                         </motion.h2>
-                        
+
                         <motion.p
                           initial={{ opacity: 0 }}
                           whileInView={{ opacity: 1 }}
@@ -189,22 +300,26 @@ function WorkPage() {
                           — {s.brand}
                         </motion.p>
 
-                        {/* Metrics */}
-                        <StaggerChildren className="mt-8 grid grid-cols-3 gap-4" staggerDelay={0.1}>
-                          {s.metrics.map((m) => (
-                            <StaggerChild key={m.l}>
-                              <motion.div
-                                whileHover={{ scale: 1.05, y: -4 }}
-                                className="rounded-xl border border-border bg-background p-4"
-                              >
-                                <div className="text-xl lg:text-2xl font-bold text-gradient-primary">
-                                  <CounterAnimation value={m.v} duration={2} />
-                                </div>
-                                <div className="mt-1 text-[11px] text-muted-foreground leading-tight">{m.l}</div>
-                              </motion.div>
-                            </StaggerChild>
+                        {/* Metrics — 3D hover cards */}
+                        <div className="mt-8 grid grid-cols-3 gap-3 perspective-1000">
+                          {s.metrics.map((m, mi) => (
+                            <motion.div
+                              key={m.l}
+                              initial={{ opacity: 0, y: 20, rotateX: -30 }}
+                              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                              whileHover={{ scale: 1.08, rotateY: 8, translateZ: 20 }}
+                              viewport={{ once: true }}
+                              transition={{ duration: 0.5, delay: mi * 0.1, type: "spring" }}
+                              style={{ transformStyle: "preserve-3d" }}
+                              className="rounded-xl border border-border bg-background p-3 text-center shadow-elegant"
+                            >
+                              <div className="text-xl font-bold text-gradient-primary">
+                                <CounterAnimation value={m.v} duration={2} />
+                              </div>
+                              <div className="mt-1 text-[10px] text-muted-foreground leading-tight">{m.l}</div>
+                            </motion.div>
                           ))}
-                        </StaggerChildren>
+                        </div>
                       </div>
 
                       {/* Right Column */}

@@ -7,6 +7,8 @@ import { SmoothScroll } from "@/components/SmoothScroll";
 import { ScrollProgress } from "@/components/animations/ScrollProgress";
 import { SplitText } from "@/components/animations/SplitText";
 import { TiltCard } from "@/components/animations/TiltCard";
+import { InteractiveFlow3D } from "@/components/animations/InteractiveFlow3D";
+import { ImagePlaceholder3D } from "@/components/animations/ImagePlaceholder3D";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 import {
   Accordion,
@@ -182,11 +184,7 @@ function ContentProductionPage() {
       <section className="section-isolate relative pt-36 pb-24 lg:pt-44 lg:pb-32 overflow-hidden">
         {/* Background Image Placeholder */}
         <div className="absolute inset-0">
-          <img 
-            src="/src/assets/content-hero-bg.jpg" 
-            alt="" 
-            className="w-full h-full object-cover opacity-30"
-          />
+          <ImagePlaceholder3D text="HERO BACKGROUND 3D" className="w-full h-full opacity-40 [&>div]:rounded-none [&>div]:border-none absolute inset-0 z-[-1]" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
         </div>
         <div className="absolute inset-0 bg-hero-glow" />
@@ -312,7 +310,7 @@ function ContentProductionPage() {
             {services.map((service, i) => {
               const Icon = service.icon;
               return (
-                <TiltCard key={i} tiltAmount={8}>
+                <TiltCard key={i} tiltAmount={15}>
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -530,6 +528,19 @@ function ContentProductionPage() {
         </div>
       </section>
 
+            {/* 3D Flow Animation Section */}
+      <section className="section-isolate py-32 bg-background border-y border-border overflow-hidden">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10 text-center mb-16 relative z-10">
+          <h2 className="text-4xl sm:text-5xl font-bold leading-tight">
+            <span className="text-gradient-primary">The Content Production Pipeline</span>
+          </h2>
+          <p className="mt-6 text-xl text-muted-foreground max-w-2xl mx-auto">
+            A disconnected strategy leaks revenue. We build interconnected systems where every step amplifies the next.
+          </p>
+        </div>
+        <InteractiveFlow3D nodes={["Concept Strategy", "Scripting", "Pre-Production", "Shooting", "Post-Production", "Color Grading", "Distribution"]} />
+      </section>
+
       {/* FAQ Section */}
       <section className="section-isolate py-32">
         <div className="mx-auto max-w-4xl px-6 lg:px-10">
@@ -599,3 +610,5 @@ function ContentProductionPage() {
     </SmoothScroll>
   );
 }
+
+

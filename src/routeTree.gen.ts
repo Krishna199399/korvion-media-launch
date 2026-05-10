@@ -12,8 +12,9 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as WorkRouteImport } from './routes/work'
 import { Route as WebsiteDesignServicesRouteImport } from './routes/website-design-services'
 import { Route as VideoProductionPhotographyServicesRouteImport } from './routes/video-production-photography-services'
-import { Route as SocialMediaMarketingRouteImport } from './routes/social-media-marketing'
+import { Route as SocialMediaMarketingServicesRouteImport } from './routes/social-media-marketing-services'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as SeoServicesRouteImport } from './routes/seo-services'
 import { Route as ProcessRouteImport } from './routes/process'
 import { Route as PerformanceMarketingServicesRouteImport } from './routes/performance-marketing-services'
 import { Route as ELearningContentDevelopmentRouteImport } from './routes/e-learning-content-development'
@@ -22,6 +23,7 @@ import { Route as CrmSetupMarketingAutomationServicesRouteImport } from './route
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CareersRouteImport } from './routes/careers'
 import { Route as BrandingAgencyCreativeServicesRouteImport } from './routes/branding-agency-creative-services'
+import { Route as AdvancedSeoPerformanceServicesRouteImport } from './routes/advanced-seo-performance-services'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesServiceSlugRouteImport } from './routes/services_.$serviceSlug'
 
@@ -41,14 +43,20 @@ const VideoProductionPhotographyServicesRoute =
     path: '/video-production-photography-services',
     getParentRoute: () => rootRouteImport,
   } as any)
-const SocialMediaMarketingRoute = SocialMediaMarketingRouteImport.update({
-  id: '/social-media-marketing',
-  path: '/social-media-marketing',
-  getParentRoute: () => rootRouteImport,
-} as any)
+const SocialMediaMarketingServicesRoute =
+  SocialMediaMarketingServicesRouteImport.update({
+    id: '/social-media-marketing-services',
+    path: '/social-media-marketing-services',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SeoServicesRoute = SeoServicesRouteImport.update({
+  id: '/seo-services',
+  path: '/seo-services',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProcessRoute = ProcessRouteImport.update({
@@ -96,6 +104,12 @@ const BrandingAgencyCreativeServicesRoute =
     path: '/branding-agency-creative-services',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AdvancedSeoPerformanceServicesRoute =
+  AdvancedSeoPerformanceServicesRouteImport.update({
+    id: '/advanced-seo-performance-services',
+    path: '/advanced-seo-performance-services',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -109,6 +123,7 @@ const ServicesServiceSlugRoute = ServicesServiceSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/advanced-seo-performance-services': typeof AdvancedSeoPerformanceServicesRoute
   '/branding-agency-creative-services': typeof BrandingAgencyCreativeServicesRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
@@ -117,8 +132,9 @@ export interface FileRoutesByFullPath {
   '/e-learning-content-development': typeof ELearningContentDevelopmentRoute
   '/performance-marketing-services': typeof PerformanceMarketingServicesRoute
   '/process': typeof ProcessRoute
+  '/seo-services': typeof SeoServicesRoute
   '/services': typeof ServicesRoute
-  '/social-media-marketing': typeof SocialMediaMarketingRoute
+  '/social-media-marketing-services': typeof SocialMediaMarketingServicesRoute
   '/video-production-photography-services': typeof VideoProductionPhotographyServicesRoute
   '/website-design-services': typeof WebsiteDesignServicesRoute
   '/work': typeof WorkRoute
@@ -126,6 +142,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/advanced-seo-performance-services': typeof AdvancedSeoPerformanceServicesRoute
   '/branding-agency-creative-services': typeof BrandingAgencyCreativeServicesRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
@@ -134,8 +151,9 @@ export interface FileRoutesByTo {
   '/e-learning-content-development': typeof ELearningContentDevelopmentRoute
   '/performance-marketing-services': typeof PerformanceMarketingServicesRoute
   '/process': typeof ProcessRoute
+  '/seo-services': typeof SeoServicesRoute
   '/services': typeof ServicesRoute
-  '/social-media-marketing': typeof SocialMediaMarketingRoute
+  '/social-media-marketing-services': typeof SocialMediaMarketingServicesRoute
   '/video-production-photography-services': typeof VideoProductionPhotographyServicesRoute
   '/website-design-services': typeof WebsiteDesignServicesRoute
   '/work': typeof WorkRoute
@@ -144,6 +162,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/advanced-seo-performance-services': typeof AdvancedSeoPerformanceServicesRoute
   '/branding-agency-creative-services': typeof BrandingAgencyCreativeServicesRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
@@ -152,8 +171,9 @@ export interface FileRoutesById {
   '/e-learning-content-development': typeof ELearningContentDevelopmentRoute
   '/performance-marketing-services': typeof PerformanceMarketingServicesRoute
   '/process': typeof ProcessRoute
+  '/seo-services': typeof SeoServicesRoute
   '/services': typeof ServicesRoute
-  '/social-media-marketing': typeof SocialMediaMarketingRoute
+  '/social-media-marketing-services': typeof SocialMediaMarketingServicesRoute
   '/video-production-photography-services': typeof VideoProductionPhotographyServicesRoute
   '/website-design-services': typeof WebsiteDesignServicesRoute
   '/work': typeof WorkRoute
@@ -163,6 +183,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/advanced-seo-performance-services'
     | '/branding-agency-creative-services'
     | '/careers'
     | '/contact'
@@ -171,8 +192,9 @@ export interface FileRouteTypes {
     | '/e-learning-content-development'
     | '/performance-marketing-services'
     | '/process'
+    | '/seo-services'
     | '/services'
-    | '/social-media-marketing'
+    | '/social-media-marketing-services'
     | '/video-production-photography-services'
     | '/website-design-services'
     | '/work'
@@ -180,6 +202,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/advanced-seo-performance-services'
     | '/branding-agency-creative-services'
     | '/careers'
     | '/contact'
@@ -188,8 +211,9 @@ export interface FileRouteTypes {
     | '/e-learning-content-development'
     | '/performance-marketing-services'
     | '/process'
+    | '/seo-services'
     | '/services'
-    | '/social-media-marketing'
+    | '/social-media-marketing-services'
     | '/video-production-photography-services'
     | '/website-design-services'
     | '/work'
@@ -197,6 +221,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/advanced-seo-performance-services'
     | '/branding-agency-creative-services'
     | '/careers'
     | '/contact'
@@ -205,8 +230,9 @@ export interface FileRouteTypes {
     | '/e-learning-content-development'
     | '/performance-marketing-services'
     | '/process'
+    | '/seo-services'
     | '/services'
-    | '/social-media-marketing'
+    | '/social-media-marketing-services'
     | '/video-production-photography-services'
     | '/website-design-services'
     | '/work'
@@ -215,6 +241,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdvancedSeoPerformanceServicesRoute: typeof AdvancedSeoPerformanceServicesRoute
   BrandingAgencyCreativeServicesRoute: typeof BrandingAgencyCreativeServicesRoute
   CareersRoute: typeof CareersRoute
   ContactRoute: typeof ContactRoute
@@ -223,8 +250,9 @@ export interface RootRouteChildren {
   ELearningContentDevelopmentRoute: typeof ELearningContentDevelopmentRoute
   PerformanceMarketingServicesRoute: typeof PerformanceMarketingServicesRoute
   ProcessRoute: typeof ProcessRoute
+  SeoServicesRoute: typeof SeoServicesRoute
   ServicesRoute: typeof ServicesRoute
-  SocialMediaMarketingRoute: typeof SocialMediaMarketingRoute
+  SocialMediaMarketingServicesRoute: typeof SocialMediaMarketingServicesRoute
   VideoProductionPhotographyServicesRoute: typeof VideoProductionPhotographyServicesRoute
   WebsiteDesignServicesRoute: typeof WebsiteDesignServicesRoute
   WorkRoute: typeof WorkRoute
@@ -254,11 +282,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VideoProductionPhotographyServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/social-media-marketing': {
-      id: '/social-media-marketing'
-      path: '/social-media-marketing'
-      fullPath: '/social-media-marketing'
-      preLoaderRoute: typeof SocialMediaMarketingRouteImport
+    '/social-media-marketing-services': {
+      id: '/social-media-marketing-services'
+      path: '/social-media-marketing-services'
+      fullPath: '/social-media-marketing-services'
+      preLoaderRoute: typeof SocialMediaMarketingServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services': {
@@ -266,6 +294,13 @@ declare module '@tanstack/react-router' {
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/seo-services': {
+      id: '/seo-services'
+      path: '/seo-services'
+      fullPath: '/seo-services'
+      preLoaderRoute: typeof SeoServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/process': {
@@ -324,6 +359,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BrandingAgencyCreativeServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/advanced-seo-performance-services': {
+      id: '/advanced-seo-performance-services'
+      path: '/advanced-seo-performance-services'
+      fullPath: '/advanced-seo-performance-services'
+      preLoaderRoute: typeof AdvancedSeoPerformanceServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -343,6 +385,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdvancedSeoPerformanceServicesRoute: AdvancedSeoPerformanceServicesRoute,
   BrandingAgencyCreativeServicesRoute: BrandingAgencyCreativeServicesRoute,
   CareersRoute: CareersRoute,
   ContactRoute: ContactRoute,
@@ -352,8 +395,9 @@ const rootRouteChildren: RootRouteChildren = {
   ELearningContentDevelopmentRoute: ELearningContentDevelopmentRoute,
   PerformanceMarketingServicesRoute: PerformanceMarketingServicesRoute,
   ProcessRoute: ProcessRoute,
+  SeoServicesRoute: SeoServicesRoute,
   ServicesRoute: ServicesRoute,
-  SocialMediaMarketingRoute: SocialMediaMarketingRoute,
+  SocialMediaMarketingServicesRoute: SocialMediaMarketingServicesRoute,
   VideoProductionPhotographyServicesRoute:
     VideoProductionPhotographyServicesRoute,
   WebsiteDesignServicesRoute: WebsiteDesignServicesRoute,

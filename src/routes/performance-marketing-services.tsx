@@ -7,6 +7,7 @@ import { SmoothScroll } from "@/components/SmoothScroll";
 import { ScrollProgress } from "@/components/animations/ScrollProgress";
 import { SplitText } from "@/components/animations/SplitText";
 import { TiltCard } from "@/components/animations/TiltCard";
+import { InteractiveFlow3D } from "@/components/animations/InteractiveFlow3D";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 import {
   Accordion,
@@ -387,7 +388,7 @@ function PerformanceMarketingPage() {
 
             <div className="grid md:grid-cols-3 gap-8">
               {growthPrinciples.map((item, i) => (
-                <TiltCard key={i} tiltAmount={8}>
+                <TiltCard key={i} tiltAmount={15}>
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -441,7 +442,7 @@ function PerformanceMarketingPage() {
               {services.map((service, i) => {
                 const Icon = service.icon;
                 return (
-                  <TiltCard key={i} tiltAmount={8}>
+                  <TiltCard key={i} tiltAmount={15}>
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
@@ -767,7 +768,20 @@ function PerformanceMarketingPage() {
           </div>
         </section>
 
-        {/* FAQ Section */}
+              {/* 3D Flow Animation Section */}
+      <section className="section-isolate py-32 bg-background border-y border-border overflow-hidden">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10 text-center mb-16 relative z-10">
+          <h2 className="text-4xl sm:text-5xl font-bold leading-tight">
+            <span className="text-gradient-primary">The Performance Marketing Engine</span>
+          </h2>
+          <p className="mt-6 text-xl text-muted-foreground max-w-2xl mx-auto">
+            A disconnected strategy leaks revenue. We build interconnected systems where every step amplifies the next.
+          </p>
+        </div>
+        <InteractiveFlow3D nodes={["Market Research", "Offer Creation", "Funnel Building", "Ad Creative", "Media Buying", "A/B Testing", "Scale"]} />
+      </section>
+
+      {/* FAQ Section */}
         <section className="section-isolate py-32">
           <div className="mx-auto max-w-4xl px-6 lg:px-10">
             <div className="text-center mb-16">
@@ -836,3 +850,4 @@ function PerformanceMarketingPage() {
     </SmoothScroll>
   );
 }
+

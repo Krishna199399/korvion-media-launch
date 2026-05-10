@@ -1,12 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
-import { SectionHeader } from "@/components/SectionHeader";
 import { CTASection } from "@/components/CTASection";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { ScrollProgress } from "@/components/animations/ScrollProgress";
 import { SplitText } from "@/components/animations/SplitText";
+import { TiltCard } from "@/components/animations/TiltCard";
 import { StaggerChildren, StaggerChild } from "@/components/animations/StaggerChildren";
 import { FadeInSection } from "@/components/animations/FadeInSection";
 
@@ -19,6 +20,12 @@ export const Route = createFileRoute("/process")({
         content:
           "Korvion's 4-phase growth system: Audit & Discovery, Strategy & Planning, Execution & Scaling, Optimization & Growth. Transparent, fast, accountable.",
       },
+      { property: "og:title", content: "Our Process — Korvion Media" },
+      { property: "og:description", content: "Four phases. Built for compounding growth." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Our Process — Korvion Media" },
+      { name: "twitter:description", content: "Korvion's 4-phase growth system: Audit & Discovery, Strategy & Planning, Execution & Scaling, Optimization & Growth." },
     ],
   }),
   component: ProcessPage,
@@ -29,6 +36,7 @@ const phases = [
     n: "01",
     title: "Audit & Discovery",
     duration: "Week 1–2",
+    color: "from-primary/20 to-primary/5",
     body: "We deep-dive your brand, funnel, analytics, tech stack, customer data and competitive landscape. You leave this phase with a brutally honest map of every leak in your revenue engine.",
     deliverables: ["Growth audit report", "Funnel & data diagnostics", "Competitive teardown", "Opportunity scoring"],
   },
@@ -36,6 +44,7 @@ const phases = [
     n: "02",
     title: "Strategy & Planning",
     duration: "Week 2–3",
+    color: "from-primary/25 to-primary/10",
     body: "We architect your custom growth blueprint — positioning, messaging, channel mix, KPIs, tech stack and the 90-day roadmap. No 80-page deck. A working operating system.",
     deliverables: ["Growth blueprint", "Channel strategy", "KPI tree & dashboards", "90-day execution roadmap"],
   },
@@ -43,6 +52,7 @@ const phases = [
     n: "03",
     title: "Execution & Scaling",
     duration: "Day 30 →",
+    color: "from-primary/30 to-primary/15",
     body: "Our pod ships. Brand, content, ads, web, automation — built and launched in tight weekly sprints. You get a single point of contact, weekly demos and full Loom transparency.",
     deliverables: ["Weekly sprint reviews", "Live production pipeline", "Always-on creative & ads", "Tech & automation rollouts"],
   },
@@ -50,25 +60,151 @@ const phases = [
     n: "04",
     title: "Optimization & Growth",
     duration: "Ongoing",
+    color: "from-primary/35 to-primary/20",
     body: "Continuous testing, monthly business reviews, quarterly growth planning. We optimize for compounding — every system we run gets sharper, faster and more profitable each month.",
     deliverables: ["A/B testing engine", "Monthly business reviews", "Quarterly growth plans", "Retention & LTV systems"],
   },
 ];
 
+// 3D Phase Card with depth
+function PhaseCard3D({ phase, index }: { phase: typeof phases[0]; index: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "center center"] });
+  const y = useTransform(scrollYProgress, [0, 1], [80, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
+  const rotateX = useTransform(scrollYProgress, [0, 1], [20, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [0.92, 1]);
+
+  return (
+    <div ref={ref} className="perspective-1000">
+      <motion.div
+        style={{ y, opacity, rotateX, scale, transformStyle: "preserve-3d" }}
+      >
+        <TiltCard tiltAmount={6}>
+          <div className={`relative rounded-3xl border border-border bg-gradient-to-br ${phase.color} backdrop-blur-sm p-8 lg:p-12 overflow-hidden hover:border-primary/40 hover:shadow-glow transition-all group`}>
+            {/* Depth layer */}
+            <div className="absolute inset-0 rounded-3xl bg-gradient-primary opacity-0 group-hover:opacity-[0.03] transition-opacity duration-700" />
+
+            {/* Floating number */}
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 4 + index, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -top-8 -right-4 text-[10rem] font-display font-bold text-primary/5 leading-none select-none pointer-events-none"
+              style={{ transform: "translateZ(20px)" }}
+            >
+              {phase.n}
+            </motion.div>
+
+            <div className="relative grid lg:grid-cols-12 gap-8 items-start">
+              {/* Left */}
+              <div className="lg:col-span-4">
+                <span className="font-mono text-xs uppercase tracking-[0.3em] text-primary">{phase.duration}</span>
+
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.5, rotateY: -45 }}
+                  whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: index * 0.1, type: "spring" }}
+                  style={{ transformStyle: "preserve-3d" }}
+                  className="mt-4 text-8xl font-display font-bold text-gradient-primary leading-none"
+                >
+                  {phase.n}
+                </motion.div>
+
+                <h3 className="mt-6 text-2xl lg:text-3xl font-bold">{phase.title}</h3>
+              </div>
+
+              {/* Right */}
+              <div className="lg:col-span-8">
+                <p className="text-lg text-muted-foreground leading-relaxed">{phase.body}</p>
+
+                <div className="mt-8 grid sm:grid-cols-2 gap-3">
+                  {phase.deliverables.map((d, di) => (
+                    <motion.div
+                      key={d}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      whileHover={{ x: 6, translateZ: 10 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: di * 0.08 }}
+                      className="flex items-center gap-3 rounded-xl border border-border/50 bg-background/50 px-4 py-3 text-sm text-foreground"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                      {d}
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </TiltCard>
+      </motion.div>
+    </div>
+  );
+}
+
+// Animated 3D pipeline connector
+function PipelineConnector({ index }: { index: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const scaleX = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
+
+  return (
+    <div ref={ref} className="my-4 flex items-center justify-center gap-4 perspective-1000">
+      <motion.div style={{ scaleX }} className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/40 to-transparent origin-left" />
+      <motion.div
+        initial={{ scale: 0, rotateZ: -90 }}
+        whileInView={{ scale: 1, rotateZ: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, type: "spring" }}
+        className="w-8 h-8 rounded-full border border-primary/40 bg-primary/10 flex items-center justify-center text-primary text-xs font-mono flex-shrink-0"
+      >
+        →
+      </motion.div>
+      <motion.div style={{ scaleX }} className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/40 to-transparent origin-right" />
+    </div>
+  );
+}
+
 function ProcessPage() {
+  const heroRef = useRef<HTMLElement>(null);
+  const { scrollYProgress: heroScroll } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+  const heroY = useTransform(heroScroll, [0, 1], ["0%", "25%"]);
+
   return (
     <SmoothScroll>
       <ScrollProgress />
       <div className="min-h-screen bg-background text-foreground">
         <Nav />
-        
+
         {/* Hero Section */}
-        <section className="section-isolate relative pt-36 pb-20 overflow-hidden bg-background">
+        <section ref={heroRef} className="section-isolate relative pt-36 pb-20 overflow-hidden bg-background min-h-[55vh] flex items-center">
           <div className="absolute inset-0 bg-hero-glow" />
           <div className="absolute inset-0 grid-pattern opacity-30" />
-          <div className="absolute -top-20 right-[-10%] h-[40rem] w-[40rem] rounded-full bg-primary/10 blur-3xl" />
-          
-          <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+
+          {/* Rotating 3D wireframe */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            {[...Array(4)].map((_, i) => (
+              <motion.div
+                key={i}
+                animate={{ rotateY: [0, 360], rotateX: [0, 180, 0] }}
+                transition={{ duration: 12 + i * 3, repeat: Infinity, ease: "linear" }}
+                className="absolute border border-primary/10 rounded-full"
+                style={{
+                  width: `${200 + i * 120}px`,
+                  height: `${200 + i * 120}px`,
+                  left: `${70 - i * 5}%`,
+                  top: `${10 + i * 10}%`,
+                  transformStyle: "preserve-3d",
+                }}
+              />
+            ))}
+          </div>
+
+          <motion.div style={{ y: heroY }} className="relative mx-auto max-w-7xl px-6 lg:px-10 w-full">
             <FadeInSection>
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
@@ -79,8 +215,8 @@ function ProcessPage() {
                 <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse-glow" />
                 Our Process
               </motion.div>
-              
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[0.98] tracking-tight">
+
+              <h1 className="text-5xl sm:text-6xl lg:text-8xl font-bold leading-[0.95] tracking-tight">
                 <SplitText splitBy="words" stagger={0.05}>
                   Four phases.
                 </SplitText>
@@ -91,7 +227,7 @@ function ProcessPage() {
                   </SplitText>
                 </span>
               </h1>
-              
+
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -101,110 +237,57 @@ function ProcessPage() {
                 From day one, you'll know exactly what we're doing, why we're doing it, and what number it's expected to move.
               </motion.p>
             </FadeInSection>
+          </motion.div>
+        </section>
+
+        {/* 3D Phase Cards */}
+        <section className="section-isolate pb-32 bg-background">
+          <div className="mx-auto max-w-6xl px-6 lg:px-10">
+            <div className="space-y-4">
+              {phases.map((p, i) => (
+                <div key={p.n}>
+                  <PhaseCard3D phase={p} index={i} />
+                  {i < phases.length - 1 && <PipelineConnector index={i} />}
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* Timeline */}
-        <section className="section-isolate pb-32 bg-background">
-          <div className="mx-auto max-w-5xl px-6 lg:px-10 relative">
-            {/* Vertical Line */}
+        {/* Guarantee section */}
+        <section className="section-isolate py-24 border-y border-border bg-surface/30 overflow-hidden">
+          <div className="mx-auto max-w-7xl px-6 lg:px-10 perspective-1000">
             <motion.div
-              initial={{ scaleY: 0 }}
-              whileInView={{ scaleY: 1 }}
+              initial={{ opacity: 0, y: 40, rotateX: 20 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 1.5, ease: "easeInOut" }}
-              className="absolute left-8 lg:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/40 to-transparent origin-top"
-            />
-            
-            <div className="space-y-16">
-              {phases.map((p, i) => (
-                <motion.div
-                  key={p.n}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.6, delay: i * 0.1 }}
-                  className={`relative grid lg:grid-cols-2 gap-8 ${i % 2 === 1 ? "lg:[direction:rtl]" : ""}`}
-                >
-                  {/* Timeline Dot */}
-                  <div className="absolute left-8 lg:left-1/2 top-6 -translate-x-1/2 flex h-4 w-4 items-center justify-center z-10">
-                    <motion.span
-                      initial={{ scale: 0 }}
-                      whileInView={{ scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: i * 0.1 + 0.2 }}
-                      className="absolute h-4 w-4 rounded-full bg-primary/30 animate-pulse-glow"
-                    />
-                    <motion.span
-                      initial={{ scale: 0 }}
-                      whileInView={{ scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: i * 0.1 + 0.3 }}
-                      className="relative h-2 w-2 rounded-full bg-primary shadow-glow-sm"
-                    />
-                  </div>
-
-                  {/* Left Column */}
-                  <div className={`pl-16 lg:pl-0 ${i % 2 === 1 ? "lg:pr-16 lg:[direction:ltr]" : "lg:pr-16 lg:text-right"}`}>
-                    <motion.div
-                      initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: i * 0.1 + 0.2 }}
-                      className="font-mono text-xs uppercase tracking-[0.2em] text-primary"
-                    >
-                      {p.duration}
-                    </motion.div>
-                    
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: i * 0.1 + 0.3 }}
-                      className="mt-2 text-7xl font-display font-bold text-gradient-primary leading-none"
-                    >
-                      {p.n}
-                    </motion.div>
-                    
-                    <motion.h3
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: i * 0.1 + 0.4 }}
-                      className="mt-4 text-3xl font-bold"
-                    >
-                      {p.title}
-                    </motion.h3>
-                  </div>
-
-                  {/* Right Column */}
-                  <div className={`pl-16 lg:pl-16 ${i % 2 === 1 ? "lg:[direction:ltr]" : ""}`}>
-                    <motion.p
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: i * 0.1 + 0.5 }}
-                      className="text-lg text-muted-foreground leading-relaxed"
-                    >
-                      {p.body}
-                    </motion.p>
-                    
-                    <StaggerChildren className="mt-6 grid sm:grid-cols-2 gap-2" staggerDelay={0.05}>
-                      {p.deliverables.map((d) => (
-                        <StaggerChild key={d}>
-                          <motion.div
-                            whileHover={{ scale: 1.02, x: 2 }}
-                            className="rounded-lg border border-border bg-surface/50 px-3 py-2 text-sm text-foreground"
-                          >
-                            {d}
-                          </motion.div>
-                        </StaggerChild>
-                      ))}
-                    </StaggerChildren>
-                  </div>
-                </motion.div>
+              transition={{ duration: 0.8, type: "spring" }}
+              style={{ transformStyle: "preserve-3d" }}
+              className="grid md:grid-cols-3 gap-6"
+            >
+              {[
+                { title: "Full Transparency", body: "Weekly Loom recaps, shared dashboards, and no hidden deliverables. You see everything." },
+                { title: "Outcome-First Billing", body: "We don't get paid for effort. We get paid for moving the number." },
+                { title: "One Point of Contact", body: "No account-manager relay race. One strategist owns your entire growth system." },
+              ].map((item, i) => (
+                <TiltCard key={item.title} tiltAmount={10}>
+                  <motion.div
+                    initial={{ opacity: 0, y: 30, rotateY: -15 }}
+                    whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: i * 0.1 }}
+                    style={{ transformStyle: "preserve-3d" }}
+                    className="h-full rounded-2xl border border-border bg-background p-8 hover:border-primary/40 hover:shadow-glow-sm transition-all"
+                  >
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                      <span className="font-mono text-primary text-sm">0{i + 1}</span>
+                    </div>
+                    <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{item.body}</p>
+                  </motion.div>
+                </TiltCard>
               ))}
-            </div>
+            </motion.div>
           </div>
         </section>
 

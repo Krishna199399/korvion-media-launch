@@ -7,6 +7,8 @@ import { SmoothScroll } from "@/components/SmoothScroll";
 import { ScrollProgress } from "@/components/animations/ScrollProgress";
 import { SplitText } from "@/components/animations/SplitText";
 import { TiltCard } from "@/components/animations/TiltCard";
+import { InteractiveFlow3D } from "@/components/animations/InteractiveFlow3D";
+import { ImagePlaceholder3D } from "@/components/animations/ImagePlaceholder3D";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 import {
   Accordion,
@@ -173,12 +175,8 @@ function ELearningPage() {
       {/* Hero Section */}
       <section className="section-isolate relative pt-36 pb-24 lg:pt-44 lg:pb-32 overflow-hidden">
         {/* Background Image Placeholder */}
-        <div className="absolute inset-0">
-          <img 
-            src="/src/assets/content-hero-bg.jpg" 
-            alt="" 
-            className="w-full h-full object-cover opacity-30"
-          />
+        <div className="absolute inset-0 z-[-1]">
+          <ImagePlaceholder3D text="HERO BACKGROUND 3D" className="w-full h-full opacity-40 [&>div]:rounded-none [&>div]:border-none" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
         </div>
         <div className="absolute inset-0 bg-hero-glow" />
@@ -250,15 +248,7 @@ function ELearningPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6">
-              {/* Image Placeholder */}
-              <div className="relative aspect-[4/3] rounded-3xl border border-border bg-surface/50 backdrop-blur-xl shadow-elegant overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
-                  <div className="text-center p-8">
-                    <BookOpen className="h-20 w-20 mx-auto mb-4 text-primary" />
-                    <p className="text-sm font-mono">E-Learning Training Visual</p>
-                  </div>
-                </div>
-              </div>
+              <ImagePlaceholder3D text="E-Learning Training Visual" />
             </div>
             <div className="lg:col-span-6">
               <h2 className="text-4xl sm:text-5xl font-bold leading-tight">
@@ -325,7 +315,7 @@ function ELearningPage() {
             {services.map((service, i) => {
               const Icon = service.icon;
               return (
-                <TiltCard key={i} tiltAmount={8}>
+                <TiltCard key={i} tiltAmount={15}>
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -541,6 +531,20 @@ function ELearningPage() {
             </a>
           </div>
         </div>
+      </section>
+
+      
+      {/* 3D Flow Animation Section */}
+      <section className="section-isolate py-32 bg-background border-y border-border overflow-hidden">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10 text-center mb-16 relative z-10">
+          <h2 className="text-4xl sm:text-5xl font-bold leading-tight">
+            <span className="text-gradient-primary">The Content Production Pipeline</span>
+          </h2>
+          <p className="mt-6 text-xl text-muted-foreground max-w-2xl mx-auto">
+            A disconnected strategy leaks revenue. We build interconnected systems where every step amplifies the next.
+          </p>
+        </div>
+        <InteractiveFlow3D nodes={["Concept Strategy", "Scripting", "Pre-Production", "Shooting", "Post-Production", "Color Grading", "Distribution"]} />
       </section>
 
       {/* FAQ Section */}

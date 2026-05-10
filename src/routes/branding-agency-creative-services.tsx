@@ -7,6 +7,7 @@ import { SmoothScroll } from "@/components/SmoothScroll";
 import { ScrollProgress } from "@/components/animations/ScrollProgress";
 import { SplitText } from "@/components/animations/SplitText";
 import { TiltCard } from "@/components/animations/TiltCard";
+import { InteractiveFlow3D } from "@/components/animations/InteractiveFlow3D";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 import {
   Accordion,
@@ -430,7 +431,7 @@ function BrandingPage() {
             {services.map((service, i) => {
               const Icon = service.icon;
               return (
-                <TiltCard key={i} tiltAmount={8}>
+                <TiltCard key={i} tiltAmount={15}>
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -722,6 +723,19 @@ function BrandingPage() {
         </div>
       </section>
 
+            {/* 3D Flow Animation Section */}
+      <section className="section-isolate py-32 bg-background border-y border-border overflow-hidden">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10 text-center mb-16 relative z-10">
+          <h2 className="text-4xl sm:text-5xl font-bold leading-tight">
+            <span className="text-gradient-primary">The Brand Evolution Process</span>
+          </h2>
+          <p className="mt-6 text-xl text-muted-foreground max-w-2xl mx-auto">
+            A disconnected strategy leaks revenue. We build interconnected systems where every step amplifies the next.
+          </p>
+        </div>
+        <InteractiveFlow3D nodes={["Brand Discovery", "Positioning", "Visual Identity", "Brand Voice", "Brand Guidelines", "Market Rollout"]} />
+      </section>
+
       {/* FAQ Section */}
       <section className="section-isolate py-32 bg-surface border-t border-border">
         <div className="mx-auto max-w-4xl px-6 lg:px-10">
@@ -812,3 +826,4 @@ function BrandingPage() {
     </SmoothScroll>
   );
 }
+
