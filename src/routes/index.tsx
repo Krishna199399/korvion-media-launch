@@ -105,7 +105,7 @@ const infrastructure = [
   },
   {
     title: "IT, Product & Engineering",
-    desc: "Beyond marketing and automation, businesses also require scalable technology infrastructure.",
+    desc: "Beyond marketing and automation, businesses also require scalable technology infrastructure. As a product engineering company, Korvion Media helps businesses build systems designed for scale, flexibility, and long-term growth.",
     links: [{ label: "IT, Product & Engineering", to: "/custom-mobile-web-app-development" }],
     support: "From web applications to backend infrastructure and DevOps systems, technology should support growth instead of creating future limitations.",
     icon: Network,
@@ -139,6 +139,10 @@ const faqs = [
   {
     q: "What industries does Korvion Media work with?",
     a: "Korvion Media works with startups, growing businesses, ecommerce brands, SaaS companies, healthcare organizations, and enterprises looking to improve digital growth and operational scalability.",
+  },
+  {
+    q: "How do I get started?",
+    a: "You can call 1234567890 or schedule a consultation. The team at Korvion Media will understand your business goals and recommend the right digital growth strategy.",
   },
 ];
 
@@ -318,10 +322,21 @@ function HomePage() {
             <FadeInSection className="max-w-3xl mb-20 text-center mx-auto">
               <h2 className="text-4xl sm:text-5xl font-bold">Why Businesses Struggle to Scale Online</h2>
               <p className="mt-6 text-xl text-muted-foreground">
-                Many businesses already invest in marketing. But growth still feels inconsistent because SEO works separately from content, campaigns operate without conversion systems, and leads are not nurtured properly.
+                Many businesses already invest in marketing. But growth still feels inconsistent because:
               </p>
+              <ul className="mt-6 space-y-3 text-lg text-muted-foreground text-left max-w-xl mx-auto">
+                <li className="flex items-start gap-3"><span className="text-destructive mt-0.5">•</span> SEO works separately from content</li>
+                <li className="flex items-start gap-3"><span className="text-destructive mt-0.5">•</span> Campaigns operate without conversion systems</li>
+                <li className="flex items-start gap-3"><span className="text-destructive mt-0.5">•</span> Websites fail to support customer journeys</li>
+                <li className="flex items-start gap-3"><span className="text-destructive mt-0.5">•</span> Branding lacks consistency</li>
+                <li className="flex items-start gap-3"><span className="text-destructive mt-0.5">•</span> Leads are not nurtured properly</li>
+                <li className="flex items-start gap-3"><span className="text-destructive mt-0.5">•</span> Automation is added too late</li>
+              </ul>
               <p className="mt-6 text-lg font-semibold text-destructive">
                 The problem is not always effort. It is a disconnected execution.
+              </p>
+              <p className="mt-6 text-lg text-muted-foreground">
+                As a digital business transformation company, Korvion Media helps businesses connect visibility, engagement, conversion, automation, and infrastructure into one scalable growth ecosystem.
               </p>
             </FadeInSection>
 
@@ -395,6 +410,73 @@ function HomePage() {
           </div>
         </section>
 
+        {/* MASTER SERVICE ECOSYSTEM */}
+        <section className="section-isolate py-32 bg-background border-t border-border">
+          <div className="mx-auto max-w-7xl px-6 lg:px-10">
+            <FadeInSection className="text-center max-w-3xl mx-auto mb-20">
+              <h2 className="text-4xl sm:text-5xl font-bold">
+                Explore the Korvion <span className="text-gradient-primary">Growth Ecosystem</span>
+              </h2>
+            </FadeInSection>
+
+            <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-4 gap-8" staggerDelay={0.12}>
+              <StaggerChild>
+                <TiltCard tiltAmount={8} className="p-8 rounded-3xl border border-border bg-surface/50 hover:border-primary/40 transition-all h-full">
+                  <div className="h-12 w-12 rounded-xl bg-gradient-primary text-primary-foreground flex items-center justify-center mb-6 shadow-glow-sm">
+                    <Search className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-6">Growth &amp; Visibility</h3>
+                  <div className="space-y-3">
+                    <Link to="/seo-services" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"><ArrowRight className="h-3 w-3 shrink-0" /> SEO &amp; Growth Services</Link>
+                    <Link to="/advanced-seo-performance-services" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"><ArrowRight className="h-3 w-3 shrink-0" /> Advanced SEO &amp; Performance</Link>
+                    <Link to="/performance-marketing-services" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"><ArrowRight className="h-3 w-3 shrink-0" /> Performance Marketing</Link>
+                  </div>
+                </TiltCard>
+              </StaggerChild>
+
+              <StaggerChild>
+                <TiltCard tiltAmount={8} className="p-8 rounded-3xl border border-border bg-surface/50 hover:border-primary/40 transition-all h-full">
+                  <div className="h-12 w-12 rounded-xl bg-gradient-primary text-primary-foreground flex items-center justify-center mb-6 shadow-glow-sm">
+                    <Megaphone className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-6">Brand &amp; Audience Engagement</h3>
+                  <div className="space-y-3">
+                    <Link to="/branding-agency-creative-services" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"><ArrowRight className="h-3 w-3 shrink-0" /> Branding &amp; Creative</Link>
+                    <Link to="/video-production-photography-services" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"><ArrowRight className="h-3 w-3 shrink-0" /> Content &amp; Production</Link>
+                    <Link to="/social-media-marketing" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"><ArrowRight className="h-3 w-3 shrink-0" /> Social Media &amp; Marketing</Link>
+                  </div>
+                </TiltCard>
+              </StaggerChild>
+
+              <StaggerChild>
+                <TiltCard tiltAmount={8} className="p-8 rounded-3xl border border-border bg-surface/50 hover:border-primary/40 transition-all h-full">
+                  <div className="h-12 w-12 rounded-xl bg-gradient-primary text-primary-foreground flex items-center justify-center mb-6 shadow-glow-sm">
+                    <Settings className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-6">Digital Infrastructure &amp; Scale</h3>
+                  <div className="space-y-3">
+                    <Link to="/website-design-services" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"><ArrowRight className="h-3 w-3 shrink-0" /> Web &amp; Digital Experience</Link>
+                    <Link to="/crm-setup-marketing-automation-services" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"><ArrowRight className="h-3 w-3 shrink-0" /> CRM, Automation &amp; Tech</Link>
+                    <Link to="/custom-mobile-web-app-development" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"><ArrowRight className="h-3 w-3 shrink-0" /> IT, Product &amp; Engineering</Link>
+                  </div>
+                </TiltCard>
+              </StaggerChild>
+
+              <StaggerChild>
+                <TiltCard tiltAmount={8} className="p-8 rounded-3xl border border-border bg-surface/50 hover:border-primary/40 transition-all h-full">
+                  <div className="h-12 w-12 rounded-xl bg-gradient-primary text-primary-foreground flex items-center justify-center mb-6 shadow-glow-sm">
+                    <Play className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-6">Specialized Solutions</h3>
+                  <div className="space-y-3">
+                    <Link to="/e-learning-content-development" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"><ArrowRight className="h-3 w-3 shrink-0" /> E Learning &amp; Animation</Link>
+                  </div>
+                </TiltCard>
+              </StaggerChild>
+            </StaggerChildren>
+          </div>
+        </section>
+
         {/* DIGITAL INFRASTRUCTURE & SCALE */}
         <section className="section-isolate py-32 bg-background">
           <div className="mx-auto max-w-7xl px-6 lg:px-10">
@@ -403,7 +485,10 @@ function HomePage() {
                 Growth Without Infrastructure <span className="text-gradient-primary">Eventually Breaks</span>
               </h2>
               <p className="mt-6 text-xl text-muted-foreground">
-                Marketing can create demand. But systems determine whether businesses can scale efficiently. Built for businesses ready to scale beyond marketing.
+                Marketing can create demand. But systems determine whether businesses can scale efficiently. That is where websites, automation, engineering, analytics, and infrastructure become critical.
+              </p>
+              <p className="mt-4 text-lg font-medium text-foreground">
+                Built for businesses ready to scale beyond marketing.
               </p>
             </FadeInSection>
 
@@ -436,6 +521,114 @@ function HomePage() {
           </div>
         </section>
 
+        {/* HOW EVERYTHING CONNECTS */}
+        <section className="section-isolate py-32 bg-surface border-y border-border">
+          <div className="mx-auto max-w-7xl px-6 lg:px-10">
+            <FadeInSection className="text-center max-w-3xl mx-auto mb-20">
+              <h2 className="text-4xl sm:text-5xl font-bold">
+                Every Growth System <span className="text-gradient-primary">Impacts Another</span>
+              </h2>
+            </FadeInSection>
+
+            <div className="max-w-3xl mx-auto space-y-0">
+              {[
+                { system: "SEO", impact: "improves visibility" },
+                { system: "Content", impact: "improves engagement" },
+                { system: "Social Media", impact: "builds trust" },
+                { system: "Paid Campaigns", impact: "accelerate acquisition" },
+                { system: "Landing Pages", impact: "improve conversion" },
+                { system: "CRM Systems", impact: "improve retention" },
+                { system: "Automation", impact: "increases efficiency" },
+                { system: "Analytics", impact: "improve optimization" },
+                { system: "Engineering", impact: "supports scalability" },
+              ].map((item, i) => (
+                <FadeInSection key={i} className="flex items-center gap-4 py-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-primary text-primary-foreground font-bold text-sm shadow-glow-sm">
+                    {i + 1}
+                  </div>
+                  <div className="flex-grow">
+                    <span className="font-bold text-lg">{item.system}</span>{" "}
+                    <span className="text-muted-foreground text-lg">{item.impact}</span>
+                  </div>
+                  {i < 8 && (
+                    <ArrowRight className="h-5 w-5 text-primary shrink-0" />
+                  )}
+                </FadeInSection>
+              ))}
+            </div>
+
+            <FadeInSection className="mt-16 text-center">
+              <p className="text-xl font-semibold text-foreground max-w-2xl mx-auto">
+                Businesses grow faster when every digital system works together instead of separately.
+              </p>
+            </FadeInSection>
+          </div>
+        </section>
+
+        {/* CASE STUDY PREVIEW */}
+        <section className="section-isolate py-32 bg-background">
+          <div className="mx-auto max-w-7xl px-6 lg:px-10">
+            <FadeInSection className="text-center max-w-3xl mx-auto mb-20">
+              <h2 className="text-4xl sm:text-5xl font-bold">
+                Growth Strategies Backed by <span className="text-gradient-primary">Real Execution</span>
+              </h2>
+              <p className="mt-6 text-xl text-muted-foreground">
+                We combine strategy, execution, optimization, automation, and infrastructure thinking across industries, growth stages, and digital ecosystems.
+              </p>
+            </FadeInSection>
+
+            <StaggerChildren className="grid md:grid-cols-3 gap-8" staggerDelay={0.15}>
+              {[
+                {
+                  challenge: "Low organic visibility despite high ad spend",
+                  strategy: "SEO ecosystem + content authority framework",
+                  ecosystem: "SEO, Content, Web Experience",
+                  outcome: "3x organic traffic growth in 6 months",
+                },
+                {
+                  challenge: "Inconsistent brand perception across channels",
+                  strategy: "Unified branding system + social media integration",
+                  ecosystem: "Branding, Social Media, Content Production",
+                  outcome: "40% improvement in brand engagement metrics",
+                },
+                {
+                  challenge: "Manual workflows limiting growth capacity",
+                  strategy: "CRM automation + lead nurture pipeline",
+                  ecosystem: "CRM, Automation, Performance Marketing",
+                  outcome: "60% reduction in manual follow-up time",
+                },
+              ].map((study, i) => (
+                <StaggerChild key={i}>
+                  <TiltCard tiltAmount={6} className="p-8 rounded-3xl border border-border bg-surface/50 hover:border-primary/40 transition-all h-full flex flex-col gap-6">
+                    <div>
+                      <p className="text-xs font-mono uppercase tracking-widest text-primary mb-2">Challenge</p>
+                      <p className="font-semibold text-lg">{study.challenge}</p>
+                    </div>
+                    <div>
+                      <p className="text-xs font-mono uppercase tracking-widest text-primary mb-2">Strategy</p>
+                      <p className="text-muted-foreground">{study.strategy}</p>
+                    </div>
+                    <div>
+                      <p className="text-xs font-mono uppercase tracking-widest text-primary mb-2">Ecosystem</p>
+                      <p className="text-muted-foreground">{study.ecosystem}</p>
+                    </div>
+                    <div className="mt-auto pt-4 border-t border-border">
+                      <p className="text-xs font-mono uppercase tracking-widest text-primary mb-2">Outcome</p>
+                      <p className="font-bold text-lg text-gradient-primary">{study.outcome}</p>
+                    </div>
+                  </TiltCard>
+                </StaggerChild>
+              ))}
+            </StaggerChildren>
+
+            <div className="mt-16 text-center">
+              <Link to="/work" className="inline-flex items-center gap-2 text-primary font-bold text-lg hover:gap-3 transition-all">
+                Explore Case Studies <ArrowUpRight className="h-5 w-5" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* APPROACH LAYER */}
         <section className="section-isolate py-32 bg-surface border-y border-border">
           <div className="mx-auto max-w-7xl px-6 lg:px-10">
@@ -456,6 +649,12 @@ function HomePage() {
                 </StaggerChild>
               ))}
             </StaggerChildren>
+
+            <div className="mt-16 text-center">
+              <Link to="/services" className="inline-flex items-center gap-2 text-primary font-bold text-lg hover:gap-3 transition-all">
+                Explore Our Approach <ArrowUpRight className="h-5 w-5" />
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -477,9 +676,15 @@ function HomePage() {
                     <li className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> Content is created without a distribution strategy.</li>
                     <li className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> Automation is introduced too late.</li>
                   </ul>
+                  <p className="text-foreground font-semibold">We built Korvion Media to solve growth from an ecosystem perspective.</p>
                   <p>By combining branding, SEO, content, performance marketing, automation, web experiences, and product infrastructure, we help businesses create scalable digital systems designed for long-term growth.</p>
                 </div>
               </motion.div>
+              <div className="mt-8">
+                <Link to="/about" className="inline-flex items-center gap-2 text-primary font-bold text-lg hover:gap-3 transition-all">
+                  Learn More About Korvion Media <ArrowUpRight className="h-5 w-5" />
+                </Link>
+              </div>
             </FadeInSection>
             <FadeInSection direction="right">
               <div className="space-y-8">
@@ -504,7 +709,7 @@ function HomePage() {
         {/* FINAL CTA SECTION */}
         <CTASection 
           title={<>Build a Smarter Digital <span className="text-gradient-primary">Growth Ecosystem</span></>}
-          subtitle="The businesses growing fastest today are not relying on disconnected marketing activities. They are building systems where visibility, branding, conversion, automation, customer experience, and technology work together to support long-term growth."
+          subtitle="The businesses growing fastest today are not relying on disconnected marketing activities. They are building systems where visibility, branding, conversion, automation, customer experience, and technology work together to support long-term growth. Build yours with Korvion Media."
           primaryBtn="Get Free Growth Consultation"
           secondaryBtn="Start Your Growth Journey"
         />
