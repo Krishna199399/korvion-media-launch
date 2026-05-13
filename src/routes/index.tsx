@@ -17,6 +17,7 @@ import { RippleButton } from "@/components/animations/RippleButton";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useRef } from "react";
 import heroOrb from "@/assets/hero-orb.jpg";
+import heroOrbPng from "@/assets/hero-orb.jpg.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -229,6 +230,15 @@ function HomePage() {
           >
             <div className="absolute inset-20 border border-primary/20 rounded-full" />
             <div className="absolute inset-40 border border-primary/30 rounded-full border-dashed" />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] pointer-events-none z-0 opacity-40"
+          >
+            <img src={heroOrbPng} alt="Hero Orb" className="w-full h-full object-contain mix-blend-screen" />
           </motion.div>
 
           <div className="relative mx-auto max-w-7xl px-6 lg:px-10 z-10">
