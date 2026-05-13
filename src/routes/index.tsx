@@ -16,7 +16,6 @@ import { StaggerChildren, StaggerChild } from "@/components/animations/StaggerCh
 import { RippleButton } from "@/components/animations/RippleButton";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useRef } from "react";
-import heroOrb from "@/assets/hero-orb.jpg";
 import heroOrbPng from "@/assets/hero-orb.jpg.png";
 
 export const Route = createFileRoute("/")({
@@ -31,11 +30,11 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Best Digital Marketing Company for Business Growth | Korvion Media" },
       { property: "og:description", content: "Korvion Media is a digital growth company helping businesses scale through SEO, branding, performance marketing, automation, product engineering, and connected digital systems." },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: heroOrb },
+      { property: "og:image", content: heroOrbPng },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Best Digital Marketing Company for Business Growth | Korvion Media" },
       { name: "twitter:description", content: "Korvion Media is a digital growth company helping businesses scale through SEO, branding, performance marketing, automation, product engineering, and connected digital systems." },
-      { name: "twitter:image", content: heroOrb },
+      { name: "twitter:image", content: heroOrbPng },
     ],
   }),
   component: HomePage,
