@@ -18,6 +18,8 @@ import { Route as SeoServicesRouteImport } from './routes/seo-services'
 import { Route as ProcessRouteImport } from './routes/process'
 import { Route as PerformanceMarketingServicesRouteImport } from './routes/performance-marketing-services'
 import { Route as ELearningContentDevelopmentRouteImport } from './routes/e-learning-content-development'
+import { Route as DigitalMarketingCompanyInBelagaviRouteImport } from './routes/digital-marketing-company-in-belagavi'
+import { Route as DigitalMarketingCompanyInBangaloreRouteImport } from './routes/digital-marketing-company-in-bangalore'
 import { Route as CustomMobileWebAppDevelopmentRouteImport } from './routes/custom-mobile-web-app-development'
 import { Route as CrmSetupMarketingAutomationServicesRouteImport } from './routes/crm-setup-marketing-automation-services'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -76,6 +78,18 @@ const ELearningContentDevelopmentRoute =
     path: '/e-learning-content-development',
     getParentRoute: () => rootRouteImport,
   } as any)
+const DigitalMarketingCompanyInBelagaviRoute =
+  DigitalMarketingCompanyInBelagaviRouteImport.update({
+    id: '/digital-marketing-company-in-belagavi',
+    path: '/digital-marketing-company-in-belagavi',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DigitalMarketingCompanyInBangaloreRoute =
+  DigitalMarketingCompanyInBangaloreRouteImport.update({
+    id: '/digital-marketing-company-in-bangalore',
+    path: '/digital-marketing-company-in-bangalore',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const CustomMobileWebAppDevelopmentRoute =
   CustomMobileWebAppDevelopmentRouteImport.update({
     id: '/custom-mobile-web-app-development',
@@ -129,6 +143,8 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/crm-setup-marketing-automation-services': typeof CrmSetupMarketingAutomationServicesRoute
   '/custom-mobile-web-app-development': typeof CustomMobileWebAppDevelopmentRoute
+  '/digital-marketing-company-in-bangalore': typeof DigitalMarketingCompanyInBangaloreRoute
+  '/digital-marketing-company-in-belagavi': typeof DigitalMarketingCompanyInBelagaviRoute
   '/e-learning-content-development': typeof ELearningContentDevelopmentRoute
   '/performance-marketing-services': typeof PerformanceMarketingServicesRoute
   '/process': typeof ProcessRoute
@@ -148,6 +164,8 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/crm-setup-marketing-automation-services': typeof CrmSetupMarketingAutomationServicesRoute
   '/custom-mobile-web-app-development': typeof CustomMobileWebAppDevelopmentRoute
+  '/digital-marketing-company-in-bangalore': typeof DigitalMarketingCompanyInBangaloreRoute
+  '/digital-marketing-company-in-belagavi': typeof DigitalMarketingCompanyInBelagaviRoute
   '/e-learning-content-development': typeof ELearningContentDevelopmentRoute
   '/performance-marketing-services': typeof PerformanceMarketingServicesRoute
   '/process': typeof ProcessRoute
@@ -168,6 +186,8 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/crm-setup-marketing-automation-services': typeof CrmSetupMarketingAutomationServicesRoute
   '/custom-mobile-web-app-development': typeof CustomMobileWebAppDevelopmentRoute
+  '/digital-marketing-company-in-bangalore': typeof DigitalMarketingCompanyInBangaloreRoute
+  '/digital-marketing-company-in-belagavi': typeof DigitalMarketingCompanyInBelagaviRoute
   '/e-learning-content-development': typeof ELearningContentDevelopmentRoute
   '/performance-marketing-services': typeof PerformanceMarketingServicesRoute
   '/process': typeof ProcessRoute
@@ -189,6 +209,8 @@ export interface FileRouteTypes {
     | '/contact'
     | '/crm-setup-marketing-automation-services'
     | '/custom-mobile-web-app-development'
+    | '/digital-marketing-company-in-bangalore'
+    | '/digital-marketing-company-in-belagavi'
     | '/e-learning-content-development'
     | '/performance-marketing-services'
     | '/process'
@@ -208,6 +230,8 @@ export interface FileRouteTypes {
     | '/contact'
     | '/crm-setup-marketing-automation-services'
     | '/custom-mobile-web-app-development'
+    | '/digital-marketing-company-in-bangalore'
+    | '/digital-marketing-company-in-belagavi'
     | '/e-learning-content-development'
     | '/performance-marketing-services'
     | '/process'
@@ -227,6 +251,8 @@ export interface FileRouteTypes {
     | '/contact'
     | '/crm-setup-marketing-automation-services'
     | '/custom-mobile-web-app-development'
+    | '/digital-marketing-company-in-bangalore'
+    | '/digital-marketing-company-in-belagavi'
     | '/e-learning-content-development'
     | '/performance-marketing-services'
     | '/process'
@@ -247,6 +273,8 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   CrmSetupMarketingAutomationServicesRoute: typeof CrmSetupMarketingAutomationServicesRoute
   CustomMobileWebAppDevelopmentRoute: typeof CustomMobileWebAppDevelopmentRoute
+  DigitalMarketingCompanyInBangaloreRoute: typeof DigitalMarketingCompanyInBangaloreRoute
+  DigitalMarketingCompanyInBelagaviRoute: typeof DigitalMarketingCompanyInBelagaviRoute
   ELearningContentDevelopmentRoute: typeof ELearningContentDevelopmentRoute
   PerformanceMarketingServicesRoute: typeof PerformanceMarketingServicesRoute
   ProcessRoute: typeof ProcessRoute
@@ -324,6 +352,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ELearningContentDevelopmentRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/digital-marketing-company-in-belagavi': {
+      id: '/digital-marketing-company-in-belagavi'
+      path: '/digital-marketing-company-in-belagavi'
+      fullPath: '/digital-marketing-company-in-belagavi'
+      preLoaderRoute: typeof DigitalMarketingCompanyInBelagaviRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digital-marketing-company-in-bangalore': {
+      id: '/digital-marketing-company-in-bangalore'
+      path: '/digital-marketing-company-in-bangalore'
+      fullPath: '/digital-marketing-company-in-bangalore'
+      preLoaderRoute: typeof DigitalMarketingCompanyInBangaloreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/custom-mobile-web-app-development': {
       id: '/custom-mobile-web-app-development'
       path: '/custom-mobile-web-app-development'
@@ -392,6 +434,10 @@ const rootRouteChildren: RootRouteChildren = {
   CrmSetupMarketingAutomationServicesRoute:
     CrmSetupMarketingAutomationServicesRoute,
   CustomMobileWebAppDevelopmentRoute: CustomMobileWebAppDevelopmentRoute,
+  DigitalMarketingCompanyInBangaloreRoute:
+    DigitalMarketingCompanyInBangaloreRoute,
+  DigitalMarketingCompanyInBelagaviRoute:
+    DigitalMarketingCompanyInBelagaviRoute,
   ELearningContentDevelopmentRoute: ELearningContentDevelopmentRoute,
   PerformanceMarketingServicesRoute: PerformanceMarketingServicesRoute,
   ProcessRoute: ProcessRoute,

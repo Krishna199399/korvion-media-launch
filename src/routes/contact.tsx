@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, ArrowUpRight, Check } from "lucide-react";
@@ -201,7 +201,23 @@ function ContactPage() {
                 <InfoCard icon={Phone} title="Direct" lines={["+91 9480156345", "Mon–Fri · 10am–7pm IST"]} />
               </StaggerChild>
               <StaggerChild>
-                <InfoCard icon={MapPin} title="Studios" lines={["Belgavi ·Karnataka", "Bengaluru ·Karnataka"]} />
+                <InfoCard icon={MapPin} title="Studios" lines={["Belgavi · Karnataka", "Bengaluru · Karnataka"]} />
+                <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2">
+                  <Link
+                    to="/digital-marketing-company-in-belagavi"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all"
+                  >
+                    View Belagavi page
+                    <ArrowUpRight className="h-4 w-4" />
+                  </Link>
+                  <Link
+                    to="/digital-marketing-company-in-bangalore"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all"
+                  >
+                    View Bangalore page
+                    <ArrowUpRight className="h-4 w-4" />
+                  </Link>
+                </div>
               </StaggerChild>
 
               <StaggerChild>

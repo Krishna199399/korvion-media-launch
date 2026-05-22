@@ -233,12 +233,16 @@ function HomePage() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] pointer-events-none z-0 opacity-40"
+            initial={{ opacity: 0, scale: 0.8, rotate: 0 }}
+            animate={{ opacity: 0.4, scale: 1, rotate: 360 }}
+            transition={{
+              opacity: { duration: 1.5, ease: "easeOut" },
+              scale: { duration: 1.5, ease: "easeOut" },
+              rotate: { duration: 50, repeat: Infinity, ease: "linear" }
+            }}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] pointer-events-none z-0"
           >
-            <img src={heroOrbPng} alt="Hero Orb" className="w-full h-full object-contain mix-blend-screen" />
+            <img src={heroOrbPng} alt="Hero Orb" className="w-full h-full object-contain mix-blend-multiply" />
           </motion.div>
 
           <div className="relative mx-auto max-w-7xl px-6 lg:px-10 z-10">

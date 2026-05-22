@@ -82,8 +82,22 @@ export function Footer() {
               <div>
                 <h4 className="text-sm font-semibold text-foreground mb-4">Studios</h4>
                 <ul className="space-y-3 text-sm text-muted-foreground">
-                  <li>Belgavi ·Karnataka</li>
-                  <li>Bengaluru ·Karnataka</li>
+                  <li>
+                    <Link
+                      to="/digital-marketing-company-in-belagavi"
+                      className="hover:text-primary transition-colors"
+                    >
+                      Belagavi · Karnataka
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/digital-marketing-company-in-bangalore"
+                      className="hover:text-primary transition-colors"
+                    >
+                      Bengaluru · Karnataka
+                    </Link>
+                  </li>
                 </ul>
               </div>
             </StaggerChild>
@@ -106,7 +120,18 @@ function FooterCol({
   links,
 }: {
   title: string;
-  links: { to: "/" | "/services" | "/work" | "/process" | "/careers" | "/contact"; label: string }[];
+  links: {
+    to:
+      | "/"
+      | "/services"
+      | "/work"
+      | "/process"
+      | "/careers"
+      | "/contact"
+      | "/digital-marketing-company-in-belagavi"
+      | "/digital-marketing-company-in-bangalore";
+    label: string;
+  }[];
 }) {
   return (
     <div>
