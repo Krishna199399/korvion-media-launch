@@ -59,52 +59,22 @@ export function CustomCursor() {
       el.addEventListener('mouseleave', handleMouseLeave);
     });
 
-    // Animation function for smooth movement
+    // Add these event handlers to the useEffect
+    document.addEventListener('mouseenter', handleMouseEnter);
+    document.addEventListener('mouseleave', handleMouseLeave);
+
+    // Add these animation loop and position calculations
     const animate = () => {
-      const lerp = (start: number, end: number, factor: number) => {
-        return start + (end - start) * factor;
-      };
-
-      // Update ring position (follows cursor)
-      ringPosition.current.x = lerp(
-        ringPosition.current.x,
-        mousePosition.current.x,
-        RING_SMOOTHNESS
-      );
-      ringPosition.current.y = lerp(
-        ringPosition.current.y,
-        mousePosition.current.y,
-        RING_SMOOTHNESS
-      );
-
-      // Dot follows cursor with offset (not the ring)
-      const dotOffset = 20;
-      const targetDotX = mousePosition.current.x + dotOffset;
-      const targetDotY = mousePosition.current.y;
-      
-      dotPosition.current.x = lerp(
-        dotPosition.current.x,
-        targetDotX,
-        DOT_SMOOTHNESS
-      );
-      dotPosition.current.y = lerp(
-        dotPosition.current.y,
-        targetDotY,
-        DOT_SMOOTHNESS
-      );
-
-      setRenderPos({
-        ring: { x: ringPosition.current.x, y: ringPosition.current.y },
-        dot: { x: dotPosition.current.x, y: dotPosition.current.y },
-      });
-
+      ringPosition.current.x += (mousePosition.current.x - ringPosition.current.x) * RING_SMOOTHNESS;
+      ringPosition.current.y += (mousePosition.current.y - ringPosition.current.y) * RING_SMOOTHNESS;
+      dotPosition.current.x += (ringPosition.current.x - dotPosition.current.x) * DOT_SMOOTHNESS;
+      dotPosition.current.y += (ringPosition.current.y - dotPosition.current.y) * DOT_SMOOTHNESS;
+      setRenderPos({ ring: ringPosition.current, dot: dotPosition.current });
       requestAnimationFrame(animate);
     };
+    animate();
 
-    // Start animation loop
-    const animationId = requestAnimationFrame(animate);
-
-    // Cleanup
+    // Add these cleanup handlers
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mousedown', handleMouseDown);
@@ -115,8 +85,17 @@ export function CustomCursor() {
         el.removeEventListener('mouseleave', handleMouseLeave);
       });
       
-      cancelAnimationFrame(animationId);
+      document.removeEventListener('mouseenter', handleMouseEnter);
+      document.removeEventListener('mouseleave', handleMouseLeave);
     };
+
+    // Add these state updates in the return JSX
+    <div className="custom-cursor">
+      <div className="cursor-ring" style={{ transform: `translate(${renderPos.ring.x}px, ${renderPos.ring.y}px) scale(${isHovering ? 1.5 : 1})` }} />
+      <div className="cursor-dot" style={{ transform: `translate(${renderPos.dot.x}px, ${renderPos.dot.y}px)` }}>
+        {isHovering && <span className="cursor-text">{cursorText}</span>}
+      </div>
+    </div>
   }, []);
 
   // Hide on mobile/touch devices

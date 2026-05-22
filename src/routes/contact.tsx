@@ -198,7 +198,7 @@ function ContactPage() {
                 <InfoCard icon={Mail} title="Email" lines={["korvionmedia@gmail.com"]} />
               </StaggerChild>
               <StaggerChild>
-                <InfoCard icon={Phone} title="Direct" lines={["+91 73536 48428", "Mon–Fri · 10am–7pm IST"]} />
+                <InfoCard icon={Phone} title="Direct" lines={["+91 9480156345", "Mon–Fri · 10am–7pm IST"]} />
               </StaggerChild>
               <StaggerChild>
                 <InfoCard icon={MapPin} title="Studios" lines={["Belgavi ·Karnataka", "Bengaluru ·Karnataka"]} />

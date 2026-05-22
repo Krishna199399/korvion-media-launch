@@ -17,6 +17,7 @@ import { RippleButton } from "@/components/animations/RippleButton";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useRef } from "react";
 import heroOrbPng from "@/assets/hero-orb.jpg.png";
+import MagicRings from '@/components/MagicRings';
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -142,7 +143,7 @@ const faqs = [
   },
   {
     q: "How do I get started?",
-    a: "You can call 1234567890 or schedule a consultation. The team at Korvion Media will understand your business goals and recommend the right digital growth strategy.",
+    a: "You can call +91 9480156345 or schedule a consultation. The team at Korvion Media will understand your business goals and recommend the right digital growth strategy.",
   },
 ];
 
@@ -759,3 +760,7 @@ function HomePage() {
     </SmoothScroll>
   );
 }
+
+<div style={{ position: 'absolute', top: 0, left: 0, zIndex: 0 }}>
+  <MagicRings color="#F97316" ringCount={6} speed={1} baseRadius={0.35} scaleRate={0.1} opacity={0.5} parallax={0.05} />
+</div>

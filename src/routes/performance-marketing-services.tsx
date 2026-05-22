@@ -154,7 +154,7 @@ const faqs = [
   {
     question: "How do I get started?",
     answer:
-      "You can get started by calling +91 73536 48428 or booking a consultation. The team at Korvion Media will analyze your current performance and build a tailored performance marketing strategy for your business.",
+      "You can get started by calling +91 9480156345 or booking a consultation. The team at Korvion Media will analyze your current performance and build a tailored performance marketing strategy for your business.",
   },
 ];
 
@@ -758,11 +758,11 @@ function PerformanceMarketingPage() {
                 <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
               <a
-                href="tel:+917353648428"
+                href="tel:+919480156345"
                 className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-8 py-4 text-lg font-semibold hover:border-primary hover:text-primary transition-all"
               >
                 <Phone className="h-5 w-5" />
-                Call +91 73536 48428
+                Call +91 9480156345
               </a>
             </div>
           </div>
