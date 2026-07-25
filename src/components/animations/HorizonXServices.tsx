@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect, useRef } from 'react';
-import { Link } from '@tanstack/react-router';
+import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { gsap } from '@/lib/gsap-config';
 import { services } from '@/lib/services-data';
@@ -126,7 +128,7 @@ export function HorizonXServices() {
           {/* Explore Link */}
           <div className="mt-8 text-center">
             <Link
-              to="/services"
+              href="/services"
               className="group inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
             >
               Explore all services

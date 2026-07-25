@@ -1,6 +1,7 @@
-import { useEffect, useRef } from 'react';
-import { gsap } from '@/lib/gsap-config';
-import { cn } from '@/lib/utils';
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
 
 interface CounterAnimationProps {
   value: string;
@@ -9,20 +10,19 @@ interface CounterAnimationProps {
 }
 
 /**
- * Animated counter component for stats
+ * Animated counter component for stats (100% SSR & hydration safe)
  */
 export function CounterAnimation({ value, duration = 2, className }: CounterAnimationProps) {
+  const [displayValue, setDisplayValue] = useState(value);
   const elementRef = useRef<HTMLSpanElement>(null);
   const hasAnimated = useRef(false);
 
   useEffect(() => {
-    const element = elementRef.current;
-    if (!element || hasAnimated.current) return;
+    if (typeof window === "undefined" || !elementRef.current || hasAnimated.current) return;
 
-    // Extract numeric value from string (e.g., "₹10Cr+" -> 10)
     const numericMatch = value.match(/[\d.]+/);
     if (!numericMatch) {
-      element.textContent = value;
+      setDisplayValue(value);
       return;
     }
 
@@ -30,31 +30,33 @@ export function CounterAnimation({ value, duration = 2, className }: CounterAnim
     const prefix = value.substring(0, value.indexOf(numericMatch[0]));
     const suffix = value.substring(value.indexOf(numericMatch[0]) + numericMatch[0].length);
 
-    const obj = { value: 0 };
+    let animationFrameId: number;
+    let startTime: number | null = null;
 
-    const animation = gsap.to(obj, {
-      value: targetValue,
-      duration,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: element,
-        start: 'top 85%',
-        once: true,
-        onEnter: () => {
-          hasAnimated.current = true;
-        },
-      },
-      onUpdate: () => {
-        const currentValue = obj.value.toFixed(value.includes('.') ? 1 : 0);
-        element.textContent = `${prefix}${currentValue}${suffix}`;
-      },
-    });
+    const step = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      const currentValue = (targetValue * easeOut).toFixed(value.includes(".") ? 1 : 0);
+      setDisplayValue(`${prefix}${currentValue}${suffix}`);
+
+      if (progress < 1) {
+        animationFrameId = requestAnimationFrame(step);
+      } else {
+        hasAnimated.current = true;
+      }
+    };
+
+    animationFrameId = requestAnimationFrame(step);
 
     return () => {
-      animation.scrollTrigger?.kill();
-      animation.kill();
+      cancelAnimationFrame(animationFrameId);
     };
   }, [value, duration]);
 
-  return <span ref={elementRef} className={cn(className)}>{value}</span>;
+  return (
+    <span ref={elementRef} className={cn(className)}>
+      {displayValue}
+    </span>
+  );
 }

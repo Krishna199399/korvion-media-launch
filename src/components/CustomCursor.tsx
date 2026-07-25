@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from 'react';
 
 /**
@@ -14,6 +16,7 @@ export function CustomCursor() {
     dot: { x: 0, y: 0 },
   });
   
+  const isHoveringRef = useRef(false);
   const [isHovering, setIsHovering] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
   const [cursorText, setCursorText] = useState('');
@@ -25,6 +28,14 @@ export function CustomCursor() {
     // Move cursor on mouse move
     const handleMouseMove = (e: MouseEvent) => {
       mousePosition.current = { x: e.clientX, y: e.clientY };
+      const target = e.target as HTMLElement | null;
+      const shouldHover = Boolean(
+        target && target.closest('a, button, input, textarea, select, [role="button"], [data-cursor-text], .cursor-hover')
+      );
+      if (isHoveringRef.current !== shouldHover) {
+        isHoveringRef.current = shouldHover;
+        setIsHovering(shouldHover);
+      }
     };
 
     // Handle mouse down
@@ -116,7 +127,7 @@ export function CustomCursor() {
   const dotSize = isClicking ? 6 : 8;
 
   return (
-    <div className="pointer-events-none fixed inset-0 z-50">
+    <div className="pointer-events-none fixed inset-0 z-[99999]">
       {/* Large outer ring */}
       <div
         className="absolute rounded-full border-2 border-foreground/30"

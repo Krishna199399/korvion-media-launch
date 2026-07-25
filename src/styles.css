@@ -1,5 +1,4 @@
-@import "tailwindcss" source(none);
-@source "../src";
+@import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -105,6 +104,17 @@
   /* Hide default cursor on interactive elements */
   a, button, input, textarea, select, [role="button"] {
     cursor: none;
+  }
+
+  /* Hide scrollbars globally while maintaining scroll functionality */
+  * {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  *::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
   }
 }
 

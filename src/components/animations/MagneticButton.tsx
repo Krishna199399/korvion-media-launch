@@ -1,3 +1,5 @@
+"use client";
+
 import { ReactNode } from 'react';
 import { useMagneticCursor } from '@/hooks/useMagneticCursor';
 import { cn } from '@/lib/utils';
@@ -17,13 +19,13 @@ export function MagneticButton({
   children,
   strength = 0.3,
   className,
-  as: Component = 'button',
+  as: Component = 'div',
   ...props
 }: MagneticButtonProps) {
   const ref = useMagneticCursor<HTMLElement>(strength);
 
   return (
-    <Component ref={ref} className={cn('cursor-pointer', className)} {...props}>
+    <Component ref={ref as any} className={cn('cursor-pointer', className)} {...props}>
       {children}
     </Component>
   );

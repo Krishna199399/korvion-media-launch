@@ -1,9 +1,13 @@
-import { Link } from "@tanstack/react-router";
+"use client";
+
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { MagneticButton } from "./animations/MagneticButton";
 import { RippleButton } from "./animations/RippleButton";
 import { FadeInSection } from "./animations/FadeInSection";
+
+import { useBookACall } from "@/context/BookACallContext";
 
 interface CTASectionProps {
   title?: React.ReactNode;
@@ -18,6 +22,8 @@ export function CTASection({
   primaryBtn,
   secondaryBtn,
 }: CTASectionProps = {}) {
+  const { openBookACall } = useBookACall();
+
   return (
     <section className="relative py-20 overflow-hidden">
       <div className="absolute inset-0 bg-hero-glow" />
@@ -44,20 +50,23 @@ export function CTASection({
               </p>
               <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <MagneticButton as="div" strength={0.2}>
-                  <RippleButton className="group inline-flex items-center gap-2 rounded-full bg-gradient-primary px-7 py-4 text-base font-semibold text-primary-foreground shadow-glow hover:shadow-glow transition-all">
-                    <Link to="/contact" className="flex items-center gap-2">
-                      {primaryBtn ?? "Book a Free Strategy Call"}
-                      <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </Link>
+                  <RippleButton
+                    onClick={openBookACall}
+                    className="group inline-flex items-center gap-2 rounded-full bg-gradient-primary px-7 py-4 text-base font-semibold text-primary-foreground shadow-glow hover:shadow-glow transition-all cursor-pointer"
+                  >
+                    {primaryBtn ?? "Book a Free Strategy Call"}
+                    <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </RippleButton>
                 </MagneticButton>
-                <MagneticButton as="div" strength={0.15}>
-                  <RippleButton className="inline-flex items-center gap-2 rounded-full border border-border px-7 py-4 text-base font-semibold text-foreground hover:border-primary hover:text-primary transition-all">
-                    <Link to="/work" className="flex items-center gap-2">
-                      {secondaryBtn ?? "See proof of work"}
-                    </Link>
-                  </RippleButton>
-                </MagneticButton>
+                {secondaryBtn && (
+                  <MagneticButton as="div" strength={0.15}>
+                    <RippleButton className="inline-flex items-center gap-2 rounded-full border border-border px-7 py-4 text-base font-semibold text-foreground hover:border-primary hover:text-primary transition-all">
+                      <Link href="/work" className="flex items-center gap-2">
+                        {secondaryBtn}
+                      </Link>
+                    </RippleButton>
+                  </MagneticButton>
+                )}
               </div>
               <p className="mt-6 text-xs text-muted-foreground font-mono">
                 Limited slots · Reply within 24h · NDA-friendly

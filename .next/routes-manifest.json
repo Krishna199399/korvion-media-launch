@@ -1,0 +1,170 @@
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/services/[serviceSlug]",
+      "regex": "^/services/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPserviceSlug": "nxtPserviceSlug"
+      },
+      "namedRegex": "^/services/(?<nxtPserviceSlug>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/advanced-seo-performance-services",
+      "regex": "^/advanced\\-seo\\-performance\\-services(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/advanced\\-seo\\-performance\\-services(?:/)?$"
+    },
+    {
+      "page": "/branding-agency-creative-services",
+      "regex": "^/branding\\-agency\\-creative\\-services(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/branding\\-agency\\-creative\\-services(?:/)?$"
+    },
+    {
+      "page": "/careers",
+      "regex": "^/careers(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/careers(?:/)?$"
+    },
+    {
+      "page": "/contact",
+      "regex": "^/contact(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/contact(?:/)?$"
+    },
+    {
+      "page": "/crm-setup-marketing-automation-services",
+      "regex": "^/crm\\-setup\\-marketing\\-automation\\-services(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/crm\\-setup\\-marketing\\-automation\\-services(?:/)?$"
+    },
+    {
+      "page": "/custom-mobile-web-app-development",
+      "regex": "^/custom\\-mobile\\-web\\-app\\-development(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/custom\\-mobile\\-web\\-app\\-development(?:/)?$"
+    },
+    {
+      "page": "/digital-marketing-company-in-bangalore",
+      "regex": "^/digital\\-marketing\\-company\\-in\\-bangalore(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/digital\\-marketing\\-company\\-in\\-bangalore(?:/)?$"
+    },
+    {
+      "page": "/digital-marketing-company-in-belagavi",
+      "regex": "^/digital\\-marketing\\-company\\-in\\-belagavi(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/digital\\-marketing\\-company\\-in\\-belagavi(?:/)?$"
+    },
+    {
+      "page": "/e-learning-content-development",
+      "regex": "^/e\\-learning\\-content\\-development(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/e\\-learning\\-content\\-development(?:/)?$"
+    },
+    {
+      "page": "/locations",
+      "regex": "^/locations(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/locations(?:/)?$"
+    },
+    {
+      "page": "/performance-marketing-services",
+      "regex": "^/performance\\-marketing\\-services(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/performance\\-marketing\\-services(?:/)?$"
+    },
+    {
+      "page": "/process",
+      "regex": "^/process(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/process(?:/)?$"
+    },
+    {
+      "page": "/seo-services",
+      "regex": "^/seo\\-services(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/seo\\-services(?:/)?$"
+    },
+    {
+      "page": "/services",
+      "regex": "^/services(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services(?:/)?$"
+    },
+    {
+      "page": "/social-media-marketing-services",
+      "regex": "^/social\\-media\\-marketing\\-services(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/social\\-media\\-marketing\\-services(?:/)?$"
+    },
+    {
+      "page": "/video-production-photography-services",
+      "regex": "^/video\\-production\\-photography\\-services(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/video\\-production\\-photography\\-services(?:/)?$"
+    },
+    {
+      "page": "/website-design-services",
+      "regex": "^/website\\-design\\-services(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/website\\-design\\-services(?:/)?$"
+    },
+    {
+      "page": "/work",
+      "regex": "^/work(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/work(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments"
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

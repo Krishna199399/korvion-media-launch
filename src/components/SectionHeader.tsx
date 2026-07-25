@@ -4,13 +4,16 @@ export function SectionHeader({
   eyebrow,
   title,
   subtitle,
+  description,
   align = "left",
 }: {
   eyebrow?: string;
   title: React.ReactNode;
   subtitle?: string;
+  description?: string;
   align?: "left" | "center";
 }) {
+  const subText = subtitle || description;
   return (
     <div className={`max-w-3xl ${align === "center" ? "mx-auto text-center" : ""}`}>
       {eyebrow && (
@@ -34,15 +37,15 @@ export function SectionHeader({
       >
         {title}
       </motion.h2>
-      {subtitle && (
+      {subText && (
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mt-5 text-lg text-muted-foreground leading-relaxed"
+          className="mt-5 text-lg sm:text-xl text-muted-foreground leading-relaxed"
         >
-          {subtitle}
+          {subText}
         </motion.p>
       )}
     </div>

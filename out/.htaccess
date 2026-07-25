@@ -1,0 +1,16 @@
+# Enable Rewrite Engine for Hostinger
+RewriteEngine On
+RewriteBase /
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# Clean URL handling (e.g. /seo-services -> /seo-services.html)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L,QSA]
+
+# Fallback for dynamic routes / 404
+ErrorDocument 404 /404.html

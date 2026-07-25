@@ -1,0 +1,23 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/branding-agency-creative-services/page": "/branding-agency-creative-services",
+  "/advanced-seo-performance-services/page": "/advanced-seo-performance-services",
+  "/e-learning-content-development/page": "/e-learning-content-development",
+  "/digital-marketing-company-in-belagavi/page": "/digital-marketing-company-in-belagavi",
+  "/contact/page": "/contact",
+  "/custom-mobile-web-app-development/page": "/custom-mobile-web-app-development",
+  "/digital-marketing-company-in-bangalore/page": "/digital-marketing-company-in-bangalore",
+  "/careers/page": "/careers",
+  "/process/page": "/process",
+  "/page": "/",
+  "/crm-setup-marketing-automation-services/page": "/crm-setup-marketing-automation-services",
+  "/social-media-marketing-services/page": "/social-media-marketing-services",
+  "/locations/page": "/locations",
+  "/video-production-photography-services/page": "/video-production-photography-services",
+  "/performance-marketing-services/page": "/performance-marketing-services",
+  "/services/[serviceSlug]/page": "/services/[serviceSlug]",
+  "/services/page": "/services",
+  "/website-design-services/page": "/website-design-services",
+  "/work/page": "/work",
+  "/seo-services/page": "/seo-services"
+}

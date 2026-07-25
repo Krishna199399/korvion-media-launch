@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, ReactNode } from 'react';
 import { useSmoothScroll } from '@/hooks/useSmoothScroll';
 

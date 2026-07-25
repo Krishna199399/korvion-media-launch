@@ -30,8 +30,8 @@ export function InteractiveFlow3D({
         
         {nodes.map((node, i) => {
           const isCenter = i === Math.floor(nodes.length / 2);
-          const zOffset = isCenter ? 100 : Math.random() * 60 - 30;
-          const xOffset = isCenter ? 0 : (i % 2 === 0 ? 1 : -1) * (Math.random() * 150 + 50);
+          const zOffset = isCenter ? 100 : ((i * 17) % 60) - 30;
+          const xOffset = isCenter ? 0 : (i % 2 === 0 ? 1 : -1) * (((i * 37) % 100) + 50);
           
           return (
             <motion.div

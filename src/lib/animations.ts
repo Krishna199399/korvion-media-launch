@@ -69,7 +69,7 @@ export const animations = {
   },
 
   // Parallax effect
-  parallax: (element: gsap.TweenTarget, speed = 0.5, options = {}) => {
+  parallax: (element: any, speed = 0.5, options = {}) => {
     return gsap.to(element, {
       y: () => window.innerHeight * speed,
       ease: 'none',
@@ -133,7 +133,7 @@ export const animations = {
   },
 
   // Scroll-triggered reveal
-  scrollReveal: (element: gsap.TweenTarget, options = {}) => {
+  scrollReveal: (element: any, options = {}) => {
     return gsap.from(element, {
       opacity: 0,
       y: 60,
@@ -150,7 +150,7 @@ export const animations = {
   },
 
   // Pin section while scrolling
-  pinSection: (element: gsap.TweenTarget, options = {}) => {
+  pinSection: (element: any, options = {}) => {
     return gsap.to(element, {
       scrollTrigger: {
         trigger: element,
