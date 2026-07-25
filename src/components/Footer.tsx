@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Instagram, Linkedin, Twitter, Youtube, Mail } from "lucide-react";
+import { Instagram, Linkedin, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import { FadeInSection } from "./animations/FadeInSection";
 import { StaggerChildren, StaggerChild } from "./animations/StaggerChildren";
@@ -46,10 +46,16 @@ export function Footer() {
             </a>
 
             <div className="mt-5 flex items-center gap-3">
-              {[Instagram, Linkedin, Twitter, Youtube].map((Icon, i) => (
+              {[
+                { icon: Instagram, href: "https://www.instagram.com/korvionmedia/", label: "Instagram" },
+                { icon: Linkedin, href: "https://in.linkedin.com/company/korvion-media", label: "LinkedIn" },
+              ].map(({ icon: Icon, href, label }) => (
                 <motion.a
-                  key={i}
-                  href="#"
+                  key={label}
+                  href={href}
+                  target={href !== "#" ? "_blank" : undefined}
+                  rel={href !== "#" ? "noopener noreferrer" : undefined}
+                  aria-label={label}
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}

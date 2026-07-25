@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export:hostinger": "node scripts/build-hostinger.js",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write ."
