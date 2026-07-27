@@ -14,11 +14,12 @@ type NavLink = { to: string; label: string; menuType?: "services" | "locations" 
 
 const links: NavLink[] = [
   { to: "/", label: "Home" },
-  { to: "/services", label: "Services", menuType: "services" },
-  { to: "/locations", label: "Locations", menuType: "locations" },
-  { to: "/work", label: "Case Studies" },
-  { to: "/process", label: "Process" },
-  { to: "/contact", label: "Contact" },
+  { to: "/about-us/", label: "About Us" },
+  { to: "/services/", label: "Services", menuType: "services" },
+  { to: "/locations/", label: "Locations", menuType: "locations" },
+  { to: "/work/", label: "Case Studies" },
+  { to: "/process/", label: "Process" },
+  { to: "/contact/", label: "Contact" },
 ];
 
 const locationItems = [
@@ -27,14 +28,14 @@ const locationItems = [
     city: "Bangalore Studio",
     title: "Digital Marketing Company in Bangalore",
     tagline: "Startups, SaaS platforms, D2C brands & enterprise teams across Bengaluru.",
-    href: "/digital-marketing-company-in-bangalore",
+    href: "/digital-marketing-company-in-bangalore/",
   },
   {
     icon: Store,
     city: "Belagavi Studio",
     title: "Digital Marketing Company in Belagavi",
     tagline: "Local businesses, institutions, healthcare & manufacturing across Belagavi & Belgaum.",
-    href: "/digital-marketing-company-in-belagavi",
+    href: "/digital-marketing-company-in-belagavi/",
   },
 ];
 
@@ -47,8 +48,8 @@ export function Nav() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileLocationsOpen, setMobileLocationsOpen] = useState(false);
 
-  const servicesCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const locationsCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const servicesTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const locationsTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -58,37 +59,35 @@ export function Nav() {
   }, []);
 
   const openServicesMenu = () => {
-    if (servicesCloseTimer.current) clearTimeout(servicesCloseTimer.current);
+    if (servicesTimerRef.current) clearTimeout(servicesTimerRef.current);
     setServicesOpen(true);
     setLocationsOpen(false);
   };
   const scheduleServicesClose = () => {
-    if (servicesCloseTimer.current) clearTimeout(servicesCloseTimer.current);
-    servicesCloseTimer.current = setTimeout(() => setServicesOpen(false), 120);
+    servicesTimerRef.current = setTimeout(() => setServicesOpen(false), 200);
   };
 
   const openLocationsMenu = () => {
-    if (locationsCloseTimer.current) clearTimeout(locationsCloseTimer.current);
+    if (locationsTimerRef.current) clearTimeout(locationsTimerRef.current);
     setLocationsOpen(true);
     setServicesOpen(false);
   };
   const scheduleLocationsClose = () => {
-    if (locationsCloseTimer.current) clearTimeout(locationsCloseTimer.current);
-    locationsCloseTimer.current = setTimeout(() => setLocationsOpen(false), 120);
+    locationsTimerRef.current = setTimeout(() => setLocationsOpen(false), 200);
   };
 
   const getServiceLink = (slug: string) => {
-    if (slug === "social-media-marketing") return "/social-media-marketing-services";
-    if (slug === "branding-creative") return "/branding-agency-creative-services";
-    if (slug === "content-production") return "/video-production-photography-services";
-    if (slug === "performance-marketing") return "/performance-marketing-services";
-    if (slug === "web-digital-experience") return "/website-design-services";
-    if (slug === "crm-automation-tech") return "/crm-setup-marketing-automation-services";
-    if (slug === "e-learning-animation") return "/e-learning-content-development";
-    if (slug === "it-product-engineering") return "/custom-mobile-web-app-development";
-    if (slug === "advanced-seo-performance") return "/seo-services";
-    if (slug === "advanced-seo-cro") return "/advanced-seo-performance-services";
-    return `/services/${slug}`;
+    if (slug === "social-media-marketing") return "/social-media-marketing-services/";
+    if (slug === "branding-creative") return "/branding-agency-creative-services/";
+    if (slug === "content-production") return "/video-production-photography-services/";
+    if (slug === "performance-marketing") return "/performance-marketing-services/";
+    if (slug === "web-digital-experience") return "/website-design-services/";
+    if (slug === "crm-automation-tech") return "/crm-setup-marketing-automation-services/";
+    if (slug === "e-learning-animation") return "/e-learning-content-development/";
+    if (slug === "it-product-engineering") return "/custom-mobile-web-app-development/";
+    if (slug === "advanced-seo-performance") return "/best-seo-services/";
+    if (slug === "advanced-seo-cro") return "/advanced-seo-performance-services/";
+    return `/services/${slug}/`;
   };
 
   return (

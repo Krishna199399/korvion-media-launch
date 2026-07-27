@@ -1,0 +1,268 @@
+# ==========================================================
+# robots.txt
+# Website: https://www.korvionmedia.com
+# Company: Korvion Media
+# Last Updated: 2026
+# ==========================================================
+
+# ----------------------------------------------------------
+# XML Sitemap
+# ----------------------------------------------------------
+Sitemap: https://www.korvionmedia.com/sitemap.xml
+
+# ==========================================================
+# Allow Major Search Engines
+# ==========================================================
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+# ==========================================================
+# AI Search & LLM Crawlers
+# ==========================================================
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# ==========================================================
+# Default Rules
+# ==========================================================
+
+User-agent: *
+Allow: /
+
+# ----------------------------------------------------------
+# Block Internal / Private Paths
+# ----------------------------------------------------------
+
+Disallow: /admin/
+Disallow: /api/
+Disallow: /dashboard/
+Disallow: /login/
+Disallow: /private/
+Disallow: /draft/
+Disallow: /preview/
+Disallow: /search/
+Disallow: /beta/
+Disallow: /tmp/
+Disallow: /cgi-bin/
+
+# ----------------------------------------------------------
+# Allow Static Assets
+# ----------------------------------------------------------
+
+Allow: /_next/static/
+Allow: /_next/image/
+Allow: /images/
+Allow: /uploads/
+
+# ----------------------------------------------------------
+# Crawl Delay
+# ----------------------------------------------------------
+
+Crawl-delay: 5
+
+# ==========================================================
+# Block Unwanted / Legacy Crawlers
+# ==========================================================
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: OmniExplorer_Bot
+Disallow: /
+
+User-agent: Python-urllib
+Disallow: /
+
+User-agent: Wget
+Disallow: /
+
+User-agent: EmailCollector
+Disallow: /
+
+User-agent: EmailSiphon
+Disallow: /
+
+User-agent: EmailWolf
+Disallow: /
+
+User-agent: ExtractorPro
+Disallow: /
+
+User-agent: HTTrack
+Disallow: /
+
+User-agent: WebCopier
+Disallow: /
+
+User-agent: WebStripper
+Disallow: /
+
+User-agent: SiteSnagger
+Disallow: /
+
+User-agent: Offline Explorer
+Disallow: /
+
+User-agent: WebZIP
+Disallow: /
+
+User-agent: Teleport
+Disallow: /
+
+User-agent: TeleportPro
+Disallow: /
+
+User-agent: CherryPicker
+Disallow: /
+
+User-agent: CopyRightCheck
+Disallow: /
+
+User-agent: LinkWalker
+Disallow: /
+
+User-agent: LinkextractorPro
+Disallow: /
+
+User-agent: BotALot
+Disallow: /
+
+User-agent: Foobot
+Disallow: /
+
+User-agent: SpankBot
+Disallow: /
+
+User-agent: BuiltBotTough
+Disallow: /
+
+User-agent: BackDoorBot
+Disallow: /
+
+User-agent: Nutch
+Disallow: /
+
+User-agent: larbin
+Disallow: /
+
+User-agent: Alexibot
+Disallow: /
+
+User-agent: LexiBot
+Disallow: /
+
+User-agent: Openbot
+Disallow: /
+
+User-agent: Cosmos
+Disallow: /
+
+User-agent: NetAnts
+Disallow: /
+
+User-agent: ProWebWalker
+Disallow: /
+
+User-agent: CheeseBot
+Disallow: /
+
+User-agent: Harvest
+Disallow: /
+
+User-agent: Flaming AttackBot
+Disallow: /
+
+User-agent: EroCrawler
+Disallow: /
+
+User-agent: Zeus
+Disallow: /
+
+User-agent: RepoMonkey
+Disallow: /
+
+User-agent: Aqua_Products
+Disallow: /
+
+User-agent: Oracle Ultra Search
+Disallow: /
+
+User-agent: Gaisbot
+Disallow: /
+
+User-agent: searchpreview
+Disallow: /

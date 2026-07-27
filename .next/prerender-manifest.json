@@ -1,6 +1,35 @@
 {
   "version": 4,
   "routes": {
+    "/sitemap.xml": {
+      "initialHeaders": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "application/xml",
+        "x-next-cache-tags": "_N_T_/layout,_N_T_/sitemap.xml/layout,_N_T_/sitemap.xml/route,_N_T_/sitemap.xml/"
+      },
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/sitemap.xml",
+      "dataRoute": null,
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/_not-found": {
       "initialStatus": 404,
       "experimentalBypassFor": [
@@ -50,7 +79,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/performance-marketing-services": {
+    "/digital-marketing-company-in-bangalore": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -63,32 +92,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/performance-marketing-services",
-      "dataRoute": "/performance-marketing-services.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/e-learning-content-development": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/e-learning-content-development",
-      "dataRoute": "/e-learning-content-development.rsc",
+      "srcRoute": "/digital-marketing-company-in-bangalore",
+      "dataRoute": "/digital-marketing-company-in-bangalore.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -146,7 +151,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/seo-services": {
+    "/careers": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -159,8 +164,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/seo-services",
-      "dataRoute": "/seo-services.rsc",
+      "srcRoute": "/careers",
+      "dataRoute": "/careers.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -170,7 +175,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/digital-marketing-company-in-belagavi": {
+    "/about-us": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -183,8 +188,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/digital-marketing-company-in-belagavi",
-      "dataRoute": "/digital-marketing-company-in-belagavi.rsc",
+      "srcRoute": "/about-us",
+      "dataRoute": "/about-us.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -194,7 +199,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/advanced-seo-performance-services": {
+    "/e-learning-content-development": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -207,8 +212,56 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/advanced-seo-performance-services",
-      "dataRoute": "/advanced-seo-performance-services.rsc",
+      "srcRoute": "/e-learning-content-development",
+      "dataRoute": "/e-learning-content-development.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/cookie-policy": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/cookie-policy",
+      "dataRoute": "/cookie-policy.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/privacy-policy": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/privacy-policy",
+      "dataRoute": "/privacy-policy.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -242,7 +295,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/services": {
+    "/performance-marketing-services": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -255,8 +308,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/services",
-      "dataRoute": "/services.rsc",
+      "srcRoute": "/performance-marketing-services",
+      "dataRoute": "/performance-marketing-services.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -266,7 +319,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/social-media-marketing-services": {
+    "/locations": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -279,104 +332,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/social-media-marketing-services",
-      "dataRoute": "/social-media-marketing-services.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/work": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/work",
-      "dataRoute": "/work.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/careers": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/careers",
-      "dataRoute": "/careers.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/video-production-photography-services": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/video-production-photography-services",
-      "dataRoute": "/video-production-photography-services.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/crm-setup-marketing-automation-services": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/crm-setup-marketing-automation-services",
-      "dataRoute": "/crm-setup-marketing-automation-services.rsc",
+      "srcRoute": "/locations",
+      "dataRoute": "/locations.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -626,6 +583,78 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/digital-marketing-company-in-belagavi": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/digital-marketing-company-in-belagavi",
+      "dataRoute": "/digital-marketing-company-in-belagavi.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/terms-and-conditions": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/terms-and-conditions",
+      "dataRoute": "/terms-and-conditions.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/video-production-photography-services": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/video-production-photography-services",
+      "dataRoute": "/video-production-photography-services.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/website-design-services": {
       "experimentalBypassFor": [
         {
@@ -650,7 +679,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/digital-marketing-company-in-bangalore": {
+    "/about": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -663,8 +692,80 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/digital-marketing-company-in-bangalore",
-      "dataRoute": "/digital-marketing-company-in-bangalore.rsc",
+      "srcRoute": "/about",
+      "dataRoute": "/about.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/work": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/work",
+      "dataRoute": "/work.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/social-media-marketing-services": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/social-media-marketing-services",
+      "dataRoute": "/social-media-marketing-services.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/services": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/services",
+      "dataRoute": "/services.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -698,7 +799,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/locations": {
+    "/crm-setup-marketing-automation-services": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -711,8 +812,56 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/locations",
-      "dataRoute": "/locations.rsc",
+      "srcRoute": "/crm-setup-marketing-automation-services",
+      "dataRoute": "/crm-setup-marketing-automation-services.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/advanced-seo-performance-services": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/advanced-seo-performance-services",
+      "dataRoute": "/advanced-seo-performance-services.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/best-seo-services": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/best-seo-services",
+      "dataRoute": "/best-seo-services.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -752,8 +901,8 @@
   },
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "531e279e3a19c58a2dea054a3fe0a68d",
-    "previewModeSigningKey": "8f3be54427f661ec053bc1e8497d587570fbdee635c7bc7cef6d471b6ba59253",
-    "previewModeEncryptionKey": "33e4a9a47bdcec6932840f6fc1cd1e97ed508803a930c33d8c39c62a0a62f31f"
+    "previewModeId": "104a27386178d94eef93bdc5c3930d92",
+    "previewModeSigningKey": "32c328f890165283edce150a4689a2c2aadc2bfbc46d360402fcb440c63148d9",
+    "previewModeEncryptionKey": "bc753e63d6d4b1563813efc1fc8153aeb51e0acadaa2a38d44d229420fcd9e89"
   }
 }

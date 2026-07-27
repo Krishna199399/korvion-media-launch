@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Instagram, Linkedin, Mail } from "lucide-react";
+import { Instagram, Linkedin, Facebook, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import { FadeInSection } from "./animations/FadeInSection";
 import { StaggerChildren, StaggerChild } from "./animations/StaggerChildren";
@@ -49,6 +49,7 @@ export function Footer() {
               {[
                 { icon: Instagram, href: "https://www.instagram.com/korvionmedia/", label: "Instagram" },
                 { icon: Linkedin, href: "https://in.linkedin.com/company/korvion-media", label: "LinkedIn" },
+                { icon: Facebook, href: "https://www.facebook.com/people/Korvion-Media/61592265010920/", label: "Facebook" },
               ].map(({ icon: Icon, href, label }) => (
                 <motion.a
                   key={label}
@@ -74,10 +75,10 @@ export function Footer() {
               <FooterCol
                 title="Growth & Marketing"
                 links={[
-                  { to: "/seo-services", label: "SEO Services" },
-                  { to: "/advanced-seo-performance-services", label: "Advanced SEO & Performance" },
-                  { to: "/performance-marketing-services", label: "Performance Marketing Services" },
-                  { to: "/social-media-marketing-services", label: "Social Media Marketing Services" },
+                  { to: "/best-seo-services/", label: "Best SEO Services" },
+                  { to: "/advanced-seo-performance-services/", label: "Advanced SEO & Performance" },
+                  { to: "/performance-marketing-services/", label: "Performance Marketing Services" },
+                  { to: "/social-media-marketing-services/", label: "Social Media Marketing Services" },
                 ]}
               />
             </StaggerChild>
@@ -87,10 +88,10 @@ export function Footer() {
               <FooterCol
                 title="Branding & Experience"
                 links={[
-                  { to: "/branding-agency-creative-services", label: "Branding & Creative Services" },
-                  { to: "/video-production-photography-services", label: "Content Production Services" },
-                  { to: "/website-design-services", label: "Website Design Services" },
-                  { to: "/e-learning-content-development", label: "E Learning Content Development" },
+                  { to: "/branding-agency-creative-services/", label: "Branding & Creative Services" },
+                  { to: "/video-production-photography-services/", label: "Content Production Services" },
+                  { to: "/website-design-services/", label: "Website Design Services" },
+                  { to: "/e-learning-content-development/", label: "E Learning Content Development" },
                 ]}
               />
             </StaggerChild>
@@ -100,10 +101,10 @@ export function Footer() {
               <FooterCol
                 title="Automation & Technology"
                 links={[
-                  { to: "/crm-setup-marketing-automation-services", label: "CRM Setup Services" },
-                  { to: "/crm-setup-marketing-automation-services", label: "Marketing Automation Services" },
-                  { to: "/custom-mobile-web-app-development", label: "Custom Mobile App Development" },
-                  { to: "/process", label: "Our Process" },
+                  { to: "/crm-setup-marketing-automation-services/", label: "CRM Setup Services" },
+                  { to: "/crm-setup-marketing-automation-services/", label: "Marketing Automation Services" },
+                  { to: "/custom-mobile-web-app-development/", label: "Custom Mobile App Development" },
+                  { to: "/process/", label: "Our Process" },
                 ]}
               />
             </StaggerChild>
@@ -113,13 +114,13 @@ export function Footer() {
               <FooterCol
                 title="Company & Locations"
                 links={[
-                  { to: "/services", label: "About Korvion Media" },
-                  { to: "/work", label: "Our Work" },
-                  { to: "/careers", label: "Careers at Korvion Media" },
-                  { to: "/contact", label: "Contact Korvion Media" },
-                  { to: "/digital-marketing-company-in-bangalore", label: "Bangalore Digital Marketing Company" },
-                  { to: "/digital-marketing-company-in-belagavi", label: "Belagavi Digital Marketing Company" },
-                  { to: "/services", label: "Services Overview" },
+                  { to: "/about-us/", label: "About Korvion Media" },
+                  { to: "/work/", label: "Our Work" },
+                  { to: "/careers/", label: "Careers at Korvion Media" },
+                  { to: "/contact/", label: "Contact Korvion Media" },
+                  { to: "/digital-marketing-company-in-bangalore/", label: "Bangalore Digital Marketing Company" },
+                  { to: "/digital-marketing-company-in-belagavi/", label: "Belagavi Digital Marketing Company" },
+                  { to: "/services/", label: "Services Overview" },
                 ]}
               />
             </StaggerChild>
@@ -132,13 +133,13 @@ export function Footer() {
             <p>© {new Date().getFullYear()} Korvion Media. All Rights Reserved.</p>
 
             <div className="flex flex-wrap items-center gap-4 sm:gap-6 font-medium">
-              <Link href="#" className="hover:text-primary transition-colors">Privacy Policy</Link>
+              <Link href="/privacy-policy/" className="hover:text-primary transition-colors">Privacy Policy</Link>
               <span className="text-border hidden sm:inline">•</span>
-              <Link href="#" className="hover:text-primary transition-colors">Terms & Conditions</Link>
+              <Link href="/terms-and-conditions/" className="hover:text-primary transition-colors">Terms & Conditions</Link>
               <span className="text-border hidden sm:inline">•</span>
-              <Link href="#" className="hover:text-primary transition-colors">Cookie Policy</Link>
+              <Link href="/cookie-policy/" className="hover:text-primary transition-colors">Cookie Policy</Link>
               <span className="text-border hidden sm:inline">•</span>
-              <Link href="#" className="hover:text-primary transition-colors">Sitemap</Link>
+              <Link href="/sitemap.xml" className="hover:text-primary transition-colors">Sitemap</Link>
             </div>
           </div>
         </FadeInSection>

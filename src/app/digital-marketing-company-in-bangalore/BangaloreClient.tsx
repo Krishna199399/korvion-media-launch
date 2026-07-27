@@ -67,7 +67,7 @@ const growthLayers = [
     title: "SEO Systems Designed for Competitive Bangalore Markets",
     desc: "Search visibility in Bangalore requires more than keyword optimization alone. Businesses need technical SEO, content ecosystems, authority growth, Core Web Vitals optimization, and search strategies aligned with how customers actually discover brands online. Korvion Media builds SEO ecosystems designed to improve long-term organic visibility, qualified traffic, and scalable acquisition.",
     buttons: [
-      { label: "Explore SEO & Growth Services", href: "/seo-services" },
+      { label: "Explore Best SEO Services", href: "/best-seo-services" },
       { label: "Explore Advanced SEO & Performance", href: "/advanced-seo-performance-services" },
     ],
   },

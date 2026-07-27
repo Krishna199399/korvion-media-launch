@@ -27,7 +27,7 @@ export function ServiceDetailClient({ serviceSlug }: { serviceSlug: string }) {
     if (slug === "crm-automation-tech") return "/crm-setup-marketing-automation-services";
     if (slug === "e-learning-animation") return "/e-learning-content-development";
     if (slug === "it-product-engineering") return "/custom-mobile-web-app-development";
-    if (slug === "advanced-seo-performance") return "/seo-services";
+    if (slug === "advanced-seo-performance") return "/best-seo-services";
     if (slug === "advanced-seo-cro") return "/advanced-seo-performance-services";
     return `/services/${slug}`;
   };

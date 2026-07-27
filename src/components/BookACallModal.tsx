@@ -46,13 +46,50 @@ export function BookACallModal({ isOpen, onClose }: BookACallModalProps) {
     };
   }, [isOpen, onClose]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSubmitted(true);
-    setTimeout(() => {
-      setFormSubmitted(false);
-      onClose();
-    }, 3500);
+    setSubmitting(true);
+
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "1e22062e-7bee-43a4-b8c4-f6c6a218a1e0";
+
+    try {
+      const payload = {
+        access_key: accessKey,
+        subject: `New Call Request - ${formData.service} (${formData.name})`,
+        from_name: "Korvion Media Concierge Modal",
+        replyto: formData.email,
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        service: formData.service,
+        message: formData.message,
+      };
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await response.json();
+      if (!data.success) {
+        console.warn("Web3Forms modal response:", data);
+      }
+    } catch (err) {
+      console.error("Modal submission error:", err);
+    } finally {
+      setSubmitting(false);
+      setFormSubmitted(true);
+      setTimeout(() => {
+        setFormSubmitted(false);
+        onClose();
+      }, 3500);
+    }
   };
 
   return (
@@ -189,8 +226,8 @@ export function BookACallModal({ isOpen, onClose }: BookACallModalProps) {
                     </div>
                     <div>
                       <p className="text-[11px] text-muted-foreground">Strategy Team Email</p>
-                      <a href="mailto:hello@korvionmedia.com" className="text-xs font-semibold hover:text-primary transition-colors">
-                        hello@korvionmedia.com
+                      <a href="mailto:korvionmedia@gmail.com" className="text-xs font-semibold hover:text-primary transition-colors">
+                        korvionmedia@gmail.com
                       </a>
                     </div>
                   </div>
@@ -313,9 +350,10 @@ export function BookACallModal({ isOpen, onClose }: BookACallModalProps) {
 
                     <button
                       type="submit"
-                      className="w-full rounded-xl bg-gradient-primary py-3 px-5 text-xs sm:text-sm font-semibold text-primary-foreground shadow-glow hover:shadow-glow transition-all flex items-center justify-center gap-2"
+                      disabled={submitting}
+                      className="w-full rounded-xl bg-gradient-primary py-3 px-5 text-xs sm:text-sm font-semibold text-primary-foreground shadow-glow hover:shadow-glow transition-all flex items-center justify-center gap-2 disabled:opacity-50"
                     >
-                      Confirm Call Request
+                      {submitting ? "Sending Request..." : "Confirm Call Request"}
                       <ArrowRight className="h-3.5 w-3.5" />
                     </button>
                   </form>

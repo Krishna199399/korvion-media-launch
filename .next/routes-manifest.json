@@ -5,11 +5,24 @@
   "basePath": "",
   "redirects": [
     {
-      "source": "/:path+/",
-      "destination": "/:path+",
+      "source": "/:file((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/]+\\.\\w+)/",
+      "destination": "/:file",
+      "internal": true,
+      "missing": [
+        {
+          "type": "header",
+          "key": "x-nextjs-data"
+        }
+      ],
+      "statusCode": 308,
+      "regex": "^(?:/((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/]+\\.\\w+))/$"
+    },
+    {
+      "source": "/:notfile((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/\\.]+)",
+      "destination": "/:notfile/",
       "internal": true,
       "statusCode": 308,
-      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+      "regex": "^(?:/((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/\\.]+))$"
     }
   ],
   "headers": [],
@@ -42,10 +55,28 @@
       "namedRegex": "^/_not\\-found(?:/)?$"
     },
     {
+      "page": "/about",
+      "regex": "^/about(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/about(?:/)?$"
+    },
+    {
+      "page": "/about-us",
+      "regex": "^/about\\-us(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/about\\-us(?:/)?$"
+    },
+    {
       "page": "/advanced-seo-performance-services",
       "regex": "^/advanced\\-seo\\-performance\\-services(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/advanced\\-seo\\-performance\\-services(?:/)?$"
+    },
+    {
+      "page": "/best-seo-services",
+      "regex": "^/best\\-seo\\-services(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/best\\-seo\\-services(?:/)?$"
     },
     {
       "page": "/branding-agency-creative-services",
@@ -64,6 +95,12 @@
       "regex": "^/contact(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/contact(?:/)?$"
+    },
+    {
+      "page": "/cookie-policy",
+      "regex": "^/cookie\\-policy(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/cookie\\-policy(?:/)?$"
     },
     {
       "page": "/crm-setup-marketing-automation-services",
@@ -108,16 +145,16 @@
       "namedRegex": "^/performance\\-marketing\\-services(?:/)?$"
     },
     {
+      "page": "/privacy-policy",
+      "regex": "^/privacy\\-policy(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/privacy\\-policy(?:/)?$"
+    },
+    {
       "page": "/process",
       "regex": "^/process(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/process(?:/)?$"
-    },
-    {
-      "page": "/seo-services",
-      "regex": "^/seo\\-services(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/seo\\-services(?:/)?$"
     },
     {
       "page": "/services",
@@ -126,10 +163,22 @@
       "namedRegex": "^/services(?:/)?$"
     },
     {
+      "page": "/sitemap.xml",
+      "regex": "^/sitemap\\.xml(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/sitemap\\.xml(?:/)?$"
+    },
+    {
       "page": "/social-media-marketing-services",
       "regex": "^/social\\-media\\-marketing\\-services(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/social\\-media\\-marketing\\-services(?:/)?$"
+    },
+    {
+      "page": "/terms-and-conditions",
+      "regex": "^/terms\\-and\\-conditions(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/terms\\-and\\-conditions(?:/)?$"
     },
     {
       "page": "/video-production-photography-services",

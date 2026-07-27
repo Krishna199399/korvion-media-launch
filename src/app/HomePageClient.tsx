@@ -44,7 +44,7 @@ const ecosystems = [
     title: "SEO & Organic Growth Systems",
     desc: "Search visibility compounds when technical optimization, authority building, content strategy, and user experience work together.",
     links: [
-      { label: "SEO & Growth Services", to: "/seo-services" },
+      { label: "Best SEO Services", to: "/best-seo-services" },
       { label: "Advanced SEO & Performance", to: "/advanced-seo-performance-services" },
     ],
     support: "We focus on sustainable visibility, qualified traffic, and measurable organic growth through SEO ecosystems designed for long-term business impact.",
@@ -270,7 +270,7 @@ export function HomePageClient() {
                 
                 <MagneticButton as="div" strength={0.15}>
                   <RippleButton className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-border bg-surface/50 backdrop-blur-md px-8 py-4 text-base font-semibold text-foreground hover:border-primary hover:text-primary transition-all">
-                    <Link href="/services" className="flex items-center gap-2">
+                    <Link href="/services/" className="flex items-center gap-2">
                       Explore Growth Services
                     </Link>
                   </RippleButton>
@@ -442,7 +442,7 @@ export function HomePageClient() {
                       <h4 className="font-bold text-lg">Belagavi Studio</h4>
                       <p className="text-xs text-muted-foreground">Digital Marketing & SEO Services in Belagavi</p>
                     </div>
-                    <Link href="/digital-marketing-company-in-belagavi" className="inline-flex items-center gap-2 text-xs font-bold text-primary hover:gap-3 transition-all">
+                    <Link href="/digital-marketing-company-in-belagavi/" className="inline-flex items-center gap-2 text-xs font-bold text-primary hover:gap-3 transition-all">
                       Belagavi Hub <ArrowUpRight className="h-4 w-4" />
                     </Link>
                   </div>
@@ -452,7 +452,7 @@ export function HomePageClient() {
                       <h4 className="font-bold text-lg">Bengaluru Studio</h4>
                       <p className="text-xs text-muted-foreground">Digital Marketing Company in Bangalore</p>
                     </div>
-                    <Link href="/digital-marketing-company-in-bangalore" className="inline-flex items-center gap-2 text-xs font-bold text-primary hover:gap-3 transition-all">
+                    <Link href="/digital-marketing-company-in-bangalore/" className="inline-flex items-center gap-2 text-xs font-bold text-primary hover:gap-3 transition-all">
                       Bengaluru Hub <ArrowUpRight className="h-4 w-4" />
                     </Link>
                   </div>
@@ -496,7 +496,7 @@ export function HomePageClient() {
                     </div>
                   ))}
                 </div>
-                <Link href="/e-learning-content-development" className="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all">
+                <Link href="/e-learning-content-development/" className="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all">
                   Explore Learning Solutions <ArrowUpRight className="h-5 w-5" />
                 </Link>
               </div>

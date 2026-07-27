@@ -67,7 +67,7 @@ const growthLayers = [
     title: "SEO Systems That Help Customers Discover Your Business Faster",
     desc: "Search visibility directly influences how modern customers discover businesses online. Businesses across Belagavi increasingly compete through Google search, maps visibility, content ecosystems, and local digital authority. Korvion Media builds SEO systems focused on improving organic visibility, search rankings, local discoverability, technical performance, and long-term acquisition growth.",
     buttons: [
-      { label: "Explore SEO & Growth Services", href: "/seo-services" },
+      { label: "Explore Best SEO Services", href: "/best-seo-services" },
       { label: "Explore Advanced SEO & Performance", href: "/advanced-seo-performance-services" },
     ],
   },
@@ -723,6 +723,76 @@ export function BelagaviClient() {
                 </div>
               </div>
             </FadeInSection>
+          </div>
+        </section>
+
+        {/* BELAGAVI OFFICE LOCATION & MAP SECTION */}
+        <section className="section-isolate py-20 border-t border-border/60 bg-surface/30">
+          <div className="mx-auto max-w-7xl px-6 lg:px-10">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="font-mono text-xs uppercase tracking-[0.3em] text-primary">OFFICE LOCATION</span>
+              <h2 className="text-3xl sm:text-5xl font-bold mt-3">Visit Our Belagavi Office</h2>
+              <p className="mt-4 text-sm sm:text-base text-muted-foreground">
+                RGJ4+8HF, Fourth Cross Rd, Bhagya Nagar, Angol, Belagavi, Karnataka 590006
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-5 space-y-6">
+                <div className="rounded-2xl border border-border bg-surface/60 p-6 space-y-4">
+                  <div className="flex items-start gap-3">
+                    <MapPin className="h-5 w-5 text-primary shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-bold text-base">Office Address</h4>
+                      <p className="text-sm text-muted-foreground leading-relaxed mt-1">
+                        RGJ4+8HF, Fourth Cross Rd, Bhagya Nagar, Angol, Belagavi, Karnataka 590006
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3 pt-3 border-t border-border/60">
+                    <Phone className="h-5 w-5 text-primary shrink-0" />
+                    <div>
+                      <h4 className="font-bold text-sm">Direct Phone</h4>
+                      <a href="tel:+919480156345" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                        +91 9480156345
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3 pt-3 border-t border-border/60">
+                    <Globe2 className="h-5 w-5 text-primary shrink-0" />
+                    <div>
+                      <h4 className="font-bold text-sm">Official Email</h4>
+                      <a href="mailto:korvionmedia@gmail.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                        korvionmedia@gmail.com
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=RGJ4%2B8HF%2C+Fourth+Cross+Rd%2C+Bhagya+Nagar%2C+Angol%2C+Belagavi%2C+Karnataka+590006"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-gradient-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow hover:shadow-glow transition-all"
+                >
+                  <MapPin className="h-4 w-4" />
+                  Get Directions on Google Maps
+                  <ArrowUpRight className="h-4 w-4" />
+                </a>
+              </div>
+
+              <div className="lg:col-span-7 h-[360px] sm:h-[420px] rounded-2xl overflow-hidden border border-border shadow-2xl relative">
+                <iframe
+                  title="Korvion Media Belagavi Office Google Map"
+                  src="https://maps.google.com/maps?q=RGJ4%2B8HF%2C%20Fourth%20Cross%20Rd%2C%20Bhagya%20Nagar%2C%20Angol%2C%20Belagavi%2C%20Karnataka%20590006&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                  className="h-full w-full border-0"
+                  loading="lazy"
+                  allowFullScreen
+                />
+              </div>
+            </div>
           </div>
         </section>
 
