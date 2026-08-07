@@ -5,6 +5,13 @@ export const metadata: Metadata = {
   title: "Careers | Korvion Media",
   description:
     "Explore career opportunities at Korvion Media. We hire operators, engineers, designers, and growth marketers.",
+  alternates: {
+    canonical: "https://www.korvionmedia.com/careers/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "Careers | Korvion Media",
     description: "Explore career opportunities at Korvion Media.",

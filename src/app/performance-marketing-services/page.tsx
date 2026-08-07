@@ -4,6 +4,13 @@ import { PerformanceMarketingClient } from "./PerformanceMarketingClient";
 export const metadata: Metadata = {
   title: "Performance Marketing & Lead Generation Services | Korvion Media",
   description: "Korvion Media delivers performance marketing services including Google Ads, LinkedIn Ads, conversion rate optimization, and lead generation systems focused on measurable ROI and business growth.",
+  alternates: {
+    canonical: "https://www.korvionmedia.com/performance-marketing-services/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "Performance Marketing & Lead Generation Services | Korvion Media",
     description: "Korvion Media delivers performance marketing services including Google Ads, LinkedIn Ads, conversion rate optimization, and lead generation systems focused on measurable ROI and business growth.",

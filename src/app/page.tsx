@@ -5,6 +5,13 @@ export const metadata: Metadata = {
   title: "Korvion Media | Digital Marketing Company in India",
   description:
     "Korvion Media helps businesses accelerate digital growth through SEO, branding, website development, performance marketing, CRM solutions, marketing automation, content production, and custom mobile app development.",
+  alternates: {
+    canonical: "https://www.korvionmedia.com/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "Korvion Media | Digital Marketing Company in India",
     description:

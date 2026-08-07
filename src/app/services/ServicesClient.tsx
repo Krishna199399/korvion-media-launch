@@ -229,10 +229,10 @@ export function ServicesClient() {
                             <MagneticButton strength={0.15}>
                               <Link
                                 href={linkHref}
-                                className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
+                                className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-5 py-2.5 text-sm font-semibold text-primary hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all group"
                               >
                                 Explore {s.title}
-                                <ArrowUpRight className="h-4 w-4" />
+                                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                               </Link>
                             </MagneticButton>
 

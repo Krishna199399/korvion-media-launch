@@ -5,6 +5,13 @@ export const metadata: Metadata = {
   title: "Cookie Policy | Korvion Media",
   description:
     "Learn how Korvion Media uses cookies and similar technologies to enhance website functionality, improve user experience, analyze traffic, and deliver relevant marketing content.",
+  alternates: {
+    canonical: "https://www.korvionmedia.com/cookie-policy/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "Cookie Policy | Korvion Media",
     description:

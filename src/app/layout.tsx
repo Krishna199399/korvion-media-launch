@@ -21,6 +21,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@korvionmedia",
   },
+  robots: {
+    index: true,
+    follow: true,
+  },
   other: {
     "geo.region": "IN-KA",
     "geo.placename": "Belagavi, Bengaluru",

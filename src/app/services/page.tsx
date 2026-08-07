@@ -5,6 +5,13 @@ export const metadata: Metadata = {
   title: "Digital Marketing & Technology Services | Korvion Media",
   description:
     "Explore Korvion Media's full range of digital marketing, branding, website development, CRM, automation, SEO, and custom application development services designed to accelerate business growth.",
+  alternates: {
+    canonical: "https://www.korvionmedia.com/services/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "Digital Marketing & Technology Services | Korvion Media",
     description:

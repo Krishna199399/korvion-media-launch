@@ -5,6 +5,13 @@ export const metadata: Metadata = {
   title: "Privacy Policy | Korvion Media",
   description:
     "Read Korvion Media's Privacy Policy to understand how we collect, use, store, and protect your personal information when you interact with our website and digital marketing services.",
+  alternates: {
+    canonical: "https://www.korvionmedia.com/privacy-policy/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "Privacy Policy | Korvion Media",
     description:

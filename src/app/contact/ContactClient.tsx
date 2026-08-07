@@ -220,7 +220,7 @@ export function ContactClient() {
                     href="https://www.google.com/maps/search/?api=1&query=RGJ4%2B8HF%2C+Fourth+Cross+Rd%2C+Bhagya+Nagar%2C+Angol%2C+Belagavi%2C+Karnataka+590006"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-xs font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-all group"
                   >
                     <MapPin className="h-3.5 w-3.5" /> Get Directions on Google Maps
                   </a>

@@ -5,6 +5,13 @@ export const metadata: Metadata = {
   title: "Digital Marketing Company in Bangalore | Korvion Media",
   description:
     "Partner with Korvion Media for SEO, branding, performance marketing, website development, and digital growth services in Bengaluru.",
+  alternates: {
+    canonical: "https://www.korvionmedia.com/digital-marketing-company-in-bangalore/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "Digital Marketing Company in Bangalore | Korvion Media",
     description:

@@ -436,10 +436,10 @@ export function BangaloreClient() {
                 <div className="pt-6 border-t border-primary/20 mt-6">
                   <button
                     onClick={openBookACall}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all cursor-pointer"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-5 py-2.5 text-sm font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-all cursor-pointer group"
                   >
                     <span>Connect Your Business Ecosystem</span>
-                    <ArrowUpRight className="h-4 w-4" />
+                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </button>
                 </div>
               </div>
@@ -482,15 +482,15 @@ export function BangaloreClient() {
                         )}
                       </div>
 
-                      <div className="mt-8 border-t border-border/60 pt-4 space-y-2">
+                      <div className="mt-8 border-t border-border/60 pt-4 flex flex-wrap gap-2">
                         {layer.buttons.map((btn) => (
                           <Link
                             key={btn.label}
                             href={btn.href}
-                            className="flex items-center justify-between text-xs font-semibold text-primary hover:underline group"
+                            className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-xs font-semibold text-primary hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all group"
                           >
-                            <span>[ {btn.label} ]</span>
-                            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                            {btn.label}
+                            <ArrowUpRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                           </Link>
                         ))}
                       </div>

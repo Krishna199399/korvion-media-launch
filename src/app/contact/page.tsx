@@ -5,6 +5,13 @@ export const metadata: Metadata = {
   title: "Contact Korvion Media | Book a Strategy Call & Growth Audit",
   description:
     "Contact Korvion Media for SEO, branding, website development, performance marketing, social media marketing, CRM implementation, marketing automation, custom mobile app development, and digital growth solutions.",
+  alternates: {
+    canonical: "https://www.korvionmedia.com/contact/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "Contact Korvion Media | Digital Growth & Performance Marketing Agency",
     description:

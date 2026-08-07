@@ -4,6 +4,13 @@ import { SocialMediaClient } from "./SocialMediaClient";
 export const metadata: Metadata = {
   title: "Social Media Marketing Services | Korvion Media",
   description: "Korvion Media delivers social media marketing services, strategy, influencer campaigns, and reputation management to help brands grow, engage, and build communities.",
+  alternates: {
+    canonical: "https://www.korvionmedia.com/social-media-marketing-services/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "Social Media Marketing Services | Korvion Media",
     description: "Korvion Media delivers social media marketing services, strategy, influencer campaigns, and reputation management to help brands grow, engage, and build communities.",

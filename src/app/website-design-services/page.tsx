@@ -4,6 +4,13 @@ import { WebsiteDesignClient } from "./WebsiteDesignClient";
 export const metadata: Metadata = {
   title: "Website Design Services | Korvion Media",
   description: "Korvion Media offers website design services, UI UX design, and web development focused on conversion, performance, and real business growth.",
+  alternates: {
+    canonical: "https://www.korvionmedia.com/website-design-services/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "Website Design Services | Korvion Media",
     description: "Korvion Media offers website design services, UI UX design, and web development focused on conversion, performance, and real business growth.",

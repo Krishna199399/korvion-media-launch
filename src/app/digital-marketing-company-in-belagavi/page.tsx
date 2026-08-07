@@ -5,6 +5,13 @@ export const metadata: Metadata = {
   title: "Digital Marketing Company in Belagavi | Korvion Media",
   description:
     "Korvion Media helps businesses in Belagavi grow through SEO, branding, performance marketing, website development, CRM, and automation solutions.",
+  alternates: {
+    canonical: "https://www.korvionmedia.com/digital-marketing-company-in-belagavi/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "Digital Marketing Company in Belagavi | Korvion Media",
     description:

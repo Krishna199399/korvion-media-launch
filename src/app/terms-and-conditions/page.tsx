@@ -5,6 +5,13 @@ export const metadata: Metadata = {
   title: "Terms & Conditions | Korvion Media",
   description:
     "Review Korvion Media's Terms & Conditions to understand the rules, responsibilities, intellectual property, payments, and service terms when using our website and digital marketing services.",
+  alternates: {
+    canonical: "https://www.korvionmedia.com/terms-and-conditions/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "Terms & Conditions | Korvion Media",
     description:

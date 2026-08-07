@@ -4,6 +4,13 @@ import { BrandingClient } from "./BrandingClient";
 export const metadata: Metadata = {
   title: "Branding Agency and Creative Services | Korvion Media",
   description: "Korvion Media is a branding agency offering brand identity design, logo design services, and creative campaigns that help businesses build strong, scalable brands.",
+  alternates: {
+    canonical: "https://www.korvionmedia.com/branding-agency-creative-services/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "Branding Agency and Creative Services | Korvion Media",
     description: "Korvion Media is a branding agency offering brand identity design, logo design services, and creative campaigns that help businesses build strong, scalable brands.",

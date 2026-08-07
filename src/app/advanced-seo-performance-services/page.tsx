@@ -4,6 +4,13 @@ import { AdvancedSEOClient } from "./AdvancedSEOClient";
 export const metadata: Metadata = {
   title: "Advanced SEO Services & CRO | Korvion Media",
   description: "Korvion Media provides advanced SEO services, including SaaS SEO, AI SEO, Core Web Vitals optimization, CRO, and content authority strategies focused on scalable organic growth.",
+  alternates: {
+    canonical: "https://www.korvionmedia.com/advanced-seo-performance-services/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "Advanced SEO Services & CRO | Korvion Media",
     description: "Korvion Media provides advanced SEO services, including SaaS SEO, AI SEO, Core Web Vitals optimization, CRO, and content authority strategies focused on scalable organic growth.",

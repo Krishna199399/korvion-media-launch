@@ -405,8 +405,8 @@ export function HomePageClient() {
                         
                         <div className="space-y-2 mb-6">
                           {item.links.map((link, j) => (
-                            <Link key={j} href={link.to} className="inline-flex items-center gap-2 text-sm font-bold text-primary hover:gap-3 transition-all">
-                              {link.label} <ArrowUpRight className="h-4 w-4" />
+                            <Link key={j} href={link.to} className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all group">
+                              {link.label} <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                             </Link>
                           ))}
                         </div>
@@ -442,8 +442,8 @@ export function HomePageClient() {
                       <h4 className="font-bold text-lg">Belagavi Studio</h4>
                       <p className="text-xs text-muted-foreground">Digital Marketing & SEO Services in Belagavi</p>
                     </div>
-                    <Link href="/digital-marketing-company-in-belagavi/" className="inline-flex items-center gap-2 text-xs font-bold text-primary hover:gap-3 transition-all">
-                      Belagavi Hub <ArrowUpRight className="h-4 w-4" />
+                    <Link href="/digital-marketing-company-in-belagavi/" className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-xs font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-all group">
+                      Belagavi Hub <ArrowUpRight className="h-3.5 w-3.5" />
                     </Link>
                   </div>
 
@@ -452,8 +452,8 @@ export function HomePageClient() {
                       <h4 className="font-bold text-lg">Bengaluru Studio</h4>
                       <p className="text-xs text-muted-foreground">Digital Marketing Company in Bangalore</p>
                     </div>
-                    <Link href="/digital-marketing-company-in-bangalore/" className="inline-flex items-center gap-2 text-xs font-bold text-primary hover:gap-3 transition-all">
-                      Bengaluru Hub <ArrowUpRight className="h-4 w-4" />
+                    <Link href="/digital-marketing-company-in-bangalore/" className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-xs font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-all group">
+                      Bengaluru Hub <ArrowUpRight className="h-3.5 w-3.5" />
                     </Link>
                   </div>
                 </div>
@@ -496,8 +496,8 @@ export function HomePageClient() {
                     </div>
                   ))}
                 </div>
-                <Link href="/e-learning-content-development/" className="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all">
-                  Explore Learning Solutions <ArrowUpRight className="h-5 w-5" />
+                <Link href="/e-learning-content-development/" className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-5 py-2.5 text-sm font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-all group">
+                  Explore Learning Solutions <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
               </div>
             </FadeInSection>

@@ -4,6 +4,13 @@ import { SEOClient } from "./SEOClient";
 export const metadata: Metadata = {
   title: "Best SEO Services | Korvion Media",
   description: "Korvion Media provides SEO services, including technical SEO, local SEO, ecommerce SEO, keyword strategy, audits, and content optimization focused on long-term business growth.",
+  alternates: {
+    canonical: "https://www.korvionmedia.com/best-seo-services/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "Best SEO Services | Korvion Media",
     description: "Korvion Media provides SEO services, including technical SEO, local SEO, ecommerce SEO, keyword strategy, audits, and content optimization focused on long-term business growth.",

@@ -4,6 +4,13 @@ import { ELearningClient } from "./ELearningClient";
 export const metadata: Metadata = {
   title: "E-Learning Content Development | Korvion Media",
   description: "Korvion Media creates e-learning content, LMS training modules, and animated learning experiences designed to improve engagement, retention, and training effectiveness.",
+  alternates: {
+    canonical: "https://www.korvionmedia.com/e-learning-content-development/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "E-Learning Content Development | Korvion Media",
     description: "Korvion Media creates e-learning content, LMS training modules, and animated learning experiences designed to improve engagement, retention, and training effectiveness.",

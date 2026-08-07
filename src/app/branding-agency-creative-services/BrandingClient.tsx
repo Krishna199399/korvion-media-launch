@@ -272,10 +272,10 @@ export function BrandingClient() {
                     <div className="pt-4">
                       <button
                         onClick={openBookACall}
-                        className="inline-flex items-center gap-2 text-base font-semibold text-primary hover:gap-3 transition-all cursor-pointer group"
+                        className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-5 py-2.5 text-base font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-all cursor-pointer group"
                       >
                         <span>Talk to a Branding Expert</span>
-                        <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                        <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                       </button>
                     </div>
                   </motion.div>
@@ -516,10 +516,10 @@ export function BrandingClient() {
                   <div className="pt-4">
                     <button
                       onClick={openBookACall}
-                      className="inline-flex items-center gap-2 text-base font-semibold text-primary hover:gap-3 transition-all cursor-pointer group"
+                      className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-5 py-2.5 text-base font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-all cursor-pointer group"
                     >
-                      <span>Let’s Discuss Your Brand Goals</span>
-                      <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                      <span>Let's Discuss Your Brand Goals</span>
+                      <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </button>
                   </div>
                 </motion.div>

@@ -4,6 +4,13 @@ import { VideoProductionClient } from "./VideoProductionClient";
 export const metadata: Metadata = {
   title: "Video Production & Photography Services | Korvion Media",
   description: "Korvion Media offers video production services, photography services, and social media content creation to help brands engage, convert, and grow with high impact visual content.",
+  alternates: {
+    canonical: "https://www.korvionmedia.com/video-production-photography-services/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "Video Production & Photography Services | Korvion Media",
     description: "Korvion Media offers video production services, photography services, and social media content creation to help brands engage, convert, and grow with high impact visual content.",

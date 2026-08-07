@@ -5,6 +5,13 @@ export const metadata: Metadata = {
   title: "Our Work & Case Studies | Korvion Media",
   description:
     "Explore Korvion Media's portfolio of successful digital marketing, SEO, branding, website development, automation, and business growth projects. Discover how we've helped businesses achieve measurable results across industries.",
+  alternates: {
+    canonical: "https://www.korvionmedia.com/work/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "Our Work & Case Studies | Korvion Media",
     description:

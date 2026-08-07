@@ -4,6 +4,13 @@ import { AppDevClient } from "./AppDevClient";
 export const metadata: Metadata = {
   title: "Custom Mobile & Web App Development Services | Korvion Media",
   description: "Korvion Media delivers custom mobile app development, web app development, DevOps, backend systems, and product engineering solutions built for scalability, security, and performance.",
+  alternates: {
+    canonical: "https://www.korvionmedia.com/custom-mobile-web-app-development/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "Custom Mobile & Web App Development Services | Korvion Media",
     description: "Korvion Media delivers custom mobile app development, web app development, DevOps, backend systems, and product engineering solutions built for scalability, security, and performance.",

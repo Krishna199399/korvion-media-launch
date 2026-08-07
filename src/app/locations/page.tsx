@@ -5,6 +5,13 @@ export const metadata: Metadata = {
   title: "Our Locations | Korvion Media",
   description:
     "Explore Korvion Media's service locations across India. Find our Belagavi office and discover our digital marketing services available in Bengaluru.",
+  alternates: {
+    canonical: "https://www.korvionmedia.com/locations/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "Our Locations | Korvion Media",
     description:

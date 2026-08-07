@@ -5,6 +5,13 @@ export const metadata: Metadata = {
   title: "Our Process | Korvion Media",
   description:
     "Discover Korvion Media's strategic process for digital marketing, branding, web development, automation, and business growth. Learn how we plan, execute, optimize, and scale measurable results for every client.",
+  alternates: {
+    canonical: "https://www.korvionmedia.com/process/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "Our Process | Korvion Media",
     description:
