@@ -663,7 +663,7 @@ export function BelagaviClient() {
         <section className="section-isolate py-24 relative overflow-hidden bg-background">
           <div className="mx-auto max-w-5xl px-6 lg:px-10 text-center">
             <FadeInSection>
-              <div className="relative rounded-[2.5rem] border border-primary/30 bg-surface/60 backdrop-blur-2xl p-10 sm:p-16 shadow-2xl overflow-hidden">
+              <div className="relative rounded-[2rem] sm:rounded-[2.5rem] border border-primary/30 bg-surface/60 backdrop-blur-2xl p-6 sm:p-10 lg:p-16 shadow-2xl overflow-hidden">
                 {/* Dual Floating Ambient Radial Glows */}
                 <div className="absolute -top-32 -right-32 h-80 w-80 rounded-full bg-primary/20 blur-3xl pointer-events-none" />
                 <div className="absolute -bottom-32 -left-32 h-80 w-80 rounded-full bg-primary/15 blur-3xl pointer-events-none" />

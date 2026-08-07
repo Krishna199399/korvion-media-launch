@@ -198,7 +198,7 @@ export function WorkClient() {
                 Case Studies
               </motion.div>
 
-              <h1 className="text-5xl sm:text-6xl lg:text-8xl font-bold leading-[0.95] tracking-tight">
+              <h1 className="text-3xl sm:text-5xl lg:text-8xl font-bold leading-[0.95] tracking-tight">
                 <SplitText splitBy="words" stagger={0.05}>
                   Brands we built.
                 </SplitText>

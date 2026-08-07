@@ -73,7 +73,7 @@ export function ContactClient() {
                 Let's Build
               </motion.div>
               
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[0.98] tracking-tight">
+              <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold leading-[0.98] tracking-tight">
                 <SplitText splitBy="words" stagger={0.05}>
                   Tell us where you're stuck.
                 </SplitText>

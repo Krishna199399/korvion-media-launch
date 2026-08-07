@@ -35,7 +35,7 @@ export function CTASection({
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative rounded-3xl border border-border bg-surface/60 backdrop-blur-xl p-10 sm:p-16 shadow-elegant overflow-hidden"
+            className="relative rounded-3xl border border-border bg-surface/60 backdrop-blur-xl p-6 sm:p-10 lg:p-16 shadow-elegant overflow-hidden"
           >
             <div className="absolute -top-32 -right-32 h-80 w-80 rounded-full bg-primary/30 blur-3xl" />
             <div className="absolute -bottom-32 -left-32 h-80 w-80 rounded-full bg-primary/20 blur-3xl" />

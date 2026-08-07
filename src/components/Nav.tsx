@@ -105,7 +105,7 @@ export function Nav() {
             alt="Korvion Media" 
             width={240}
             height={53}
-            className="h-[53px] w-auto transition-transform group-hover:scale-105 flex-shrink-0"
+            className="h-[40px] lg:h-[53px] w-auto transition-transform group-hover:scale-105 flex-shrink-0"
           />
           <div className="hidden lg:block w-[80px] flex-shrink-0">
             <RotatingText

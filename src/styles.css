@@ -85,7 +85,13 @@
   * { border-color: var(--color-border); }
   html {
     scroll-behavior: smooth;
-    font-size: 115%;
+    font-size: 100%;
+  }
+  @media (min-width: 768px) {
+    html { font-size: 107%; }
+  }
+  @media (min-width: 1024px) {
+    html { font-size: 115%; }
   }
   body {
     background-color: var(--color-background);
@@ -96,15 +102,20 @@
       radial-gradient(ellipse 50% 35% at 85% -5%, oklch(0.70 0.20 45 / 0.14), transparent 60%),
       radial-gradient(ellipse 55% 40% at -5% 100%, oklch(0.70 0.20 45 / 0.10), transparent 60%);
     background-attachment: fixed;
-    cursor: none; /* Hide default cursor */
+  }
+  /* Only hide cursor on devices with a precise pointer (mouse) */
+  @media (pointer: fine) {
+    body { cursor: none; }
+    a, button, input, textarea, select, [role="button"] {
+      cursor: none;
+    }
+  }
+  /* Ensure touch elements are easy to tap */
+  a, button, [role="button"] {
+    touch-action: manipulation;
   }
   h1,h2,h3,h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
   ::selection { background: var(--primary); color: var(--primary-foreground); }
-  
-  /* Hide default cursor on interactive elements */
-  a, button, input, textarea, select, [role="button"] {
-    cursor: none;
-  }
 
   /* Hide scrollbars globally while maintaining scroll functionality */
   * {
@@ -165,6 +176,22 @@
   .cursor-hover {
     cursor: none;
   }
+  /* Clip overflow from decorative absolute elements without hiding content */
+  .overflow-x-clip {
+    overflow-x: clip;
+  }
+}
+
+/* Mobile-specific overrides */
+@media (max-width: 767px) {
+  /* Prevent decorative absolute orbs from causing horizontal scroll */
+  section {
+    overflow-x: clip;
+  }
+  /* Tighten heading line-height on small screens */
+  h1 { line-height: 1.1; }
+  /* Ensure images don't overflow */
+  img { max-width: 100%; height: auto; }
 }
 
 @keyframes float-slow {

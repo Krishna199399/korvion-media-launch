@@ -84,7 +84,7 @@ function PhaseCard3D({ phase, index }: { phase: typeof phases[0]; index: number 
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: index * 0.1, type: "spring" }}
                   style={{ transformStyle: "preserve-3d" }}
-                  className="mt-4 text-8xl font-display font-bold text-gradient-primary leading-none"
+                  className="mt-4 text-6xl lg:text-8xl font-display font-bold text-gradient-primary leading-none"
                 >
                   {phase.n}
                 </motion.div>
@@ -191,7 +191,7 @@ export function ProcessClient() {
                 Our Process
               </motion.div>
 
-              <h1 className="text-5xl sm:text-6xl lg:text-8xl font-bold leading-[0.95] tracking-tight">
+              <h1 className="text-3xl sm:text-5xl lg:text-8xl font-bold leading-[0.95] tracking-tight">
                 <SplitText splitBy="words" stagger={0.05}>
                   Four phases.
                 </SplitText>

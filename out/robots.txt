@@ -90,11 +90,6 @@ Allow: /
 
 User-agent: *
 Allow: /
-
-# ----------------------------------------------------------
-# Block Internal / Private Paths
-# ----------------------------------------------------------
-
 Disallow: /admin/
 Disallow: /api/
 Disallow: /dashboard/
@@ -106,20 +101,10 @@ Disallow: /search/
 Disallow: /beta/
 Disallow: /tmp/
 Disallow: /cgi-bin/
-
-# ----------------------------------------------------------
-# Allow Static Assets
-# ----------------------------------------------------------
-
 Allow: /_next/static/
 Allow: /_next/image/
 Allow: /images/
 Allow: /uploads/
-
-# ----------------------------------------------------------
-# Crawl Delay
-# ----------------------------------------------------------
-
 Crawl-delay: 5
 
 # ==========================================================

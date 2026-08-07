@@ -49,7 +49,7 @@ export function ServiceDetailClient({ serviceSlug }: { serviceSlug: string }) {
                 <div className="flex items-center gap-3">
                   <span className="font-mono text-xs text-primary tracking-[0.3em]">SERVICE / {service.number}</span>
                 </div>
-                <h1 className="mt-5 text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.02]">
+                <h1 className="mt-5 text-3xl sm:text-5xl lg:text-7xl font-bold leading-[1.02]">
                   <SplitText
                     splitBy="words"
                     stagger={0.05}
