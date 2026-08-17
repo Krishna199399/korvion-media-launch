@@ -93,19 +93,19 @@ export function Nav() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-background/70 backdrop-blur-xl border-b border-border"
+        scrolled || open
+          ? "bg-background/95 backdrop-blur-xl border-b border-border shadow-sm"
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-1 group flex-shrink-0">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 h-16 flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-2 group shrink-0">
           <img 
             src={typeof logoImage === "string" ? logoImage : logoImage.src} 
             alt="Korvion Media" 
             width={240}
             height={53}
-            className="h-[40px] lg:h-[53px] w-auto transition-transform group-hover:scale-105 flex-shrink-0"
+            className="h-8 sm:h-10 lg:h-12 max-h-8 sm:max-h-10 lg:max-h-12 w-auto object-contain transition-transform group-hover:scale-105 shrink-0"
           />
           <div className="hidden lg:block w-[80px] flex-shrink-0">
             <RotatingText
@@ -383,9 +383,9 @@ export function Nav() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden border-t border-border bg-background/95 backdrop-blur-xl max-h-[calc(100vh-4rem)] overflow-y-auto"
+            className="lg:hidden border-t border-border bg-background/95 backdrop-blur-xl max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain shadow-2xl"
           >
-            <div className="px-6 py-6 flex flex-col gap-1">
+            <div className="px-4 sm:px-6 py-6 pb-12 flex flex-col gap-1">
               {links.map((l) => {
                 if (l.menuType === "services") {
                   return (

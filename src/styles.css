@@ -190,8 +190,6 @@
   }
   /* Tighten heading line-height on small screens */
   h1 { line-height: 1.1; }
-  /* Ensure images don't overflow */
-  img { max-width: 100%; height: auto; }
 }
 
 @keyframes float-slow {
