@@ -191,12 +191,6 @@
       "regex": "^/website\\-design\\-services(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/website\\-design\\-services(?:/)?$"
-    },
-    {
-      "page": "/work",
-      "regex": "^/work(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/work(?:/)?$"
     }
   ],
   "dataRoutes": [],

@@ -115,7 +115,6 @@ export function Footer() {
                 title="Company & Locations"
                 links={[
                   { to: "/about-us/", label: "About Korvion Media" },
-                  { to: "/work/", label: "Our Work" },
                   { to: "/careers/", label: "Careers at Korvion Media" },
                   { to: "/contact/", label: "Contact Korvion Media" },
                   { to: "/digital-marketing-company-in-bangalore/", label: "Bangalore Digital Marketing Company" },

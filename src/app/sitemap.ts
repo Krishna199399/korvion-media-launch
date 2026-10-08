@@ -23,7 +23,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/digital-marketing-company-in-bangalore/`, lastModified, changeFrequency: "weekly", priority: 0.8 },
     { url: `${baseUrl}/digital-marketing-company-in-belagavi/`, lastModified, changeFrequency: "weekly", priority: 0.8 },
     { url: `${baseUrl}/process/`, lastModified, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}/work/`, lastModified, changeFrequency: "weekly", priority: 0.8 },
     { url: `${baseUrl}/careers/`, lastModified, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/about-us/`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/privacy-policy/`, lastModified, changeFrequency: "monthly", priority: 0.5 },

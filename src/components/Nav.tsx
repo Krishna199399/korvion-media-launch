@@ -17,7 +17,6 @@ const links: NavLink[] = [
   { to: "/about-us/", label: "About Us" },
   { to: "/services/", label: "Services", menuType: "services" },
   { to: "/locations/", label: "Locations", menuType: "locations" },
-  { to: "/work/", label: "Case Studies" },
   { to: "/process/", label: "Process" },
   { to: "/contact/", label: "Contact" },
 ];
