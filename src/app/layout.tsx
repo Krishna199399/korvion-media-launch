@@ -26,6 +26,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  verification: {
+    google: "4tQee39cT0gFwFqApCS8biFS-YHr3flvFS05UUzAG-4",
+  },
   other: {
     "geo.region": "IN-KA",
     "geo.placename": "Belagavi, Bengaluru",
