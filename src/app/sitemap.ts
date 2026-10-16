@@ -20,6 +20,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/custom-mobile-web-app-development/`, lastModified, changeFrequency: "weekly", priority: 0.9 },
     { url: `${baseUrl}/e-learning-content-development/`, lastModified, changeFrequency: "weekly", priority: 0.9 },
     { url: `${baseUrl}/locations/`, lastModified, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${baseUrl}/industries/manufacturing/`, lastModified, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${baseUrl}/case-studies/`, lastModified, changeFrequency: "weekly", priority: 0.8 },
     { url: `${baseUrl}/digital-marketing-company-in-bangalore/`, lastModified, changeFrequency: "weekly", priority: 0.8 },
     { url: `${baseUrl}/digital-marketing-company-in-belagavi/`, lastModified, changeFrequency: "weekly", priority: 0.8 },
     { url: `${baseUrl}/process/`, lastModified, changeFrequency: "monthly", priority: 0.7 },

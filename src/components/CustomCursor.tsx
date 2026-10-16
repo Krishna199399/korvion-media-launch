@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 /**
  * Custom Cursor Component
  * Large ring follows cursor, dot follows ring with delay
  */
 export function CustomCursor() {
+  const pathname = usePathname();
   const mousePosition = useRef({ x: 0, y: 0 });
   const ringPosition = useRef({ x: 0, y: 0 });
   const dotPosition = useRef({ x: 0, y: 0 });
@@ -99,14 +101,6 @@ export function CustomCursor() {
       document.removeEventListener('mouseenter', handleMouseEnter);
       document.removeEventListener('mouseleave', handleMouseLeave);
     };
-
-    // Add these state updates in the return JSX
-    <div className="custom-cursor">
-      <div className="cursor-ring" style={{ transform: `translate(${renderPos.ring.x}px, ${renderPos.ring.y}px) scale(${isHovering ? 1.5 : 1})` }} />
-      <div className="cursor-dot" style={{ transform: `translate(${renderPos.dot.x}px, ${renderPos.dot.y}px)` }}>
-        {isHovering && <span className="cursor-text">{cursorText}</span>}
-      </div>
-    </div>
   }, []);
 
   // Hide on mobile/touch devices
@@ -116,6 +110,10 @@ export function CustomCursor() {
       document.body.style.cursor = 'auto';
     }
   }, []);
+
+  if (pathname?.startsWith('/admin')) {
+    return null;
+  }
 
   // Don't render on touch devices
   if (typeof window !== 'undefined') {

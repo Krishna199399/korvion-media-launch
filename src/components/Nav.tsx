@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, ChevronDown, ArrowUpRight, Building2, Store, MapPin, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -16,8 +17,9 @@ const links: NavLink[] = [
   { to: "/", label: "Home" },
   { to: "/about-us/", label: "About Us" },
   { to: "/services/", label: "Services", menuType: "services" },
+  { to: "/industries/manufacturing/", label: "Industries" },
   { to: "/locations/", label: "Locations", menuType: "locations" },
-  { to: "/process/", label: "Process" },
+  { to: "/case-studies/", label: "Case Studies" },
   { to: "/contact/", label: "Contact" },
 ];
 
@@ -39,6 +41,7 @@ const locationItems = [
 ];
 
 export function Nav() {
+  const pathname = usePathname();
   const { openBookACall } = useBookACall();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -88,6 +91,10 @@ export function Nav() {
     if (slug === "advanced-seo-cro") return "/advanced-seo-performance-services/";
     return `/services/${slug}/`;
   };
+
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
 
   return (
     <header

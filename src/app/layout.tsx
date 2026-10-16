@@ -1,11 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import "@/styles.css";
-import { Nav } from "@/components/Nav";
-import { Footer } from "@/components/Footer";
-import { CustomCursor } from "@/components/CustomCursor";
-import { SmoothScroll } from "@/components/SmoothScroll";
-import { BookACallProvider } from "@/context/BookACallContext";
+import { AppShell } from "@/components/AppShell";
 
 export const metadata: Metadata = {
   title: "Korvion Media — We Build Brands That Print Revenue",
@@ -82,14 +78,7 @@ export default function RootLayout({
         />
       </head>
       <body className="overflow-x-hidden w-full relative bg-background text-foreground">
-        <BookACallProvider>
-          <SmoothScroll>
-            <Nav />
-            <main className="overflow-x-hidden w-full">{children}</main>
-            <Footer />
-            <CustomCursor />
-          </SmoothScroll>
-        </BookACallProvider>
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );

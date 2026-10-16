@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Instagram, Linkedin, Facebook, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import { FadeInSection } from "./animations/FadeInSection";
@@ -8,6 +9,11 @@ import { StaggerChildren, StaggerChild } from "./animations/StaggerChildren";
 import logoImage from "@/assets/korvion-logo.png";
 
 export function Footer() {
+  const pathname = usePathname();
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
+
   return (
     <footer className="relative border-t border-border bg-background overflow-hidden text-foreground">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
@@ -115,6 +121,8 @@ export function Footer() {
                 title="Company & Locations"
                 links={[
                   { to: "/about-us/", label: "About Korvion Media" },
+                  { to: "/industries/manufacturing/", label: "Manufacturing Industry" },
+                  { to: "/case-studies/", label: "Case Studies & Results" },
                   { to: "/careers/", label: "Careers at Korvion Media" },
                   { to: "/contact/", label: "Contact Korvion Media" },
                   { to: "/digital-marketing-company-in-bangalore/", label: "Bangalore Digital Marketing Company" },

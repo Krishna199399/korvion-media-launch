@@ -56,15 +56,6 @@ export function BlogsPageClient({
   // Get unique categories from blogs
   const categories = Array.from(new Set(blogs.map((blog) => blog.category)));
 
-  // Debounced search
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      updateFilters({ search: searchState });
-    }, 500);
-
-    return () => clearTimeout(timeout);
-  }, [searchState]);
-
   const updateFilters = (updates: Record<string, string>) => {
     const params = new URLSearchParams(searchParams.toString());
 
@@ -83,6 +74,15 @@ export function BlogsPageClient({
 
     router.push(`${pathname}?${params.toString()}`);
   };
+
+  // Debounced search
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      updateFilters({ search: searchState });
+    }, 500);
+
+    return () => clearTimeout(timeout);
+  }, [searchState, updateFilters]);
 
   const handleStatusChange = (value: string) => {
     updateFilters({ status: value === 'ALL' ? '' : value });

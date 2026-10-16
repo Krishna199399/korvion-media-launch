@@ -103,12 +103,51 @@
       radial-gradient(ellipse 55% 40% at -5% 100%, oklch(0.70 0.20 45 / 0.10), transparent 60%);
     background-attachment: fixed;
   }
-  /* Only hide cursor on devices with a precise pointer (mouse) */
+  /* Only hide cursor on devices with a precise pointer (mouse) when not in admin mode */
   @media (pointer: fine) {
-    body { cursor: none; }
-    a, button, input, textarea, select, [role="button"] {
+    body:not(.admin-mode) { cursor: none; }
+    body:not(.admin-mode) a,
+    body:not(.admin-mode) button,
+    body:not(.admin-mode) input,
+    body:not(.admin-mode) textarea,
+    body:not(.admin-mode) select,
+    body:not(.admin-mode) [role="button"] {
       cursor: none;
     }
+  }
+
+  /* Admin panel native cursor restoration */
+  body.admin-mode,
+  body.admin-mode *,
+  .admin-root,
+  .admin-root * {
+    cursor: auto !important;
+  }
+
+  body.admin-mode a,
+  body.admin-mode button,
+  body.admin-mode [role="button"],
+  body.admin-mode select,
+  body.admin-mode label,
+  .admin-root a,
+  .admin-root button,
+  .admin-root [role="button"],
+  .admin-root select,
+  .admin-root label {
+    cursor: pointer !important;
+  }
+
+  body.admin-mode input,
+  body.admin-mode textarea,
+  body.admin-mode [contenteditable="true"],
+  body.admin-mode .tiptap-editor,
+  body.admin-mode .tiptap-editor *,
+  .admin-root input,
+  .admin-root textarea,
+  .admin-root [contenteditable="true"],
+  .admin-root .tiptap-editor,
+  .admin-root .tiptap-editor * {
+    cursor: text !important;
   }
   /* Ensure touch elements are easy to tap */
   a, button, [role="button"] {
@@ -203,3 +242,95 @@
   50% { opacity: 1; }
 }
 .animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+
+/* Tiptap Editor Styles */
+@layer components {
+  .tiptap-editor {
+    outline: none;
+  }
+
+  .tiptap-editor h2 {
+    @apply text-2xl font-bold mt-8 mb-4;
+  }
+
+  .tiptap-editor h3 {
+    @apply text-xl font-bold mt-6 mb-3;
+  }
+
+  .tiptap-editor p {
+    @apply my-4 leading-relaxed;
+    line-height: 1.7;
+  }
+
+  .tiptap-editor ul,
+  .tiptap-editor ol {
+    @apply ml-6 my-4 space-y-2;
+  }
+
+  .tiptap-editor ul {
+    list-style-type: disc;
+  }
+
+  .tiptap-editor ol {
+    list-style-type: decimal;
+  }
+
+  .tiptap-editor li {
+    @apply leading-relaxed;
+  }
+
+  .tiptap-editor blockquote {
+    @apply border-l-4 border-primary pl-4 py-2 my-4 italic bg-muted/30;
+  }
+
+  .tiptap-editor code {
+    @apply bg-muted px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+
+  .tiptap-editor pre {
+    @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto my-4;
+  }
+
+  .tiptap-editor pre code {
+    @apply bg-transparent p-0;
+  }
+
+  .tiptap-editor a {
+    @apply text-primary underline hover:text-primary/80;
+  }
+
+  .tiptap-editor img {
+    @apply max-w-full mx-auto my-6 rounded-lg;
+  }
+
+  .tiptap-editor table {
+    @apply w-full border-collapse my-4;
+  }
+
+  .tiptap-editor th,
+  .tiptap-editor td {
+    @apply border border-border p-2;
+  }
+
+  .tiptap-editor th {
+    @apply font-bold bg-muted;
+  }
+
+  .tiptap-editor hr {
+    @apply my-8 border-t-2 border-border;
+  }
+
+  /* Placeholder styles */
+  .tiptap-editor p.is-editor-empty:first-child::before {
+    content: attr(data-placeholder);
+    @apply text-muted-foreground;
+    float: left;
+    height: 0;
+    pointer-events: none;
+  }
+
+  /* YouTube embed styles */
+  .tiptap-editor iframe {
+    @apply w-full rounded-lg;
+  }
+}
