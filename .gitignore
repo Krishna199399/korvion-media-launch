@@ -40,3 +40,6 @@ out/
 *.njsproj
 *.sln
 *.sw?
+
+# Agents & Workflows
+.agents/

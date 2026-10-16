@@ -375,12 +375,46 @@ export function ManufacturingClient() {
     }
 
     setSubmitting(true);
-    // Simulate API submission
-    setTimeout(() => {
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "1e22062e-7bee-43a4-b8c4-f6c6a218a1e0";
+
+    try {
+      const payload = {
+        access_key: accessKey,
+        subject: `New Manufacturing Enquiry - ${formData.businessName} (${formData.contactName})`,
+        from_name: "Korvion Manufacturing Page",
+        replyto: formData.workEmail,
+        name: formData.contactName,
+        email: formData.workEmail,
+        phone: formData.phone,
+        company: formData.businessName,
+        industry: formData.industry,
+        product: formData.product,
+        challenge: formData.challenge,
+      };
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        setSubmitted(true);
+        toast.success('Your manufacturing enquiry has been received. Our team will contact you within 24 hours!');
+      } else {
+        console.error("Web3Forms response error:", data);
+        toast.error(data.message || 'Failed to submit enquiry. Please try WhatsApp or call directly.');
+      }
+    } catch (err) {
+      console.error("Manufacturing enquiry submission error:", err);
+      toast.error('Network error. Please try again or reach out on WhatsApp.');
+    } finally {
       setSubmitting(false);
-      setSubmitted(true);
-      toast.success('Your manufacturing enquiry has been received. Our team will contact you within 24 hours!');
-    }, 1000);
+    }
   };
 
   const scrollToForm = () => {

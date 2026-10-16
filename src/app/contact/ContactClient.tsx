@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, ArrowUpRight, Check } from "lucide-react";
+import { Mail, MapPin, Phone, ArrowUpRight, Check, AlertCircle } from "lucide-react";
+import { toast } from "sonner";
 import { ScrollProgress } from "@/components/animations/ScrollProgress";
 import { SplitText } from "@/components/animations/SplitText";
 import { MagneticButton } from "@/components/animations/MagneticButton";
@@ -14,10 +15,12 @@ import { FadeInSection } from "@/components/animations/FadeInSection";
 export function ContactClient() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitting(true);
+    setErrorMessage(null);
 
     const form = e.currentTarget;
     const formData = new FormData(form);
@@ -40,13 +43,18 @@ export function ContactClient() {
       const data = await response.json();
       if (data.success) {
         setSubmitted(true);
+        toast.success("Thank you! Your inquiry has been sent.");
       } else {
-        console.warn("Web3Forms response:", data);
-        setSubmitted(true);
+        console.error("Web3Forms response:", data);
+        const err = data.message || "Unable to send inquiry. Please try again or reach out on WhatsApp.";
+        setErrorMessage(err);
+        toast.error(err);
       }
     } catch (err) {
       console.error("Form submission error:", err);
-      setSubmitted(true);
+      const networkErr = "Network error. Please try again or reach out directly on WhatsApp.";
+      setErrorMessage(networkErr);
+      toast.error(networkErr);
     } finally {
       setSubmitting(false);
     }
@@ -137,6 +145,15 @@ export function ContactClient() {
                   </motion.div>
                 ) : (
                   <form onSubmit={handleSubmit}>
+                    {errorMessage && (
+                      <div className="mb-6 flex items-start gap-3 rounded-2xl border border-red-500/30 bg-red-500/10 p-4 text-sm text-red-400">
+                        <AlertCircle className="h-5 w-5 shrink-0 mt-0.5 text-red-400" />
+                        <div>
+                          <p className="font-semibold">Unable to submit form</p>
+                          <p className="text-xs text-red-300/90 mt-0.5">{errorMessage}</p>
+                        </div>
+                      </div>
+                    )}
                     <StaggerChildren className="space-y-5" staggerDelay={0.08}>
                       <StaggerChild>
                         <div className="grid sm:grid-cols-2 gap-5">

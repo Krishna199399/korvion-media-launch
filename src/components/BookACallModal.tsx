@@ -13,7 +13,9 @@ import {
   ArrowRight,
   Sparkles,
   User,
+  AlertCircle,
 } from "lucide-react";
+import { toast } from "sonner";
 
 interface BookACallModalProps {
   isOpen: boolean;
@@ -23,6 +25,7 @@ interface BookACallModalProps {
 export function BookACallModal({ isOpen, onClose }: BookACallModalProps) {
   const [activeTab, setActiveTab] = useState<"instant" | "form">("instant");
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formError, setFormError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -51,6 +54,7 @@ export function BookACallModal({ isOpen, onClose }: BookACallModalProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
+    setFormError(null);
 
     const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "1e22062e-7bee-43a4-b8c4-f6c6a218a1e0";
 
@@ -77,18 +81,26 @@ export function BookACallModal({ isOpen, onClose }: BookACallModalProps) {
       });
 
       const data = await response.json();
-      if (!data.success) {
-        console.warn("Web3Forms modal response:", data);
+      if (data.success) {
+        setFormSubmitted(true);
+        toast.success("Call request submitted! Our team will reach out shortly.");
+        setTimeout(() => {
+          setFormSubmitted(false);
+          onClose();
+        }, 3500);
+      } else {
+        console.error("Web3Forms modal response error:", data);
+        const err = data.message || "Unable to submit request. Please reach us via WhatsApp or Phone.";
+        setFormError(err);
+        toast.error(err);
       }
     } catch (err) {
       console.error("Modal submission error:", err);
+      const networkErr = "Network error. Please reach us via WhatsApp or Phone.";
+      setFormError(networkErr);
+      toast.error(networkErr);
     } finally {
       setSubmitting(false);
-      setFormSubmitted(true);
-      setTimeout(() => {
-        setFormSubmitted(false);
-        onClose();
-      }, 3500);
     }
   };
 
@@ -272,6 +284,12 @@ export function BookACallModal({ isOpen, onClose }: BookACallModalProps) {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-3">
+                    {formError && (
+                      <div className="flex items-start gap-2 rounded-lg border border-red-500/30 bg-red-500/10 p-2.5 text-xs text-red-400">
+                        <AlertCircle className="h-4 w-4 shrink-0 mt-0.5 text-red-400" />
+                        <span>{formError}</span>
+                      </div>
+                    )}
                     <div className="grid sm:grid-cols-2 gap-3">
                       <div>
                         <label className="block text-[11px] font-semibold mb-1 text-muted-foreground">Your Name *</label>
