@@ -45,7 +45,7 @@ const homeSchema = {
         "@id": "https://www.korvionmedia.com/#logo",
       },
       "telephone": "+91 9480156345",
-      "email": "korvionmedia@gmail.com",
+      "email": "info@korvionmedia.com",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "RGJ4+8HF, Fourth Cross Rd, Bhagya Nagar, Angol",
@@ -59,7 +59,7 @@ const homeSchema = {
         "@id": "https://www.korvionmedia.com/#primary-contact",
         "contactType": "Customer Support",
         "telephone": "+91 9480156345",
-        "email": "korvionmedia@gmail.com",
+        "email": "info@korvionmedia.com",
         "availableLanguage": ["English", "Kannada", "Hindi"],
       },
       "areaServed": [

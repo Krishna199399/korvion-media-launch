@@ -764,8 +764,8 @@ export function BelagaviClient() {
                     <Globe2 className="h-5 w-5 text-primary shrink-0" />
                     <div>
                       <h4 className="font-bold text-sm">Official Email</h4>
-                      <a href="mailto:korvionmedia@gmail.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                        korvionmedia@gmail.com
+                      <a href="mailto:info@korvionmedia.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                        info@korvionmedia.com
                       </a>
                     </div>
                   </div>

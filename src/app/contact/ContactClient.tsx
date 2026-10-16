@@ -219,7 +219,7 @@ export function ContactClient() {
             {/* Info Cards */}
             <StaggerChildren className="lg:col-span-5 space-y-4" staggerDelay={0.1}>
               <StaggerChild>
-                <InfoCard icon={Mail} title="Email" lines={["korvionmedia@gmail.com"]} />
+                <InfoCard icon={Mail} title="Email" lines={["info@korvionmedia.com"]} />
               </StaggerChild>
               <StaggerChild>
                 <InfoCard icon={Phone} title="Direct" lines={["+91 9480156345", "Mon–Fri · 10am–7pm IST"]} />

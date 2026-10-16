@@ -188,11 +188,11 @@ export function CookiePolicyClient() {
 
                 <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
                   <a
-                    href="mailto:korvionmedia@gmail.com"
+                    href="mailto:info@korvionmedia.com"
                     className="inline-flex items-center gap-2 rounded-full bg-gradient-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow hover:shadow-glow transition-all"
                   >
                     <Mail className="h-4 w-4" />
-                    korvionmedia@gmail.com
+                    info@korvionmedia.com
                   </a>
                   <a
                     href="tel:+919480156345"

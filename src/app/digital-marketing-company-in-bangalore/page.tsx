@@ -38,7 +38,7 @@ const bangaloreSchema = {
         "@id": "https://www.korvionmedia.com/#organization",
       },
       "telephone": "+91 9480156345",
-      "email": "korvionmedia@gmail.com",
+      "email": "info@korvionmedia.com",
       "areaServed": {
         "@type": "City",
         "name": "Bengaluru",

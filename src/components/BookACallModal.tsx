@@ -238,8 +238,8 @@ export function BookACallModal({ isOpen, onClose }: BookACallModalProps) {
                     </div>
                     <div>
                       <p className="text-[11px] text-muted-foreground">Strategy Team Email</p>
-                      <a href="mailto:korvionmedia@gmail.com" className="text-xs font-semibold hover:text-primary transition-colors">
-                        korvionmedia@gmail.com
+                      <a href="mailto:info@korvionmedia.com" className="text-xs font-semibold hover:text-primary transition-colors">
+                        info@korvionmedia.com
                       </a>
                     </div>
                   </div>

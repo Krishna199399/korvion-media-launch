@@ -44,11 +44,11 @@ export function Footer() {
             </p>
 
             <a
-              href="mailto:korvionmedia@gmail.com"
+              href="mailto:info@korvionmedia.com"
               className="mt-5 inline-flex items-center gap-2 text-xs sm:text-sm text-foreground hover:text-primary transition-colors font-medium"
             >
               <Mail className="h-4 w-4 text-primary" />
-              <span>korvionmedia@gmail.com</span>
+              <span>info@korvionmedia.com</span>
             </a>
 
             <div className="mt-5 flex items-center gap-3">
