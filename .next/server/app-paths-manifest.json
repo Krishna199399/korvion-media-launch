@@ -1,8 +1,0 @@
-{
-  "/page": "app/page.js",
-  "/about-us/page": "app/about-us/page.js",
-  "/admin/tags/page": "app/admin/tags/page.js",
-  "/admin/media/page": "app/admin/media/page.js",
-  "/admin/newsletter/page": "app/admin/newsletter/page.js",
-  "/admin/page": "app/admin/page.js"
-}
