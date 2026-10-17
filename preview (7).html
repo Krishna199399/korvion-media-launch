@@ -1,0 +1,1560 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Digital marketing for manufacturers. Improve product visibility, reach B2B buyers, generate enquiries and build distribution opportunities with Korvion Media.">
+<title>Digital Marketing for Manufacturers | Korvion Media</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* =====================================================
+   KORVION MEDIA | MANUFACTURING LANDING PAGE
+   Body only. No website header or footer.
+   ===================================================== */
+
+:root {
+  --km-ink: #0A192B;
+  --km-navy: #0D2239;
+  --km-navy-2: #112F4B;
+  --km-blue: #1677C8;
+  --km-blue-light: #4DA7F4;
+  --km-orange: #FF7938;
+  --km-orange-light: #FFAD69;
+  --km-paper: #F5F7FA;
+  --km-white: #FFFFFF;
+  --km-muted: #68788A;
+  --km-border: #DFE6EE;
+  --km-green: #77D9B0;
+  --km-radius: 20px;
+  --km-shadow: 0 18px 55px rgba(11, 35, 58, .08);
+  --km-gradient: linear-gradient(115deg, #1677C8 0%, #2466BD 48%, #FF7938 100%);
+  --km-gradient-blue: linear-gradient(135deg, #123A61 0%, #1677C8 100%);
+  --km-font: "DM Sans", sans-serif;
+  --km-display: "Manrope", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 28px;
+}
+
+body {
+  margin: 0;
+  background: var(--km-white);
+  color: var(--km-ink);
+  font-family: var(--km-font);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+a { color: inherit; text-decoration: none; }
+
+button, input, select, textarea { font: inherit; }
+
+button, a { -webkit-tap-highlight-color: transparent; }
+
+p {
+  margin: 0;
+  color: var(--km-muted);
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  font-family: var(--km-display);
+  line-height: 1.15;
+  letter-spacing: -.045em;
+}
+
+h1 { font-size: clamp(2.8rem, 5.8vw, 5.5rem); font-weight: 700; }
+h2 { font-size: clamp(2rem, 3.7vw, 3.35rem); font-weight: 700; }
+h3 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.025em; }
+
+.km-wrap { width: min(1200px, calc(100% - 48px)); margin-inline: auto; }
+.km-section { padding: 108px 0; }
+.km-section-sm { padding: 76px 0; }
+.km-bg-soft { background: var(--km-paper); }
+
+.km-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  color: var(--km-blue);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.km-eyebrow::before {
+  width: 24px;
+  height: 2px;
+  content: "";
+  background: var(--km-gradient);
+}
+
+.km-section-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(260px, .75fr);
+  align-items: end;
+  gap: 38px;
+  margin-bottom: 46px;
+}
+
+.km-section-heading p { max-width: 490px; }
+
+.km-gradient-text {
+  color: transparent;
+  background: var(--km-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.km-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 14px 22px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: var(--km-gradient);
+  color: #fff;
+  font-size: .9rem;
+  font-weight: 700;
+  transition: transform .25s, box-shadow .25s;
+  cursor: pointer;
+}
+
+.km-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(22, 119, 200, .24);
+}
+
+.km-btn-outline {
+  border-color: rgba(255,255,255,.28);
+  background: rgba(255,255,255,.04);
+  color: #fff;
+}
+
+.km-btn-light {
+  border-color: var(--km-border);
+  background: #fff;
+  color: var(--km-ink);
+}
+
+.km-arrow { font-size: 1.15rem; transition: transform .2s; }
+.km-btn:hover .km-arrow { transform: translateX(4px); }
+
+.km-icon {
+  width: 25px;
+  height: 25px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* HERO */
+
+.km-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 92px 0 0;
+  background: var(--km-ink);
+  color: white;
+}
+
+.km-hero::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: linear-gradient(to bottom, black, transparent 92%);
+}
+
+.km-hero::after {
+  position: absolute;
+  z-index: -1;
+  top: -280px;
+  right: -190px;
+  width: 780px;
+  height: 780px;
+  border-radius: 50%;
+  content: "";
+  background: radial-gradient(circle, rgba(22,119,200,.25), rgba(255,121,56,.07) 48%, transparent 70%);
+  pointer-events: none;
+}
+
+.km-hero-grid {
+  display: grid;
+  grid-template-columns: 1.06fr .94fr;
+  align-items: center;
+  gap: 54px;
+  padding-bottom: 78px;
+}
+
+.km-hero .km-eyebrow { color: #9CCFFF; }
+
+.km-hero h1 { max-width: 760px; }
+.km-hero-copy { max-width: 590px; margin-top: 24px; color: #B9C8D8; font-size: 1.05rem; }
+
+.km-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+
+.km-hero-note {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 22px;
+  color: #B9C8D8;
+  font-size: .8rem;
+}
+
+.km-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--km-green);
+  box-shadow: 0 0 0 5px rgba(119,217,176,.1);
+}
+
+.km-hero-visual {
+  position: relative;
+  min-height: 465px;
+}
+
+.km-hero-image {
+  position: absolute;
+  inset: 15px 0 15px 30px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 20px 20px 70px 20px;
+  background: #18344C;
+}
+
+.km-hero-image img { opacity: .74; }
+
+.km-hero-image::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(180deg, transparent 28%, rgba(7,21,36,.86) 100%);
+}
+
+.km-visual-caption {
+  position: absolute;
+  z-index: 1;
+  right: 30px;
+  bottom: 36px;
+  left: 55px;
+}
+
+.km-visual-caption span {
+  display: block;
+  margin-bottom: 10px;
+  color: #9CCFFF;
+  font-size: .7rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.km-visual-caption h3 { max-width: 330px; color: white; font-size: 1.8rem; }
+
+.km-float-card {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 16px 18px;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 12px;
+  background: rgba(12,32,52,.93);
+  box-shadow: 0 18px 45px rgba(0,0,0,.18);
+  backdrop-filter: blur(14px);
+}
+
+.km-float-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--km-gradient);
+  color: white;
+}
+
+.km-float-card small, .km-float-card strong { display: block; }
+.km-float-card small { color: #B9C8D8; font-size: .72rem; }
+.km-float-card strong { font-size: .9rem; }
+
+.km-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+
+.km-hero-stat {
+  padding: 27px 24px 30px 0;
+  border-right: 1px solid rgba(255,255,255,.12);
+}
+
+.km-hero-stat:not(:first-child) { padding-left: 26px; }
+.km-hero-stat:last-child { border-right: 0; }
+.km-hero-stat strong {
+  display: block;
+  color: white;
+  font-family: var(--km-display);
+  font-size: clamp(1.55rem, 2.7vw, 2.25rem);
+  line-height: 1.2;
+}
+.km-hero-stat span { color: #AFC1D2; font-size: .77rem; }
+
+/* MARKET SIGNAL */
+
+.km-signal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.km-signal-panel {
+  position: relative;
+  overflow: hidden;
+  padding: 38px;
+  border-radius: var(--km-radius);
+  background: var(--km-navy);
+  color: white;
+}
+
+.km-signal-panel::after {
+  position: absolute;
+  right: -90px;
+  bottom: -150px;
+  width: 310px;
+  height: 310px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 50%;
+  box-shadow: 0 0 0 35px rgba(255,255,255,.025), 0 0 0 70px rgba(255,255,255,.02);
+  content: "";
+}
+
+.km-big-number {
+  display: block;
+  margin: 10px 0;
+  font-family: var(--km-display);
+  font-size: clamp(3.4rem, 6vw, 5.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -.07em;
+}
+
+.km-signal-panel p { max-width: 350px; color: #BDCDDB; font-size: .88rem; }
+
+.km-source { display: block; margin-top: 15px; color: #93A8BA; font-size: .68rem; }
+
+.km-signal-content h2 { margin-bottom: 22px; }
+.km-signal-content > p { margin-bottom: 24px; }
+
+.km-check-list { display: grid; gap: 16px; padding: 0; margin: 0; list-style: none; }
+.km-check-list li { display: flex; align-items: flex-start; gap: 12px; color: #35485B; font-size: .92rem; }
+.km-check {
+  display: grid;
+  width: 23px;
+  height: 23px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: #E7F3FF;
+  color: var(--km-blue);
+  font-size: .75rem;
+}
+
+/* BUYER CARDS */
+
+.km-buyer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+.km-buyer-card {
+  padding: 26px 23px;
+  border: 1px solid var(--km-border);
+  border-radius: 14px;
+  background: white;
+  transition: transform .25s, box-shadow .25s, border-color .25s;
+}
+
+.km-buyer-card:hover { transform: translateY(-5px); border-color: #A8D0F4; box-shadow: var(--km-shadow); }
+
+.km-card-icon {
+  display: grid;
+  width: 47px;
+  height: 47px;
+  margin-bottom: 25px;
+  place-items: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #E6F3FF, #FFF0E6);
+  color: var(--km-blue);
+}
+
+.km-buyer-card h3 { margin-bottom: 10px; }
+.km-buyer-card p { font-size: .84rem; }
+
+/* JOURNEY */
+
+.km-journey-list { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+
+.km-stage {
+  position: relative;
+  min-height: 220px;
+  padding: 24px 20px;
+  border: 1px solid var(--km-border);
+  border-radius: 14px;
+  background: white;
+  transition: background .25s, transform .25s, border-color .25s;
+}
+
+.km-stage:hover { transform: translateY(-4px); border-color: var(--km-blue-light); background: #F8FBFF; }
+
+.km-stage-number {
+  display: inline-block;
+  margin-bottom: 28px;
+  color: var(--km-blue);
+  font-family: var(--km-display);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+.km-stage h3 { margin-bottom: 12px; }
+.km-stage p { font-size: .82rem; }
+
+/* FRAMEWORK */
+
+.km-framework {
+  overflow: hidden;
+  border-radius: 22px;
+  background: var(--km-ink);
+  color: white;
+}
+
+.km-framework-top {
+  display: grid;
+  grid-template-columns: 1fr .75fr;
+  align-items: end;
+  gap: 30px;
+  padding: 46px;
+}
+
+.km-framework-top h2 { max-width: 600px; }
+.km-framework-top p { color: #AFC1D2; }
+
+.km-framework-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(255,255,255,.13);
+}
+
+.km-framework-step {
+  min-height: 250px;
+  padding: 30px;
+  border-right: 1px solid rgba(255,255,255,.13);
+}
+.km-framework-step:last-child { border-right: 0; }
+
+.km-framework-step span {
+  display: block;
+  margin-bottom: 34px;
+  color: #76B9F2;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .13em;
+}
+
+.km-framework-step h3 { margin-bottom: 13px; color: white; }
+.km-framework-step p { color: #AFC1D2; font-size: .84rem; }
+
+/* SERVICE CARDS */
+
+.km-service-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+
+.km-service-card {
+  display: flex;
+  min-height: 245px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  border: 1px solid var(--km-border);
+  border-radius: 15px;
+  background: white;
+  transition: transform .25s, box-shadow .25s, border-color .25s;
+}
+
+.km-service-card:hover { transform: translateY(-5px); border-color: #B7D8F5; box-shadow: var(--km-shadow); }
+
+.km-service-card .km-card-icon { margin-bottom: 23px; }
+.km-service-card h3 { margin-bottom: 10px; }
+.km-service-card p { margin-bottom: 20px; font-size: .83rem; }
+
+.km-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  color: var(--km-blue);
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+.km-text-link:hover { color: var(--km-orange); }
+
+.km-section-kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 24px;
+  color: var(--km-muted);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.km-section-kicker::after { width: 60px; height: 1px; background: var(--km-border); content: ""; }
+
+/* SPECIALISED SERVICES */
+
+.km-special-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+.km-special-card {
+  display: grid;
+  grid-template-columns: 54px 1fr auto;
+  align-items: start;
+  gap: 17px;
+  padding: 23px;
+  border: 1px solid var(--km-border);
+  border-radius: 14px;
+  background: rgba(255,255,255,.8);
+  transition: border-color .2s, background .2s;
+}
+
+.km-special-card:hover { border-color: #A8D0F4; background: white; }
+
+.km-special-card .km-card-icon { margin: 0; }
+.km-special-card h3 { margin-bottom: 7px; }
+.km-special-card p { font-size: .82rem; }
+.km-special-card .km-text-link { grid-column: 2 / 4; margin-top: 0; }
+
+/* INDUSTRY CARDS */
+
+.km-industry-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+
+.km-industry-card {
+  overflow: hidden;
+  border: 1px solid var(--km-border);
+  border-radius: 17px;
+  background: white;
+  transition: transform .25s, box-shadow .25s;
+}
+.km-industry-card:hover { transform: translateY(-4px); box-shadow: var(--km-shadow); }
+
+.km-industry-photo {
+  position: relative;
+  height: 185px;
+  overflow: hidden;
+  background: #18344C;
+}
+.km-industry-photo img { transition: transform .6s; }
+.km-industry-card:hover .km-industry-photo img { transform: scale(1.05); }
+
+.km-industry-photo::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(0deg, rgba(7,21,36,.55), transparent 75%);
+}
+
+.km-industry-index {
+  position: absolute;
+  z-index: 1;
+  top: 16px;
+  left: 16px;
+  display: grid;
+  width: 37px;
+  height: 37px;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 9px;
+  background: rgba(7,21,36,.6);
+  color: white;
+  font-size: .75rem;
+  font-weight: 700;
+  backdrop-filter: blur(8px);
+}
+
+.km-industry-content { padding: 25px; }
+.km-industry-content h3 { margin-bottom: 13px; font-size: 1.18rem; }
+
+.km-industry-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--km-border);
+}
+
+.km-industry-stat strong {
+  color: var(--km-blue);
+  font-family: var(--km-display);
+  font-size: 1.85rem;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -.05em;
+}
+
+.km-industry-stat span { color: var(--km-muted); font-size: .73rem; line-height: 1.4; }
+.km-industry-content p { font-size: .84rem; }
+
+.km-insight {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 17px;
+  padding: 12px 13px;
+  border-radius: 8px;
+  background: #F1F7FD;
+  color: #385773;
+  font-size: .77rem;
+  line-height: 1.55;
+}
+.km-insight .km-icon { width: 17px; height: 17px; color: var(--km-blue); }
+
+.km-stat-source { display: block; margin-top: 12px; color: #8493A2; font-size: .65rem; line-height: 1.5; }
+
+/* INDUSTRIAL CONTEXT */
+
+.km-partner-panel {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 55px;
+  align-items: center;
+  padding: 52px;
+  border: 1px solid var(--km-border);
+  border-radius: 22px;
+  background: linear-gradient(135deg, #F7FAFD, #FFFFFF 65%);
+}
+
+.km-partner-visual {
+  position: relative;
+  min-height: 300px;
+  overflow: hidden;
+  border-radius: 15px;
+  background: var(--km-navy);
+}
+.km-partner-visual img { position: absolute; inset: 0; opacity: .65; }
+.km-partner-visual::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(135deg, rgba(22,119,200,.2), rgba(10,25,43,.65));
+}
+
+.km-partner-overlay {
+  position: absolute;
+  z-index: 1;
+  right: 20px;
+  bottom: 22px;
+  left: 22px;
+  color: white;
+}
+.km-partner-overlay span { display: block; margin-bottom: 8px; color: #9CCFFF; font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; }
+.km-partner-overlay h3 { max-width: 300px; font-size: 1.65rem; }
+
+.km-partner-copy h2 { margin-bottom: 18px; }
+.km-partner-copy p + p { margin-top: 14px; }
+
+/* OUTCOMES */
+
+.km-outcome-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+
+.km-outcome-card {
+  padding: 25px;
+  border: 1px solid var(--km-border);
+  border-radius: 14px;
+  background: white;
+}
+.km-outcome-card .km-card-icon { margin-bottom: 20px; }
+.km-outcome-card h3 { margin-bottom: 9px; }
+.km-outcome-card p { font-size: .83rem; }
+
+/* FAQ */
+
+.km-faq-layout { display: grid; grid-template-columns: .7fr 1.3fr; gap: 65px; align-items: start; }
+
+.km-faq-aside {
+  position: sticky;
+  top: 25px;
+}
+.km-faq-aside p { margin: 18px 0 25px; }
+
+.km-faq-list { border-top: 1px solid var(--km-border); }
+
+.km-faq-item { border-bottom: 1px solid var(--km-border); }
+
+.km-faq-item summary {
+  position: relative;
+  padding: 22px 48px 22px 0;
+  color: var(--km-ink);
+  font-family: var(--km-display);
+  font-size: .98rem;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  list-style: none;
+  cursor: pointer;
+}
+.km-faq-item summary::-webkit-details-marker { display: none; }
+
+.km-faq-item summary::after {
+  position: absolute;
+  top: 21px;
+  right: 5px;
+  display: grid;
+  width: 27px;
+  height: 27px;
+  place-items: center;
+  border: 1px solid var(--km-border);
+  border-radius: 50%;
+  color: var(--km-blue);
+  content: "+";
+  font-family: var(--km-font);
+  font-size: 1.1rem;
+  font-weight: 400;
+  transition: transform .2s, background .2s;
+}
+.km-faq-item[open] summary::after { transform: rotate(45deg); background: #E8F4FF; }
+
+.km-faq-answer { max-width: 680px; padding: 0 35px 22px 0; }
+.km-faq-answer p { font-size: .9rem; }
+
+/* ENQUIRY */
+
+.km-enquiry {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  background: var(--km-ink);
+  color: white;
+}
+.km-enquiry::before {
+  position: absolute;
+  top: -250px;
+  right: -100px;
+  width: 580px;
+  height: 580px;
+  border-radius: 50%;
+  content: "";
+  background: radial-gradient(circle, rgba(22,119,200,.24), rgba(255,121,56,.07) 48%, transparent 70%);
+  pointer-events: none;
+}
+.km-enquiry-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 60px;
+  padding: 58px;
+}
+.km-enquiry-copy h2 { margin-bottom: 20px; }
+.km-enquiry-copy p { color: #B9C8D8; }
+.km-enquiry-note { display: flex; gap: 12px; margin-top: 32px; color: #B9C8D8; font-size: .82rem; }
+
+.km-form {
+  padding: 30px;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 15px;
+  background: rgba(255,255,255,.055);
+  backdrop-filter: blur(8px);
+}
+.km-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; }
+.km-field { display: flex; flex-direction: column; gap: 7px; }
+.km-field-full { grid-column: 1 / -1; }
+.km-field label { color: #D7E3EE; font-size: .78rem; }
+.km-field input, .km-field select, .km-field textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 13px;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 7px;
+  outline: none;
+  background: rgba(255,255,255,.07);
+  color: white;
+  font-size: .86rem;
+}
+.km-field textarea { min-height: 90px; resize: vertical; }
+.km-field select option { color: var(--km-ink); background: white; }
+.km-field input::placeholder, .km-field textarea::placeholder { color: #91A6B9; }
+.km-field input:focus, .km-field select:focus, .km-field textarea:focus { border-color: #6DBBFA; box-shadow: 0 0 0 3px rgba(22,119,200,.16); }
+.km-form .km-btn { width: 100%; margin-top: 20px; }
+.km-form-privacy { margin-top: 12px; color: #8FA6B9; font-size: .68rem; }
+.km-form-message { display: none; margin-top: 14px; color: var(--km-green); font-size: .85rem; }
+
+/* FINAL CTA */
+
+.km-final-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+  padding: 38px 0;
+  border-top: 1px solid var(--km-border);
+}
+.km-final-cta h2 { max-width: 680px; font-size: clamp(1.8rem, 3vw, 2.7rem); }
+.km-final-cta p { margin-top: 10px; }
+
+/* REVEAL */
+
+.km-reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+.km-reveal.km-visible { opacity: 1; transform: translateY(0); }
+
+/* RESPONSIVE */
+
+@media (max-width: 1050px) {
+  .km-hero-grid { gap: 30px; }
+  .km-hero-visual { min-height: 405px; }
+  .km-buyer-grid, .km-outcome-grid { grid-template-columns: repeat(2, 1fr); }
+  .km-service-grid { grid-template-columns: repeat(3, 1fr); }
+  .km-journey-list { grid-template-columns: repeat(3, 1fr); }
+  .km-framework-step { padding: 24px; }
+  .km-enquiry-grid { gap: 35px; padding: 40px; }
+}
+
+@media (max-width: 760px) {
+  .km-wrap { width: min(100% - 32px, 600px); }
+  .km-section { padding: 74px 0; }
+  .km-section-sm { padding: 56px 0; }
+
+  .km-section-heading, .km-signal, .km-partner-panel, .km-faq-layout, .km-enquiry-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .km-section-heading { margin-bottom: 30px; }
+  .km-hero { padding-top: 58px; }
+  .km-hero-grid { grid-template-columns: 1fr; gap: 32px; padding-bottom: 45px; }
+  .km-hero h1 { font-size: clamp(2.65rem, 11vw, 4.3rem); }
+  .km-hero-copy { font-size: .98rem; }
+  .km-hero-visual { min-height: 340px; }
+  .km-hero-image { inset: 14px 0 8px 18px; }
+  .km-visual-caption { right: 20px; bottom: 23px; left: 32px; }
+  .km-visual-caption h3 { font-size: 1.45rem; }
+  .km-float-card { padding: 12px; }
+  .km-float-icon { width: 36px; height: 36px; }
+  .km-hero-stats { grid-template-columns: repeat(2, 1fr); }
+  .km-hero-stat { padding: 19px 12px 20px 0; }
+  .km-hero-stat:not(:first-child) { padding-left: 12px; }
+  .km-hero-stat:nth-child(2) { border-right: 0; }
+  .km-hero-stat:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.12); }
+  .km-hero-stat:nth-child(3) { padding-left: 0; }
+  .km-hero-stat strong { font-size: 1.7rem; }
+
+  .km-signal-panel { padding: 28px; }
+  .km-buyer-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .km-buyer-card { padding: 19px 16px; }
+  .km-buyer-card .km-card-icon { margin-bottom: 19px; }
+  .km-journey-list { grid-template-columns: 1fr 1fr; }
+  .km-stage { min-height: 185px; padding: 20px 16px; }
+  .km-stage-number { margin-bottom: 19px; }
+
+  .km-framework-top { grid-template-columns: 1fr; padding: 29px; }
+  .km-framework-steps { grid-template-columns: 1fr 1fr; }
+  .km-framework-step { min-height: 220px; padding: 22px; border-bottom: 1px solid rgba(255,255,255,.13); }
+  .km-framework-step:nth-child(2) { border-right: 0; }
+  .km-framework-step:nth-child(3), .km-framework-step:nth-child(4) { border-bottom: 0; }
+
+  .km-service-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .km-service-card { min-height: 235px; padding: 18px; }
+  .km-service-card h3 { font-size: 1rem; }
+  .km-service-card p { font-size: .8rem; }
+
+  .km-special-grid, .km-industry-grid { grid-template-columns: 1fr; }
+  .km-special-card { grid-template-columns: 46px 1fr auto; gap: 12px; padding: 18px; }
+  .km-special-card .km-card-icon { width: 43px; height: 43px; }
+  .km-special-card h3 { font-size: 1rem; }
+  .km-industry-photo { height: 195px; }
+  .km-industry-content { padding: 22px; }
+
+  .km-partner-panel { padding: 20px; }
+  .km-partner-visual { min-height: 250px; }
+  .km-outcome-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .km-outcome-card { padding: 19px; }
+
+  .km-faq-aside { position: static; }
+  .km-enquiry-grid { padding: 27px 20px; }
+  .km-form { padding: 20px; }
+  .km-form-grid { grid-template-columns: 1fr; }
+  .km-field-full { grid-column: auto; }
+  .km-final-cta { align-items: flex-start; flex-direction: column; padding: 30px 0; }
+}
+
+@media (max-width: 420px) {
+  .km-wrap { width: calc(100% - 28px); }
+  .km-hero-actions { align-items: stretch; flex-direction: column; }
+  .km-hero-actions .km-btn { width: 100%; }
+  .km-buyer-grid, .km-service-grid, .km-outcome-grid { grid-template-columns: 1fr; }
+  .km-buyer-card { min-height: auto; }
+  .km-service-card { min-height: 205px; }
+  .km-journey-list { grid-template-columns: 1fr; }
+  .km-stage { min-height: auto; }
+  .km-special-card { grid-template-columns: 42px 1fr; }
+  .km-special-card .km-text-link { grid-column: 2; }
+  .km-framework-steps { grid-template-columns: 1fr; }
+  .km-framework-step { min-height: auto; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.13) !important; }
+  .km-framework-step:last-child { border-bottom: 0 !important; }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+  .km-reveal { opacity: 1; transform: none; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Reusable inline SVG icon library -->
+<svg aria-hidden="true" width="0" height="0" style="position:absolute;overflow:hidden">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7.3"/><path d="m16.2 16.2 4.3 4.3"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-network" viewBox="0 0 24 24"><circle cx="12" cy="5" r="3"/><circle cx="5" cy="19" r="3"/><circle cx="19" cy="19" r="3"/><path d="m10.5 7.6-4 8.7M13.5 7.6l4 8.7M8 19h8"/></symbol>
+  <symbol id="i-trend" viewBox="0 0 24 24"><path d="M3 3v18h18M7 14l5-5 4 4 5-7"/><path d="M16 6h5v5"/></symbol>
+  <symbol id="i-factory" viewBox="0 0 24 24"><path d="M3 21V9l6 3V7l6 4V4h4v17"/><path d="M3 21h18M7 17h2m3 0h2m3 0h1"/></symbol>
+  <symbol id="i-handshake" viewBox="0 0 24 24"><path d="m3 12 4-4 4 1 3-2 7 4-7 8-4-3-3 1-4-5Z"/><path d="m7 8 3-3 5 1 3 3M8 15l3-3m1 5 3-3m1 2 2-2"/></symbol>
+  <symbol id="i-package" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="M3 8v9l9 5 9-5V8M12 13v9M7.5 5.5l9 5"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v18H6.5A2.5 2.5 0 0 0 4 22V4.5Z"/><path d="M4 18a2.5 2.5 0 0 1 2.5-2.5H20M8 6h7m-7 4h7"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4a2 2 0 0 1 2 2v10H1V9a2 2 0 0 1 2-2Z"/><circle cx="12" cy="13" r="4"/></symbol>
+  <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18h1a2 2 0 0 0 1.7-3.1 2 2 0 0 1 1.7-3h1.1A4.5 4.5 0 0 0 22 10.4C22 6.3 17.5 3 12 3Z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7.5" r="1"/><circle cx="15" cy="7.5" r="1"/></symbol>
+  <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4M16 7l-5 5-3-3"/></symbol>
+  <symbol id="i-workflow" viewBox="0 0 24 24"><rect x="2" y="3" width="8" height="6" rx="1"/><rect x="14" y="15" width="8" height="6" rx="1"/><rect x="2" y="15" width="8" height="6" rx="1"/><path d="M10 6h4a2 2 0 0 1 2 2v7M6 9v6"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18M7 14l4-4 4 3 6-7"/><path d="M16 6h5v5"/></symbol>
+  <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="18" rx="2"/><path d="M9 4V2h6v2M8 11h8m-8 4h8m-8 4h5"/></symbol>
+  <symbol id="i-shopping" viewBox="0 0 24 24"><path d="M3 3h2l2.5 12h11l3-9H6"/><circle cx="10" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></symbol>
+  <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6m-5 0v6l-6 10a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-6-10V3"/><path d="M7 15h10"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24"><path d="m13 2-3 9h8L9 22l3-9H4l9-11Z"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a6 6 0 0 0-7.8 7.8L2 19l3 3 4.9-4.9a6 6 0 0 0 7.8-7.8L14 13l-3-3 3.7-3.7Z"/></symbol>
+  <symbol id="i-shirt" viewBox="0 0 24 24"><path d="m16 4 5 3-3 5-3-2v11H9V10L6 12 3 7l5-3 2 2h4l2-2Z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  <symbol id="i-boxes" viewBox="0 0 24 24"><path d="m12 2 9 5-9 5-9-5 9-5ZM3 12l9 5 9-5M3 17l9 5 9-5"/></symbol>
+</svg>
+
+<main id="km-manufacturing-page">
+
+  <!-- HERO -->
+  <section class="km-hero">
+    <div class="km-wrap">
+      <div class="km-hero-grid">
+        <div class="km-reveal">
+          <div class="km-eyebrow">Manufacturing growth · Digital market access</div>
+          <h1>Digital marketing for manufacturers, <span class="km-gradient-text">backed by industrial expertise.</span></h1>
+          <p class="km-hero-copy">Turn your manufacturing capabilities into market opportunities. Reach relevant buyers, strengthen product visibility and build a clearer path to enquiries and sales.</p>
+
+          <div class="km-hero-actions">
+            <a class="km-btn" href="#km-enquiry">Discuss your manufacturing business <span class="km-arrow">↗</span></a>
+            <a class="km-btn km-btn-outline" href="#km-framework">Explore our approach <span class="km-arrow">↓</span></a>
+          </div>
+
+          <div class="km-hero-note">
+            <span class="km-live-dot"></span>
+            Built around your product, buyers and route to market
+          </div>
+        </div>
+
+        <div class="km-hero-visual km-reveal">
+          <div class="km-hero-image">
+            <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1100&q=85" alt="Industrial engineering and manufacturing work">
+            <div class="km-visual-caption">
+              <span>From production to market</span>
+              <h3>Your product. The right buyer. A clearer route to growth.</h3>
+            </div>
+          </div>
+          <div class="km-float-card">
+            <div class="km-float-icon"><svg class="km-icon"><use href="#i-target"/></svg></div>
+            <div><small>Marketing starts with</small><strong>Understanding the product</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="km-hero-stats">
+        <div class="km-hero-stat"><strong>2.67 lakh</strong><span>Registered manufacturing establishments</span></div>
+        <div class="km-hero-stat"><strong>9.59%</strong><span>Manufacturing GVA growth in FY2024–25</span></div>
+        <div class="km-hero-stat"><strong>10</strong><span>Manufacturing industry groups explored</span></div>
+        <div class="km-hero-stat"><strong>One</strong><span>Product-to-market approach</span></div>
+      </div>
+      <p class="km-source">Manufacturing figures: Annual Survey of Industries, 2024–25. The remaining figures describe the structure of this page, not business performance claims.</p>
+    </div>
+  </section>
+
+  <!-- MARKET OPPORTUNITY -->
+  <section class="km-section">
+    <div class="km-wrap km-signal">
+      <div class="km-signal-panel km-reveal">
+        <div class="km-eyebrow">India manufacturing landscape</div>
+        <span class="km-big-number km-gradient-text">₹26.94L Cr</span>
+        <p>Gross value added by India's registered manufacturing sector in FY2024–25.</p>
+        <span class="km-source">Source: Annual Survey of Industries, 2024–25.</span>
+      </div>
+      <div class="km-signal-content km-reveal">
+        <div class="km-eyebrow">The market opportunity</div>
+        <h2>Production creates capacity. <span class="km-gradient-text">Market access creates opportunity.</span></h2>
+        <p>As manufacturers compete for buyers, distributors and new markets, product quality alone may not be enough. Buyers need to discover your business, understand your offer and evaluate your capabilities.</p>
+        <ul class="km-check-list">
+          <li><span class="km-check">✓</span><span>Make your products easier to discover in relevant searches.</span></li>
+          <li><span class="km-check">✓</span><span>Communicate specifications, applications and differentiators clearly.</span></li>
+          <li><span class="km-check">✓</span><span>Build a more direct route from buyer interest to a sales enquiry.</span></li>
+          <li><span class="km-check">✓</span><span>Identify gaps before investing in channels that may not fit your business.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUYER TYPES -->
+  <section class="km-section km-bg-soft">
+    <div class="km-wrap">
+      <div class="km-section-heading km-reveal">
+        <div>
+          <div class="km-eyebrow">Know your buyer</div>
+          <h2>Who needs to find your product <span class="km-gradient-text">after production?</span></h2>
+        </div>
+        <p>Manufacturing B2B marketing starts by understanding the people who evaluate, specify, source, distribute or purchase your products.</p>
+      </div>
+
+      <div class="km-buyer-grid">
+        <article class="km-buyer-card km-reveal">
+          <div class="km-card-icon"><svg class="km-icon"><use href="#i-factory"/></svg></div>
+          <h3>Industrial & B2B buyers</h3>
+          <p>OEMs, procurement teams, engineering companies, contractors and institutional buyers.</p>
+        </article>
+        <article class="km-buyer-card km-reveal">
+          <div class="km-card-icon"><svg class="km-icon"><use href="#i-network"/></svg></div>
+          <h3>Distributors & dealers</h3>
+          <p>Wholesalers, retailers, stockists and regional channel partners looking for products to represent.</p>
+        </article>
+        <article class="km-buyer-card km-reveal">
+          <div class="km-card-icon"><svg class="km-icon"><use href="#i-shopping"/></svg></div>
+          <h3>Business & end consumers</h3>
+          <p>Customers purchasing through websites, marketplaces, retail networks or direct sales.</p>
+        </article>
+        <article class="km-buyer-card km-reveal">
+          <div class="km-card-icon"><svg class="km-icon"><use href="#i-globe"/></svg></div>
+          <h3>New-market & export buyers</h3>
+          <p>Importers, sourcing teams and international businesses seeking manufacturing partners.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUSINESS STAGE -->
+  <section class="km-section">
+    <div class="km-wrap">
+      <div class="km-section-heading km-reveal">
+        <div>
+          <div class="km-eyebrow">Your current stage</div>
+          <h2>What does your business need <span class="km-gradient-text">next?</span></h2>
+        </div>
+        <p>Not every manufacturer needs every marketing channel. Start with the business challenge that matters most right now.</p>
+      </div>
+
+      <div class="km-journey-list">
+        <article class="km-stage km-reveal"><span class="km-stage-number">01 / ENTER</span><h3>Entering the market</h3><p>Clarify positioning, establish a digital presence and reach initial buyers.</p></article>
+        <article class="km-stage km-reveal"><span class="km-stage-number">02 / ACQUIRE</span><h3>Finding first customers</h3><p>Identify relevant audiences and create routes for enquiries.</p></article>
+        <article class="km-stage km-reveal"><span class="km-stage-number">03 / GROW</span><h3>Generating more enquiries</h3><p>Improve discoverability, lead quality and follow-up.</p></article>
+        <article class="km-stage km-reveal"><span class="km-stage-number">04 / DISTRIBUTE</span><h3>Building distribution</h3><p>Attract dealers, distributors and channel partners.</p></article>
+        <article class="km-stage km-reveal"><span class="km-stage-number">05 / EXPAND</span><h3>Entering new markets</h3><p>Reach new regions, export markets or online sales channels.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRAMEWORK -->
+  <section class="km-section-sm" id="km-framework">
+    <div class="km-wrap">
+      <div class="km-framework km-reveal">
+        <div class="km-framework-top">
+          <div>
+            <div class="km-eyebrow">The Korvion approach</div>
+            <h2>Understand the product before choosing the <span class="km-gradient-text">marketing channels.</span></h2>
+          </div>
+          <p>Our product-to-market framework connects your product, buyer requirements and sales model with the right digital marketing priorities. Enter at the stage that fits your business.</p>
+        </div>
+        <div class="km-framework-steps">
+          <article class="km-framework-step"><span>PHASE 01 · 01–03</span><h3>Understand the opportunity</h3><p>Assess your product, market demand, competitors, target buyers and purchasing requirements.</p></article>
+          <article class="km-framework-step"><span>PHASE 02 · 04–06</span><h3>Prepare for the market</h3><p>Define positioning, routes to market, sales assets and the digital presence buyers need.</p></article>
+          <article class="km-framework-step"><span>PHASE 03 · 07–09</span><h3>Reach and convert</h3><p>Use relevant channels, enquiry journeys and follow-up to support sales opportunities.</p></article>
+          <article class="km-framework-step"><span>PHASE 04 · 10</span><h3>Measure and expand</h3><p>Review lead quality, conversion, channel performance and new-market opportunities.</p></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE SERVICES -->
+  <section class="km-section">
+    <div class="km-wrap">
+      <div class="km-section-heading km-reveal">
+        <div>
+          <div class="km-eyebrow">Core capabilities</div>
+          <h2>Digital marketing services for <span class="km-gradient-text">manufacturing companies.</span></h2>
+        </div>
+        <p>Bring together the capabilities that support your business goals, from product discoverability and brand communication to demand generation and lead management.</p>
+      </div>
+
+      <div class="km-service-grid">
+        <article class="km-service-card km-reveal"><div class="km-card-icon"><svg class="km-icon"><use href="#i-search"/></svg></div><h3>SEO Services</h3><p>Improve organic visibility for product, application and buyer-intent searches.</p><a class="km-text-link" href="https://www.korvionmedia.com/best-seo-services/">Explore SEO <span>↗</span></a></article>
+
+        <article class="km-service-card km-reveal"><div class="km-card-icon"><svg class="km-icon"><use href="#i-chart"/></svg></div><h3>Advanced SEO & Performance</h3><p>Strengthen technical foundations, search performance and organic growth opportunities.</p><a class="km-text-link" href="https://www.korvionmedia.com/advanced-seo-performance-services/">Explore advanced SEO <span>↗</span></a></article>
+
+        <article class="km-service-card km-reveal"><div class="km-card-icon"><svg class="km-icon"><use href="#i-target"/></svg></div><h3>Performance Marketing</h3><p>Reach relevant audiences through paid campaigns built around measurable business goals.</p><a class="km-text-link" href="https://www.korvionmedia.com/performance-marketing-services/">Explore paid marketing <span>↗</span></a></article>
+
+        <article class="km-service-card km-reveal"><div class="km-card-icon"><svg class="km-icon"><use href="#i-network"/></svg></div><h3>Social Media Marketing</h3><p>Build brand visibility, communicate product value and support audience engagement.</p><a class="km-text-link" href="https://www.korvionmedia.com/social-media-marketing-services/">Explore social media <span>↗</span></a></article>
+
+        <article class="km-service-card km-reveal"><div class="km-card-icon"><svg class="km-icon"><use href="#i-palette"/></svg></div><h3>Branding & Creative</h3><p>Build a consistent brand identity and clearer product communication across touchpoints.</p><a class="km-text-link" href="https://www.korvionmedia.com/branding-agency-creative-services/">Explore creative services <span>↗</span></a></article>
+
+        <article class="km-service-card km-reveal"><div class="km-card-icon"><svg class="km-icon"><use href="#i-camera"/></svg></div><h3>Video & Photography</h3><p>Present products, facilities, capabilities and applications through visual content.</p><a class="km-text-link" href="https://www.korvionmedia.com/video-production-photography-services/">Explore visual content <span>↗</span></a></article>
+
+        <article class="km-service-card km-reveal"><div class="km-card-icon"><svg class="km-icon"><use href="#i-monitor"/></svg></div><h3>Website Design</h3><p>Create a professional digital presence that helps buyers evaluate products and enquire.</p><a class="km-text-link" href="https://www.korvionmedia.com/website-design-services/">Explore website design <span>↗</span></a></article>
+
+        <article class="km-service-card km-reveal"><div class="km-card-icon"><svg class="km-icon"><use href="#i-workflow"/></svg></div><h3>CRM & Marketing Automation</h3><p>Organise incoming enquiries, follow-ups and marketing workflows to support sales teams.</p><a class="km-text-link" href="https://www.korvionmedia.com/crm-setup-marketing-automation-services/">Explore CRM & automation <span>↗</span></a></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECIALISED SERVICES -->
+  <section class="km-section km-bg-soft">
+    <div class="km-wrap">
+      <div class="km-section-heading km-reveal">
+        <div>
+          <div class="km-eyebrow">Beyond the basics</div>
+          <h2>More than campaigns. Support for the <span class="km-gradient-text">manufacturing marketing journey.</span></h2>
+        </div>
+        <p>Manufacturers may also need product-specific sales materials, distribution support and better conversion workflows. Explore the areas relevant to your business.</p>
+      </div>
+
+      <div class="km-special-grid">
+        <article class="km-special-card km-reveal"><div class="km-card-icon"><svg class="km-icon"><use href="#i-package"/></svg></div><div><h3>Product Packaging & Label Design</h3><p>Communicate product benefits, positioning and brand identity through considered packaging and labels.</p></div><a class="km-text-link" href="https://www.korvionmedia.com/branding-agency-creative-services/" aria-label="Explore creative services">↗</a></article>
+
+        <article class="km-special-card km-reveal"><div class="km-card-icon"><svg class="km-icon"><use href="#i-book"/></svg></div><div><h3>Product Catalogues & Technical Brochures</h3><p>Present product ranges, specifications, applications and manufacturing capabilities in buyer-friendly formats.</p></div><a class="km-text-link" href="https://www.korvionmedia.com/branding-agency-creative-services/" aria-label="Explore branding services">↗</a></article>
+
+        <article class="km-special-card km-reveal"><div class="km-card-icon"><svg class="km-icon"><use href="#i-boxes"/></svg></div><div><h3>Product Page & Application Content</h3><p>Explain use cases, specifications, industries served and the questions buyers ask before enquiring.</p></div><a class="km-text-link" href="https://www.korvionmedia.com/best-seo-services/" aria-label="Explore SEO services">↗</a></article>
+
+        <article class="km-special-card km-reveal"><div class="km-card-icon"><svg class="km-icon"><use href="#i-users"/></svg></div><div><h3>B2B Lead Generation</h3><p>Plan targeted campaigns and enquiry journeys to attract relevant business buyers.</p></div><a class="km-text-link" href="https://www.korvionmedia.com/performance-marketing-services/" aria-label="Explore performance marketing">↗</a></article>
+
+        <article class="km-special-card km-reveal"><div class="km-card-icon"><svg class="km-icon"><use href="#i-network"/></svg></div><div><h3>Distributor & Dealer Acquisition</h3><p>Support channel-partner discovery through targeted campaigns, landing pages and enquiry workflows.</p></div><a class="km-text-link" href="#km-enquiry">Discuss this service ↗</a></article>
+
+        <article class="km-special-card km-reveal"><div class="km-card-icon"><svg class="km-icon"><use href="#i-globe"/></svg></div><div><h3>Export Market Digital Readiness</h3><p>Prepare digital touchpoints for international buyers with clear product information and enquiry routes.</p></div><a class="km-text-link" href="#km-enquiry">Discuss this service ↗</a></article>
+
+        <article class="km-special-card km-reveal"><div class="km-card-icon"><svg class="km-icon"><use href="#i-shopping"/></svg></div><div><h3>B2B Marketplace & Directory Visibility</h3><p>Improve product presentation and discoverability on relevant business directories and marketplaces.</p></div><a class="km-text-link" href="#km-enquiry">Discuss this service ↗</a></article>
+
+        <article class="km-special-card km-reveal"><div class="km-card-icon"><svg class="km-icon"><use href="#i-clipboard"/></svg></div><div><h3>Manufacturing Marketing Readiness Assessment</h3><p>Review your product messaging, website, visibility, sales assets and enquiry pathways to identify priorities.</p></div><a class="km-text-link" href="#km-enquiry">Request a discussion ↗</a></article>
+
+        <article class="km-special-card km-reveal"><div class="km-card-icon"><svg class="km-icon"><use href="#i-workflow"/></svg></div><div><h3>Lead Qualification & Follow-up Workflows</h3><p>Structure enquiry capture, lead categorisation, follow-up reminders and CRM workflows for sales teams.</p></div><a class="km-text-link" href="https://www.korvionmedia.com/crm-setup-marketing-automation-services/">Explore CRM services ↗</a></article>
+
+        <article class="km-special-card km-reveal"><div class="km-card-icon"><svg class="km-icon"><use href="#i-chart"/></svg></div><div><h3>Marketing Performance & Conversion Tracking</h3><p>Measure enquiry sources, lead quality, conversion actions and channel contribution.</p></div><a class="km-text-link" href="https://www.korvionmedia.com/advanced-seo-performance-services/">Explore performance services ↗</a></article>
+      </div>
+      <p style="margin-top:20px;font-size:.76rem">Specialised offerings should be published only after their delivery scope, responsibilities and resources are confirmed.</p>
+    </div>
+  </section>
+
+  <!-- INDUSTRY INSIGHTS -->
+  <section class="km-section">
+    <div class="km-wrap">
+      <div class="km-section-heading km-reveal">
+        <div>
+          <div class="km-eyebrow">Industry landscape · India</div>
+          <h2>Understand your industry. <span class="km-gradient-text">Find your market opportunity.</span></h2>
+        </div>
+        <p>Market size, exports, production and manufacturing capacity reveal different aspects of an industry. These snapshots add context; your product and buyer research determine the right marketing opportunity.</p>
+      </div>
+
+      <div class="km-industry-grid">
+
+        <article class="km-industry-card km-reveal">
+          <div class="km-industry-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=900&q=80" alt="Food production and processing" /><span class="km-industry-index">01</span></div>
+          <div class="km-industry-content">
+            <h3>Food, Beverage & Nutraceutical Manufacturing</h3>
+            <div class="km-industry-stat"><strong>US$382.24B</strong><span>Estimated food processing market, FY2025</span></div>
+            <p>India's food processing market has been projected to reach US$689.02 billion by FY2034. Processed foods, ingredients, beverages and nutraceuticals serve buyers across retail, food service, private label and exports.</p>
+            <div class="km-insight"><svg class="km-icon"><use href="#i-target"/></svg><span>Marketing focus: product positioning, packaging, product pages and distribution visibility.</span></div>
+            <small class="km-stat-source">Source: industry market estimates; verify the latest report and fiscal-year basis before publication.</small>
+          </div>
+        </article>
+
+        <article class="km-industry-card km-reveal">
+          <div class="km-industry-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1581093458791-9d42e3c5a6c5?auto=format&fit=crop&w=900&q=80" alt="Industrial chemical and process equipment" /><span class="km-industry-index">02</span></div>
+          <div class="km-industry-content">
+            <h3>Chemicals, Pharmaceuticals & Personal Care</h3>
+            <div class="km-industry-stat"><strong>US$30.47B</strong><span>Indian pharmaceutical exports, FY2024–25</span></div>
+            <p>Pharmaceutical exports grew 9.4% in FY2024–25. Chemicals, pharma products and personal-care manufacturing serve distinct buyers and need product-specific messaging and careful compliance communication.</p>
+            <div class="km-insight"><svg class="km-icon"><use href="#i-target"/></svg><span>Marketing focus: technical product content, capability pages and qualified B2B enquiries.</span></div>
+            <small class="km-stat-source">Source: Indian pharmaceutical export reporting for FY2024–25.</small>
+          </div>
+        </article>
+
+        <article class="km-industry-card km-reveal">
+          <div class="km-industry-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1605600659873-d808a13e4d9a?auto=format&fit=crop&w=900&q=80" alt="Packaging products and production" /><span class="km-industry-index">03</span></div>
+          <div class="km-industry-content">
+            <h3>Packaging, Paper & Printing</h3>
+            <div class="km-industry-stat"><strong>US$92B</strong><span>Projected Indian packaging industry value by FY2030</span></div>
+            <p>Market outlooks have pointed to continued packaging demand from food, FMCG, pharmaceuticals, e-commerce and industrial supply chains. Customisation and application fit are important considerations for buyers.</p>
+            <div class="km-insight"><svg class="km-icon"><use href="#i-target"/></svg><span>Marketing focus: catalogues, packaging formats, customisation pages and buyer-specific enquiry journeys.</span></div>
+            <small class="km-stat-source">Source: published Indian packaging industry outlook; confirm the forecast and CAGR with the original report.</small>
+          </div>
+        </article>
+
+        <article class="km-industry-card km-reveal">
+          <div class="km-industry-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=900&q=80" alt="Industrial plastic materials and components" /><span class="km-industry-index">04</span></div>
+          <div class="km-industry-content">
+            <h3>Plastics, Polymers & Rubber Products</h3>
+            <div class="km-industry-stat"><strong>US$12.5B</strong><span>Indian plastics exports, FY2024–25</span></div>
+            <p>India's plastics exports reached approximately US$12.5 billion in FY2024–25. Manufacturers serve packaging, consumer products, industrial applications and automotive supply chains.</p>
+            <div class="km-insight"><svg class="km-icon"><use href="#i-target"/></svg><span>Marketing focus: material and application pages, custom manufacturing and export visibility.</span></div>
+            <small class="km-stat-source">Source: Indian plastics export reporting for FY2024–25.</small>
+          </div>
+        </article>
+
+        <article class="km-industry-card km-reveal">
+          <div class="km-industry-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=80" alt="Automotive engineering and components" /><span class="km-industry-index">05</span></div>
+          <div class="km-industry-content">
+            <h3>Automotive, Agricultural & Mobility Components</h3>
+            <div class="km-industry-stat"><strong>US$80.2B</strong><span>Auto component industry turnover, FY2024–25</span></div>
+            <p>Indian auto component industry turnover increased 9.6% year on year, while exports reached US$22.9 billion in FY2024–25. OEM sourcing and evolving mobility requirements make capability communication important.</p>
+            <div class="km-insight"><svg class="km-icon"><use href="#i-target"/></svg><span>Marketing focus: component pages, technical capabilities, OEM targeting and supplier enquiries.</span></div>
+            <small class="km-stat-source">Source: Indian auto component industry reporting for FY2024–25.</small>
+          </div>
+        </article>
+
+        <article class="km-industry-card km-reveal">
+          <div class="km-industry-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=900&q=80" alt="Industrial machinery and equipment" /><span class="km-industry-index">06</span></div>
+          <div class="km-industry-content">
+            <h3>Industrial Machinery, Equipment & Flow-Control Systems</h3>
+            <div class="km-industry-stat"><strong>US$122.43B</strong><span>Indian engineering exports, FY2025–26</span></div>
+            <p>Engineering exports grew 4.86% year on year in FY2025–26. The category spans multiple manufactured goods, not machinery alone. Equipment buyers still need clear information to compare applications and capabilities.</p>
+            <div class="km-insight"><svg class="km-icon"><use href="#i-target"/></svg><span>Marketing focus: application-led SEO, equipment pages, technical brochures and quotation requests.</span></div>
+            <small class="km-stat-source">Source: engineering export reporting for FY2025–26.</small>
+          </div>
+        </article>
+
+        <article class="km-industry-card km-reveal">
+          <div class="km-industry-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=900&q=80" alt="Solar energy and electrical infrastructure" /><span class="km-industry-index">07</span></div>
+          <div class="km-industry-content">
+            <h3>Electrical, Electronics & Renewable Energy Equipment</h3>
+            <div class="km-industry-stat"><strong>100 GW</strong><span>Solar PV module capacity listed under ALMM, August 2025</span></div>
+            <p>Listed solar module manufacturing capacity increased from 2.3 GW in 2014 to 100 GW in August 2025. This reflects expansion in the solar manufacturing ecosystem alongside opportunities in electrical and power equipment.</p>
+            <div class="km-insight"><svg class="km-icon"><use href="#i-target"/></svg><span>Marketing focus: product specifications, technical resources, installer outreach and project enquiries.</span></div>
+            <small class="km-stat-source">Source: India's Approved List of Models and Manufacturers, August 2025.</small>
+          </div>
+        </article>
+
+        <article class="km-industry-card km-reveal">
+          <div class="km-industry-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=900&q=80" alt="Metal fabrication and industrial manufacturing" /><span class="km-industry-index">08</span></div>
+          <div class="km-industry-content">
+            <h3>Metal Fabrication, Fasteners & Industrial Hardware</h3>
+            <div class="km-industry-stat"><strong>168.4M tonnes</strong><span>Indian crude steel production, FY2025–26</span></div>
+            <p>Crude steel production rose 10.7% year on year in FY2025–26. Steel is an important upstream input, although its production growth does not directly measure demand for every fabricated product or fastener.</p>
+            <div class="km-insight"><svg class="km-icon"><use href="#i-target"/></svg><span>Marketing focus: product-specific pages, materials, custom fabrication and procurement visibility.</span></div>
+            <small class="km-stat-source">Source: Indian steel production reporting for FY2025–26.</small>
+          </div>
+        </article>
+
+        <article class="km-industry-card km-reveal">
+          <div class="km-industry-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" alt="Construction materials and interior finishes" /><span class="km-industry-index">09</span></div>
+          <div class="km-industry-content">
+            <h3>Construction Materials, Glass, Ceramics & Sanitaryware</h3>
+            <div class="km-industry-stat"><strong>₹62,000 Cr</strong><span>Indian ceramic tile market value, FY2023–24</span></div>
+            <p>India was among the world's leading ceramic tile producers, consumers and exporters in 2024. Manufacturers compete through product range, finish, performance, design and distribution reach.</p>
+            <div class="km-insight"><svg class="km-icon"><use href="#i-target"/></svg><span>Marketing focus: product catalogues, visual content, regional visibility and trade enquiries.</span></div>
+            <small class="km-stat-source">Source: Indian ceramic tile industry reporting for FY2023–24.</small>
+          </div>
+        </article>
+
+        <article class="km-industry-card km-reveal">
+          <div class="km-industry-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80" alt="Textile and apparel production" /><span class="km-industry-index">10</span></div>
+          <div class="km-industry-content">
+            <h3>Textiles, Leather, Footwear & Protective Products</h3>
+            <div class="km-industry-stat"><strong>US$35.52B</strong><span>Textile and apparel exports, including handicrafts, FY2025–26</span></div>
+            <p>Ready-made garments accounted for US$15.77 billion of these exports. This figure applies to textiles and apparel, not the entire leather, footwear and protective-products category.</p>
+            <div class="km-insight"><svg class="km-icon"><use href="#i-target"/></svg><span>Marketing focus: product catalogues, private-label enquiries, sourcing visibility and export readiness.</span></div>
+            <small class="km-stat-source">Source: Indian textile and apparel export reporting for FY2025–26.</small>
+          </div>
+        </article>
+
+      </div>
+
+      <p style="margin-top:20px;font-size:.73rem">Market size, exports, production and manufacturing capacity measure different things. Figures and forecast periods should be checked against original publications before launch.</p>
+    </div>
+  </section>
+
+  <!-- INDUSTRIAL CONTEXT -->
+  <section class="km-section km-bg-soft">
+    <div class="km-wrap">
+      <div class="km-partner-panel km-reveal">
+        <div class="km-partner-visual">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80" alt="Industrial specialists reviewing engineering work">
+          <div class="km-partner-overlay"><span>Industrial perspective</span><h3>Marketing decisions grounded in product realities.</h3></div>
+        </div>
+        <div class="km-partner-copy">
+          <div class="km-eyebrow">Beyond conventional marketing</div>
+          <h2>Industrial understanding should inform <span class="km-gradient-text">marketing decisions.</span></h2>
+          <p>Manufacturing marketing works better when it reflects how a product is developed, produced, positioned and brought to market.</p>
+          <p>Korvion Media's approach is informed by collaboration with industrial specialists, including C2EX Consulting. Their work spans product development, manufacturing setup, compliance and commercialisation, particularly across food, beverage, FMCG and nutraceutical businesses.</p>
+          <p>This perspective helps connect marketing decisions with product and market realities, while Korvion focuses on digital visibility, marketing strategy, demand generation and sales-support systems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section class="km-section">
+    <div class="km-wrap">
+      <div class="km-section-heading km-reveal">
+        <div>
+          <div class="km-eyebrow">Business outcomes</div>
+          <h2>What should your marketing investment <span class="km-gradient-text">help improve?</span></h2>
+        </div>
+        <p>Marketing activity matters when it contributes to business goals. Priorities and results depend on product-market fit, sales readiness, budget and execution.</p>
+      </div>
+
+      <div class="km-outcome-grid">
+        <article class="km-outcome-card km-reveal"><div class="km-card-icon"><svg class="km-icon"><use href="#i-search"/></svg></div><h3>Greater visibility</h3><p>Improve discovery across search, product pages and relevant digital channels.</p></article>
+        <article class="km-outcome-card km-reveal"><div class="km-card-icon"><svg class="km-icon"><use href="#i-users"/></svg></div><h3>Better-fit enquiries</h3><p>Give suitable buyers a clearer path to request information or quotations.</p></article>
+        <article class="km-outcome-card km-reveal"><div class="km-card-icon"><svg class="km-icon"><use href="#i-network"/></svg></div><h3>Channel opportunities</h3><p>Support distributor, dealer and business partnership development.</p></article>
+        <article class="km-outcome-card km-reveal"><div class="km-card-icon"><svg class="km-icon"><use href="#i-chart"/></svg></div><h3>Measurable progress</h3><p>Track enquiry sources, lead quality, conversion and channel performance.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENQUIRY FORM -->
+  <section class="km-section-sm" id="km-enquiry">
+    <div class="km-wrap">
+      <div class="km-enquiry km-reveal">
+        <div class="km-enquiry-grid">
+          <div class="km-enquiry-copy">
+            <div class="km-eyebrow">Start with your product</div>
+            <h2>Let's identify your next <span class="km-gradient-text">market opportunity.</span></h2>
+            <p>Tell us what you manufacture and what you want to achieve. We can start by understanding your current position, intended buyers and biggest challenge.</p>
+            <div class="km-enquiry-note"><svg class="km-icon"><use href="#i-check"/></svg><span>No long brief needed. A few details are enough to begin the conversation.</span></div>
+          </div>
+
+          <form class="km-form" id="km-manufacturing-form">
+            <div class="km-form-grid">
+              <div class="km-field km-field-full">
+                <label for="km-industry">Which industry best describes your business?</label>
+                <select id="km-industry" name="industry" required>
+                  <option value="">Select your industry</option>
+                  <option>Food, Beverage & Nutraceutical Manufacturing</option>
+                  <option>Chemicals, Pharmaceuticals & Personal Care</option>
+                  <option>Packaging, Paper & Printing</option>
+                  <option>Plastics, Polymers & Rubber Products</option>
+                  <option>Automotive, Agricultural & Mobility Components</option>
+                  <option>Industrial Machinery, Equipment & Flow-Control Systems</option>
+                  <option>Electrical, Electronics & Renewable Energy Equipment</option>
+                  <option>Metal Fabrication, Fasteners & Industrial Hardware</option>
+                  <option>Construction Materials, Glass, Ceramics & Sanitaryware</option>
+                  <option>Textiles, Leather, Footwear & Protective Products</option>
+                  <option>Other manufacturing industry</option>
+                </select>
+              </div>
+
+              <div class="km-field km-field-full">
+                <label for="km-product">What product do you manufacture?</label>
+                <input id="km-product" name="product" required placeholder="Enter your product or product range">
+              </div>
+
+              <div class="km-field km-field-full">
+                <label for="km-challenge">What is your main business challenge?</label>
+                <select id="km-challenge" name="challenge" required>
+                  <option value="">Choose your main priority</option>
+                  <option>Finding customers and generating enquiries</option>
+                  <option>Finding distributors, dealers or wholesale buyers</option>
+                  <option>Improving product visibility</option>
+                  <option>Launching a product or entering a market</option>
+                  <option>Increasing online or direct sales</option>
+                  <option>Expanding into new regions or export markets</option>
+                  <option>Product packaging, catalogues or sales materials</option>
+                  <option>Lead qualification and follow-up</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="km-field">
+                <label for="km-business">Business name</label>
+                <input id="km-business" name="business" required placeholder="Company name">
+              </div>
+              <div class="km-field">
+                <label for="km-contact">Contact name</label>
+                <input id="km-contact" name="contact" required placeholder="Your name">
+              </div>
+              <div class="km-field">
+                <label for="km-email">Work email</label>
+                <input id="km-email" name="email" type="email" required placeholder="you@company.com">
+              </div>
+              <div class="km-field">
+                <label for="km-phone">Phone number</label>
+                <input id="km-phone" name="phone" type="tel" required placeholder="Contact number">
+              </div>
+            </div>
+
+            <button class="km-btn" type="submit">Discuss my manufacturing business <span class="km-arrow">↗</span></button>
+            <p class="km-form-privacy">Your details should be used to respond to this enquiry. Link your privacy policy here before publishing.</p>
+            <p class="km-form-message" id="km-form-message" role="status">The form is ready for integration. Connect it to your CRM or enquiry system to receive submissions.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ ACCORDION -->
+  <section class="km-section">
+    <div class="km-wrap km-faq-layout">
+      <div class="km-faq-aside km-reveal">
+        <div class="km-eyebrow">Common questions</div>
+        <h2>What manufacturers often want to <span class="km-gradient-text">know first.</span></h2>
+        <p>Understand how digital marketing can support your product, buyers and growth priorities.</p>
+        <a class="km-btn km-btn-light" href="#km-enquiry">Ask about your business <span class="km-arrow">↗</span></a>
+      </div>
+
+      <div class="km-faq-list km-reveal">
+        <details class="km-faq-item">
+          <summary>What is digital marketing for manufacturers?</summary>
+          <div class="km-faq-answer"><p>Digital marketing for manufacturers helps businesses improve product visibility, communicate their capabilities, reach potential buyers and generate relevant enquiries. The approach depends on the product, target audience, sales cycle and route to market.</p></div>
+        </details>
+        <details class="km-faq-item">
+          <summary>How is manufacturing marketing different from regular digital marketing?</summary>
+          <div class="km-faq-answer"><p>Manufacturing marketing often requires technical product information, application-led content, industry-specific buyer knowledge and longer purchasing cycles. A strategy for industrial components may differ significantly from one promoting a consumer product.</p></div>
+        </details>
+        <details class="km-faq-item">
+          <summary>Can digital marketing help manufacturers generate B2B leads?</summary>
+          <div class="km-faq-answer"><p>Yes. SEO, product landing pages, paid campaigns, targeted content and relevant outreach can attract potential business buyers. Lead quality depends on targeting, product-market fit, buyer requirements and how effectively enquiries are qualified and followed up.</p></div>
+        </details>
+        <details class="km-faq-item">
+          <summary>How can I market an industrial product online?</summary>
+          <div class="km-faq-answer"><p>Start by identifying applications, differentiators and intended buyers. Build clear product pages with relevant specifications, improve search visibility and create simple enquiry routes. Then test channels suited to the product, target market and sales cycle.</p></div>
+        </details>
+        <details class="km-faq-item">
+          <summary>Can Korvion Media help manufacturers find distributors and dealers?</summary>
+          <div class="km-faq-answer"><p>Korvion Media can support digital visibility, targeted campaigns, landing pages and enquiry workflows intended to attract potential channel partners. Distributor appointments depend on demand, commercial terms, regional fit and the manufacturer's ability to serve the market.</p></div>
+        </details>
+        <details class="km-faq-item">
+          <summary>Do you work with small and medium-scale manufacturers?</summary>
+          <div class="km-faq-answer"><p>The approach can be adapted to small, medium-scale and growing manufacturing businesses. Priorities may include establishing a credible digital presence, improving product discoverability, generating initial enquiries or building a more structured marketing process within available resources.</p></div>
+        </details>
+        <details class="km-faq-item">
+          <summary>Can you help manufacturers expand into export markets?</summary>
+          <div class="km-faq-answer"><p>Marketing can support international visibility, product positioning and outreach to relevant audiences. Export expansion also involves commercial, logistics, documentation and regulatory considerations that must be assessed separately for the product and destination market.</p></div>
+        </details>
+        <details class="km-faq-item">
+          <summary>Do all manufacturers need SEO, paid advertising and social media?</summary>
+          <div class="km-faq-answer"><p>No. The right mix depends on how buyers discover and purchase the product. SEO may suit products with active search demand, while targeted outreach or distributor development may be more relevant elsewhere. Channel selection should follow business goals.</p></div>
+        </details>
+        <details class="km-faq-item">
+          <summary>Can you help with product packaging and catalogues?</summary>
+          <div class="km-faq-answer"><p>Korvion Media can discuss branding and creative support for packaging, labels, product catalogues and brochures. The scope should be defined around your product, target buyers, brand requirements and applicable compliance needs.</p></div>
+        </details>
+        <details class="km-faq-item">
+          <summary>How does industrial expertise influence Korvion Media's approach?</summary>
+          <div class="km-faq-answer"><p>Korvion Media's approach is informed by collaboration with industrial specialists, including C2EX Consulting, whose work spans product development, manufacturing setup, compliance and commercialisation. Korvion applies this perspective to marketing strategy, digital visibility and demand generation.</p></div>
+        </details>
+        <details class="km-faq-item">
+          <summary>How do we get started with Korvion Media?</summary>
+          <div class="km-faq-answer"><p>Share your industry, product and main business challenge through the enquiry form. Korvion Media can then discuss your current position, intended buyers and priorities to identify relevant marketing opportunities and potential next steps.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA: still part of page body -->
+  <section class="km-section-sm">
+    <div class="km-wrap">
+      <div class="km-final-cta km-reveal">
+        <div>
+          <div class="km-eyebrow">Your next market opportunity</div>
+          <h2>Your product deserves to reach the <span class="km-gradient-text">right market.</span></h2>
+          <p>Build a clearer path from manufacturing capabilities to buyer visibility, enquiries and business growth.</p>
+        </div>
+        <a class="km-btn" href="#km-enquiry">Let's discuss your business <span class="km-arrow">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+/* Scroll reveal with graceful fallback */
+(function () {
+  const elements = document.querySelectorAll(".km-reveal");
+
+  if (!("IntersectionObserver" in window)) {
+    elements.forEach(el => el.classList.add("km-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("km-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  elements.forEach(el => observer.observe(el));
+})();
+
+/* Keep one FAQ open at a time */
+document.querySelectorAll(".km-faq-item").forEach(item => {
+  item.addEventListener("toggle", () => {
+    if (!item.open) return;
+    document.querySelectorAll(".km-faq-item").forEach(other => {
+      if (other !== item) other.open = false;
+    });
+  });
+});
+
+/* Demo-only form handler. Replace with CRM/API integration before launch. */
+const manufacturingForm = document.getElementById("km-manufacturing-form");
+const formMessage = document.getElementById("km-form-message");
+
+manufacturingForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  formMessage.style.display = "block";
+  formMessage.scrollIntoView({ behavior: "smooth", block: "nearest" });
+});
+</script>
+</body>
+</html>

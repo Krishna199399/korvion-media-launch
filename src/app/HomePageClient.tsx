@@ -18,6 +18,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { useRef } from "react";
 import heroOrbPng from "@/assets/hero-orb.jpg.png";
 import MagicRings from '@/components/MagicRings';
+import { ClientLogosSection } from "@/components/ClientLogosSection";
 
 const heroOrbSrc = typeof heroOrbPng === "string" ? heroOrbPng : heroOrbPng.src;
 
@@ -279,6 +280,9 @@ export function HomePageClient() {
             </div>
           </div>
         </section>
+
+        {/* CLIENT LOGOS SECTION */}
+        <ClientLogosSection />
 
         {/* 3D INTERACTIVE FLOW SHOWCASE */}
         <section className="py-20 relative bg-surface/30 border-y border-border">

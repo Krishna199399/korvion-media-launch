@@ -185,33 +185,6 @@ const specializedServices = [
   },
 ];
 
-const productApproaches = [
-  {
-    business: 'Industrial components and equipment',
-    priorities: 'Technical product pages, application-led SEO, qualified B2B enquiries and procurement visibility',
-  },
-  {
-    business: 'Food, beverage and consumer products',
-    priorities: 'Product positioning, packaging communication, brand visibility and distribution',
-  },
-  {
-    business: 'Private-label and contract manufacturers',
-    priorities: 'Capability presentation, certifications, buyer qualification and partnership enquiries',
-  },
-  {
-    business: 'Products sold through distributors',
-    priorities: 'Dealer acquisition, regional targeting, channel support and product catalogues',
-  },
-  {
-    business: 'Manufacturers selling online',
-    priorities: 'Product discovery, e-commerce conversion and repeat-purchase opportunities',
-  },
-  {
-    business: 'Export-oriented manufacturers',
-    priorities: 'International visibility, export-focused product information and buyer outreach',
-  },
-];
-
 const industrySectors = [
   {
     id: 1,
@@ -807,44 +780,6 @@ export function ManufacturingClient() {
                 </Link>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 8. COMPARISON MATRIX: DIFFERENT PRODUCTS */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-        <SectionHeader
-          eyebrow="Strategic Alignment"
-          title="Different products need different marketing approaches"
-          subtitle="The objective is not to use every channel. It is to choose the channels that fit your product, buyers and route to market."
-        />
-
-        <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-sm">
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="border-b border-border bg-muted/50">
-                  <th className="p-4 sm:p-5 font-space-grotesk font-bold text-sm sm:text-base text-foreground w-1/3">
-                    Manufacturing Business
-                  </th>
-                  <th className="p-4 sm:p-5 font-space-grotesk font-bold text-sm sm:text-base text-foreground">
-                    Marketing Priorities
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border text-sm">
-                {productApproaches.map((row, idx) => (
-                  <tr key={idx} className="hover:bg-muted/20 transition-colors">
-                    <td className="p-4 sm:p-5 font-semibold text-foreground">
-                      {row.business}
-                    </td>
-                    <td className="p-4 sm:p-5 text-muted-foreground leading-relaxed">
-                      {row.priorities}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
           </div>
         </div>
       </section>
